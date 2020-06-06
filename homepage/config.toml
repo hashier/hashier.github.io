@@ -1,3 +1,38 @@
-baseURL = "http://example.org/"
+baseURL = "https://loessl.org"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "~/christopher.loessl"
+
+theme = "anubis"
+
+paginate = 5
+
+# disqusShortname = ""
+# googleAnalytics = ""
+
+[params]
+  author = "Christopher Loessl"
+  description = "Private homepage of Christopher Loessl"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "~/about"
+    url = "/about/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "~/blog"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "~/tags"
+    url = "/tags/"
+    weight = 3
+
+[taxonomies]
+category = "categories"
+tag = "tags"
