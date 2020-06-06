@@ -2,6 +2,7 @@
 title: "about"
 date: "2020-06-06"
 # tags: ["static-page", "index"]
+comment: "This feels needs to be \_index.html. If it is index.html /posts isn't working"
 ---
 
 # About me
