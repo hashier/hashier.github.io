@@ -6,6 +6,10 @@ theme = "anubis"
 
 paginate = 7
 
+# Needed here because of the development override
+# Otherwise this folder won't show up in env: development
+staticDir = "static"
+
 # disqusShortname = ""
 # googleAnalytics = ""
 
