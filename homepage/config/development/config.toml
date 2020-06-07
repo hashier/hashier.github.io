@@ -1,2 +1,3 @@
+baseURL = "https://dev.loessl.org"
 buildDrafts = true
 paginate = 2
