@@ -1,0 +1,31 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #9b9b9b;
+        background: #232323;
+    }
+
+    .pagination-item {
+        background: #9b9b9b;
+    }
+
+    /* Navigation */
+    header a {
+        color: #9b9b9b;
+    }
+
+    header nav {
+        background: #232323;
+    }
+
+    /* Title of posts */
+    article header h1 a {
+        color: #9b9b9b;
+    }
+
+    @media (max-width: 840px) {
+        /* Have a nice box around menu on phones */
+        header nav {
+            background: #333333;
+        }
+    }
+}

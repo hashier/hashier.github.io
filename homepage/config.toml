@@ -12,6 +12,7 @@ paginate = 7
 [params]
   author = "Christopher Loessl"
   description = "Private homepage of Christopher Loessl"
+  customCss = ["css/custom.css"]
 
 [menu]
 
