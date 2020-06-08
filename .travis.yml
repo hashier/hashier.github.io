@@ -1,0 +1,25 @@
+language: generic
+
+dist: bionic
+
+addons:
+  snaps:
+    - hugo
+
+script: |
+  cd homepage
+  hugo -e development
+
+after_success:
+  - pwd
+  - if [ -z "$GITHUB_API_KEY" ]; then exit; fi
+  - git rm -rf themes
+  - git checkout --orphan master
+  - cd ..
+  - git rm -rf .
+  - rsync -aP homepage/public/ .
+  - rm -rf homepage
+  - git add --all
+  - git commit -m '\┌(ಠ_ಠ)┘'
+  - # git push -f -q https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG master
+  - git push -f https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$GITHUB_USER/test-www-staging.git master
