@@ -6,9 +6,9 @@ addons:
   snaps:
     - hugo
 
-script: |
-  cd homepage
-  hugo -e development
+script:
+  - cd homepage
+  - hugo -e development
 
 after_success:
   - pwd
@@ -20,6 +20,7 @@ after_success:
   - rsync -aP homepage/public/ .
   - rm -rf homepage
   - git add --all
-  - git commit -m '\┌(ಠ_ಠ)┘'
+  # - git commit -m '┌(ಠ_ಠ)┘' # No UTF 8 support?
+  - git commit -m '\o/'
   - # git push -f -q https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG master
   - git push -f https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$GITHUB_USER/test-www-staging.git master
