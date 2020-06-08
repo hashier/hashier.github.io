@@ -11,6 +11,7 @@ script:
   - hugo -e development
 
 after_success:
+  - echo "$GITHUB_API_KEY"
   - pwd
   - if [ -z "$GITHUB_API_KEY" ]; then exit; fi
   - git rm -rf themes
