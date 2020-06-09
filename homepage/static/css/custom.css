@@ -1,11 +1,11 @@
 @media (prefers-color-scheme: dark) {
     body {
-        color: #9b9b9b;
+        color: #ccc;
         background: #232323;
     }
 
     .pagination-item {
-        background: #9b9b9b;
+        background: #666;
     }
 
     /* Navigation */
@@ -25,7 +25,7 @@
     @media (max-width: 840px) {
         /* Have a nice box around menu on phones */
         header nav {
-            background: #333333;
+            background: #333;
         }
     }
 }
