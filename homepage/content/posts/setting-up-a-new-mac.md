@@ -1,5 +1,5 @@
 ---
-title: "Setting Up a New Mac"
+title: "Setting up a new Mac"
 date: 2013-02-01T21:50:00
 tags:
 - apple
@@ -11,7 +11,7 @@ tags:
 category:
 - computer
 aliases:
-draft: true
+draft: false
 ---
 
 Every time I setup a new Mac system I wonder "what else do I have to set/configure" so I deceided today while setting up a new Mac that I will write down the (imho) most important steps, settings and applications. Thus I have a step by step list next time I set up a new Mac (:

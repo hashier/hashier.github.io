@@ -7,9 +7,11 @@ tags:
 categories:
 - science
 aliases:
-draft: true
+draft: false
 ---
 
 27 years ago the Challenger exploded
+
+<!--more-->
 
 <http://www.nasa.gov/multimedia/imagegallery/image_gallery_2437.html>

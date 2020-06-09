@@ -1,5 +1,5 @@
 ---
-title: "Getting rid of java on a mac"
+title: "Getting rid of Java on a Mac"
 date: 2013-02-02T11:38:00
 tags:
 - apple
@@ -15,10 +15,10 @@ tags:
 categories:
 - computer
 aliases:
-draft: true
+draft: false
 ---
 
-If you installed Java from Apple then you have the problem, that you have got a very old Version of Java:
+If you installed Java from Apple then you have the problem, that you have got a very old Version of Java.
 
 <!--more-->
 
