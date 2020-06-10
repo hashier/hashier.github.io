@@ -5,7 +5,11 @@
     }
 
     .pagination-item {
-        background: #666;
+        background: #333;
+    }
+
+    .pagination-item a {
+        color: #ccc;
     }
 
     /* Navigation */
