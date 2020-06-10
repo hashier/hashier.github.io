@@ -1,15 +1,17 @@
 @media (prefers-color-scheme: dark) {
+    /* main */
     body {
-        color: #ccc;
+        color: #fafafa;
         background: #232323;
     }
 
+    /* Pager */
     .pagination-item {
         background: #333;
     }
 
     .pagination-item a {
-        color: #ccc;
+        color: #fafafa;
     }
 
     /* Navigation */
@@ -23,7 +25,7 @@
 
     /* Title of posts */
     article header h1 a {
-        color: #9b9b9b;
+        color: #ccc;
     }
 
     @media (max-width: 840px) {
