@@ -15,4 +15,4 @@ During this time I have written patches, features and bug fixes for various open
 
 By listening to podcasts, answering questions on StackOverflow, reading blogs, and giving the occasional talk at developer meetings I stay engaged with the communities and push myself to be at the cutting edge of this fast-paced field.
 
-In my free time I love to hike, read, climb and observe the universe through my 8" dobsonian telescope.
+In my free time I love to read, hike, climb and observe the universe through my 8" dobsonian telescope.
