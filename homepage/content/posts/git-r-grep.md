@@ -1,7 +1,7 @@
 ---
 title: "Recursive git grep"
 date: 2013-06-21T02:15:00
-tags: [coding, development, git, tip]
+tags: [coding, development, git, til]
 categories: [computer]
 aliases:
 ---

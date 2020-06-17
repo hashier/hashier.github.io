@@ -1,7 +1,7 @@
 ---
 title: "Improving the security of your SSH private key files — Martin Kleppmann’s blog"
 date: 2013-07-03T17:50:00
-tags: [config, key, security, ssh, tip]
+tags: [config, key, security, ssh, til]
 categories: [computer]
 aliases:
 ---

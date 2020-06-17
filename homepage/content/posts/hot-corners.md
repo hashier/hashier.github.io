@@ -1,7 +1,7 @@
 ---
 title: "Hot Corners"
 date: 2013-06-26T16:07:00
-tags: [apple, config, mac, setup, tip, osx]
+tags: [apple, config, mac, setup, til, osx]
 categories: [computer]
 aliases:
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Who opens my UPnP ports?"
 date: 2013-05-07T16:11:00
-tags: [apple, application, linux, lsof, mac, network, port, software, strange, sysadmin, tcp, tip, tool, udp, upnp]
+tags: [apple, application, linux, lsof, mac, network, port, software, strange, sysadmin, tcp, til, tool, udp, upnp]
 categories: [computer]
 aliases:
 ---

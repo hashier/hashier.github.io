@@ -1,7 +1,7 @@
 ---
 title: "iTunes: sort albums by year instead of name"
 date: 2013-02-06T18:27:28
-tags: [apple, config, iTunes, mac, shortcut, software, tip]
+tags: [apple, config, iTunes, mac, shortcut, software, til]
 categories: [computer]
 aliases:
 ---

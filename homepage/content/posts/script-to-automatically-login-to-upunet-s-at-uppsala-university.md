@@ -1,7 +1,7 @@
 ---
 title: "Script to automatically login to UpUnet-S at Uppsala University"
 date: 2013-03-26T10:28:00
-tags: [config, console, tip, uu, development]
+tags: [config, console, til, uu, development]
 categories: [computer]
 aliases:
 ---
