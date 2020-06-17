@@ -1,12 +1,12 @@
 ---
-title: "Mac inline sed"
+title: "TIL: Mac inline sed"
 date: 2020-06-17T22:16:31+02:00
 tags: [til, shell]
 categories: [computer]
 aliases:
 ---
 
-TIL: How to use inline sed on mac.
+How to use inline sed on mac.
 
 <!--more-->
 
