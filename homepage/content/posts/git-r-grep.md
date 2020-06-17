@@ -8,6 +8,8 @@ aliases:
 
 I just figured out, that I want to make sure, that I never committed a key to my repository before publishing it, so what's the easiest way to grep throw all commits in a git repository:
 
+<!--more-->
+
 ```bash
 git grep USERNAME $(git rev-list --all)
 ```
