@@ -14,7 +14,7 @@ aliases:
 draft: false
 ---
 
-Every time I setup a new Mac system I wonder "what else do I have to set/configure" so I deceided today while setting up a new Mac that I will write down the (imho) most important steps, settings and applications. Thus I have a step by step list next time I set up a new Mac (:
+Every time I setup a new Mac system I wonder "what else do I have to set/configure" so I decided today while setting up a new Mac that I will write down the (imho) most important steps, settings and applications. Thus I have a step by step list next time I set up a new Mac (:
 
 <!--more-->
 
@@ -94,7 +94,7 @@ Set sleeping times
 
 ### iTerm2
 
-- set scrollbackbuffer  higher
+- set scrollback buffer higher
 - Right option key acts as +ESC
 
 ### Applications needed
