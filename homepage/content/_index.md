@@ -19,7 +19,9 @@ In my free time I love to read, hike, climb and observe the universe through my 
 
 ## Links
 
-[Blog](/posts) \
-[christopher@loessl.org](mailto:christopher@loessl.org) \
+[My blog posts](/posts) \
+[Some projects](/projects)
+
 <https://github.com/hashier> \
-<https://twitter.com/hashier>
+<https://twitter.com/hashier> \
+[christopher@loessl.org](mailto:christopher@loessl.org)
