@@ -1,4 +1,4 @@
 baseURL = "https://dev.loessl.org"
-buildDrafts = true
+# buildDrafts = true
 paginate = 7
 staticDir2 = ["staticDir_override_dev"]
