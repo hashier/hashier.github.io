@@ -6,9 +6,11 @@ categories: [computer]
 aliases:
 ---
 
+Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and instantly noticed that someone/something opened some ports in my router and forwarded them to my machine. So of course I wanted to know what's going on on my network.
+
 <!--more-->
 
-Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and instantly noticed that someone/something opened some ports in my router and forwarded them to my machine. So of course I wanted to know what's going on on my network. First idea "wireshark" but this only gives you information from which port these UPnP stuff goes, it doesn't tell you the application that initiated these packages. For the curious here is the [filter](http://wiki.wireshark.org/SSDP) you can use:
+First idea "wireshark" but this only gives you information from which port these UPnP stuff goes, it doesn't tell you the application that initiated these packages. For the curious here is the [filter](http://wiki.wireshark.org/SSDP) you can use:
 
 ```bash
 udp.dstport == 1900 && http && ip.addr == 192.168.1.100
@@ -64,3 +66,32 @@ mdns            5353/tcp    # Multicast DNS
 ```
 
 I didn't do anything with VPN or IPsec so I started googling and found this [Apple KB entry](http://support.apple.com/kb/TS1629) which explained to me which services forward those ports and apparently it's just "Back to My Mac" and some "Bonjour" stuff.
+
+For the case that the service is still up and running on the port the `lsof` output would look something like this, where you can easily read the `command` and `PID` that is listening on a given port:
+
+```bash
+$ lsof -i :32323
+COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+Python  21495 hashier    3u  IPv4 0x23f1441a8dbc1b79      0t0  TCP *:32323 (LISTEN)
+```
+
+In this case I just started a python script which binds to port `32323`.
+
+Some other quick tips of `lsof`.
+
+Print established TCP connections:
+
+```bash
+lsof -P -iTCP -sTCP:ESTABLISHED
+```
+
+Print listening TCP connections:
+
+```bash
+$ lsof -P -iTCP -sTCP:LISTEN
+...
+Python    21495 hashier    3u  IPv4 0x23f1441a8dbc1b79      0t0  TCP *:32323 (LISTEN)
+...
+```
+
+and here we can as well see the listening python TCP server on `32323`. This is a very quick way to find out all the services that are waiting for a connection.
