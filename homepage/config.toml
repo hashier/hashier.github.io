@@ -4,7 +4,7 @@ title = "~/christopher.loessl"
 
 theme = "anubis"
 
-paginate = 7
+paginate = 15
 
 # Needed here because of the development override
 # Otherwise this folder won't show up in env: development
