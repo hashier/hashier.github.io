@@ -1,6 +1,6 @@
 ---
 title: "Fixing TruePreview for Apple Mail 6.6"
-date: 2013-09-3T20:33:00
+date: 2013-09-23T20:33:00
 tags: [apple, fix, mail, plist]
 categories: [computer]
 aliases:
