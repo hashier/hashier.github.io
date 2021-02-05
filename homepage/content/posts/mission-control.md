@@ -1,7 +1,7 @@
 ---
 title: "Mission Control"
 date: 2013-05-20T18:29:00
-tags: [apple, config, installation, mac, plist, productivity, setup, software, til]
+tags: [apple, config, installation, mac, plist, productivity, setup, software, tip]
 categories: [computer]
 aliases:
 ---

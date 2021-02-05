@@ -1,7 +1,7 @@
 ---
 title: "How to run FreeMind on Mountain Lion"
 date: 2013-02-07T20:05:00
-tags: [application, FreeMind, java, mac, mind mapping, productivity, software, til, tool]
+tags: [application, FreeMind, java, mac, mind mapping, productivity, software, tip, tool]
 categories: [computer]
 aliases:
 ---

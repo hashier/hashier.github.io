@@ -15,9 +15,3 @@ I always thought I have to use the gnu tools for inline sed, but I was wrong. Ma
 ```bash
 sed -i '' '/pattern/d' ./infile
 ```
-
-For example to change all my blog posts with the tag `tip` to `til` I used
-
-```bash
-sed -i '' 's/\(tags:.*\)tip\(.*\)/\1til\2/g' *.md
-```

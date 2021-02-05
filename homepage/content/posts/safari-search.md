@@ -1,7 +1,7 @@
 ---
 title: "Safari search"
 date: 2013-02-08T14:42:00
-tags: [apple, config, mac, plist, setup, til]
+tags: [apple, config, mac, plist, setup, tip]
 categories: [computer]
 aliases:
 ---
