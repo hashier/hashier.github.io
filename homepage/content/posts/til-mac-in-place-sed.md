@@ -6,7 +6,7 @@ categories: [computer]
 aliases:
 ---
 
-TIL how to use in-place sed on mac.
+TIL how to use in-place sed on Mac.
 
 <!--more-->
 

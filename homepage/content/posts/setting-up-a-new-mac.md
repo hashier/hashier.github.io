@@ -311,6 +311,6 @@ killall Finder
 ## Updated
 
 - 2013 06 01: Some apps and plist tweaks added
-- 2013 11 20: More homebrew stuff + lots of mac apps (mostly dev. stuff)
+- 2013 11 20: More homebrew stuff + lots of Mac apps (mostly dev. stuff)
 - 2014 02 14: More homebrew stuff
 - 2014 08 06: More apps and plist

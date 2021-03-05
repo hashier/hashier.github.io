@@ -5,13 +5,14 @@ tags:
 - til
 - security
 - side-channel
+- privacy
 categories:
 - computer
 aliases:
 draft: false
 ---
 
-An interesting side-channel attack during World War Two…
+An interesting side-channel attack—that the Britished used—during World War Two…
 
 <!--more-->
 
