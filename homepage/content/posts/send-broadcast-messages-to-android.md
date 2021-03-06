@@ -10,6 +10,6 @@ Faking a received SMS
 
 <!--more-->
 
-```android
+```java
 adb shell am broadcast -a android.provider.Telephony.SMS_RECEIVED
 ```
