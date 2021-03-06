@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>security on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/security/</link>
+    <description>~/christopher.loessl (security)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Feb 2021 18:15:03 +0100</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TIL: Big Ben</title>
+      <link>https://loessl.org/posts/til-big-ben/</link>
+      <pubDate>Sun, 21 Feb 2021 18:15:03 +0100</pubDate>
+      
+      <guid>https://loessl.org/posts/til-big-ben/</guid>
+      <description>&lt;p&gt;An interesting side-channel attack—that the Britished used—during World War Two…&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;During World War Two, BBC News was broadcast to Nazi-occupied Europe. Each news programme opened with a live broadcast of Big Ben tolling the hour – the magical sound of freedom. Ingenious German physicists found a way to determine the weather conditions in London based on tiny differences in the tone of the broadcast ding-dongs. This information offered invaluable help to the Luftwaffe. When the British Secret Service discovered this, they replaced the live broadcast with a set recording of the famous clock.&lt;/p&gt;
+&lt;p&gt;— Sapiens: A Brief History of Humankind by Yuval Noah Harari&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Improving the security of your SSH private key files — Martin Kleppmann’s blog</title>
+      <link>https://loessl.org/posts/improving-the-security-of-your-ssh-private-key-files-martin-kleppmanns-blog/</link>
+      <pubDate>Wed, 03 Jul 2013 17:50:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/improving-the-security-of-your-ssh-private-key-files-martin-kleppmanns-blog/</guid>
+      <description>&lt;p&gt;Read this great article:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://martin.kleppmann.com/2013/05/24/improving-security-of-ssh-private-keys.html&#34;&gt;Improving the security of your SSH private key files — Martin Kleppmann’s blog.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For my own convenience I just put all the important commands together but won&amp;rsquo;t explain anything. Again: Go and read the article.&lt;/p&gt;
+&lt;p&gt;Reading &amp;ldquo;normal&amp;rdquo; ASN.1 key (RSA and DSA without passphrase):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;openssl asn1parse -in test_rsa_key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Reading passphrase protected RSA key:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;openssl rsa -text -in test_rsa_key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Update key from MD5 hashing to PKCS:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mv key key.old
+openssl pkcs8 -topk8 -v2 des3 -in key.old -out key
+chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt; key &lt;span style=&#34;color:#75715e&#34;&gt;# IMPORTANT !&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The key is now back to ASN.1 structure so you can read it with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;openssl asn1parse -in test_rsa_key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Test the new key. If it works just remove the old one. If it doesn&amp;rsquo;t you still have you old key.&lt;/p&gt;
+&lt;p&gt;Done.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

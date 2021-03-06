@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>i18n on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/i18n/</link>
+    <description>~/christopher.loessl (i18n)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Dec 2013 18:24:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/i18n/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iOS Localization With iLocalize</title>
+      <link>https://loessl.org/posts/ios-localization-with-ilocalize/</link>
+      <pubDate>Fri, 27 Dec 2013 18:24:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/ios-localization-with-ilocalize/</guid>
+      <description>&lt;p&gt;I did it once before and now I have to do it again - and of course, I forgot how to do it.
+This time I&amp;rsquo;ll write it down how on way of localisation of an iOS project works.&lt;/p&gt;
+&lt;p&gt;I don&amp;rsquo;t use nib files and all user facing strings are set in code with NSLocalizedStrings(&amp;hellip;). If you are using nibs or need to translate strings in Storyboard and/or nib files, your approach might differ.&lt;/p&gt;
+&lt;p&gt;English is considered as the base language and Swedish as the translation.&lt;/p&gt;
+&lt;h2 id=&#34;this-is-the-workflow-if-you-added-new-nslocalizedstring-in-your-code&#34;&gt;This is the workflow if you added new NSLocalizedString(&amp;hellip;) in your code&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Have your project with NSLocalizedString&lt;/li&gt;
+&lt;li&gt;run &lt;code&gt;genstrings -o en.lproj **/*.m&lt;/code&gt; in the correct folder (zsh needed)&lt;/li&gt;
+&lt;li&gt;start iLocalize&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Project&amp;rdquo; -&amp;gt; &amp;ldquo;Update from files&amp;hellip;&amp;rdquo; -&amp;gt; add the en.lproj/Localizable.strings -&amp;gt; &amp;ldquo;Update the project from a new version of these files&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;click &amp;ldquo;Update&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;translate&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;this-is-the-workflow-if-you-updated-the-svlprojlocalizablestrings-files&#34;&gt;This is the workflow if you updated the sv.lproj/Localizable.strings files&lt;/h2&gt;
+&lt;p&gt;e.g., manually added them in vim or you had someone translate them for you.&lt;/p&gt;
+&lt;p&gt;It might be always good idea to update your Base language first so you can directly see after importing the Swedish Localizable.strings file which &amp;ldquo;Translation Keys&amp;rdquo; have changed and need updating or if the translator got everything.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In iLocalize on the top left you choose (for this example) Swedish&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Project&amp;rdquo; -&amp;gt; &amp;ldquo;Update from files&amp;hellip;&amp;rdquo; -&amp;gt; select your sv.lproj/Localizable.strings file-&amp;gt; &amp;ldquo;Update a localised language from these files&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Make sure in the box Swedish is selected&lt;/li&gt;
+&lt;li&gt;Click &amp;ldquo;Update&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;translate&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

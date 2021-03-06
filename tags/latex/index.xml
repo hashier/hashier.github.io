@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>latex on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/latex/</link>
+    <description>~/christopher.loessl (latex)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 May 2013 13:47:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Finding the right LaTeX packages</title>
+      <link>https://loessl.org/posts/finding-the-right-latex-packages/</link>
+      <pubDate>Wed, 22 May 2013 13:47:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/finding-the-right-latex-packages/</guid>
+      <description>&lt;p&gt;If you have little space on your machine and therefore want to install the LaTeX Basic package (which is only around 150MB instead of a couple of GB) you might run into problems that packages are missing but with &lt;code&gt;tlmgr&lt;/code&gt; this is quite easy to solve&lt;/p&gt;
+&lt;p&gt;You might get errors like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;I couldn&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;t open style file alphadin.bst
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;---line 222 of file bachelor.aux
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; : \bibstyle{alphadin
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; :                   }
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;I&amp;#39;&lt;/span&gt;m skipping whatever remains of this command
+I found no style file---while reading file bachelor.aux
+&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;There were &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; error messages&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+/usr/bin/texi2dvi: bibtex exited with bad status, quitting.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or similar. You can easily search for it with&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ tlmgr search --global --file alphadin.bst
+din1505: texmf-dist/bibtex/bst/din1505/alphadin.bst
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;--all&lt;/code&gt; is a useful search flag as well.&lt;/p&gt;
+&lt;p&gt;PS: Installing works with &lt;code&gt;tlmgr&lt;/code&gt; of course as well&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

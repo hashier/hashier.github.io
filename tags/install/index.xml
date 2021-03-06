@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>install on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/install/</link>
+    <description>~/christopher.loessl (install)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Feb 2013 21:50:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/install/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up a new Mac</title>
+      <link>https://loessl.org/posts/setting-up-a-new-mac/</link>
+      <pubDate>Fri, 01 Feb 2013 21:50:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/setting-up-a-new-mac/</guid>
+      <description>&lt;p&gt;Every time I setup a new Mac system I wonder &amp;ldquo;what else do I have to set/configure&amp;rdquo; so I decided today while setting up a new Mac that I will write down the (imho) most important steps, settings and applications. Thus I have a step by step list next time I set up a new Mac (:&lt;/p&gt;
+&lt;p&gt;This post is subject to change without prior notice.&lt;/p&gt;
+&lt;h2 id=&#34;system-preferences&#34;&gt;System Preferences&lt;/h2&gt;
+&lt;h3 id=&#34;general&#34;&gt;General&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Ask to keep changes when closing documents&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Close windows when quitting an application&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;mission-control&#34;&gt;Mission Control&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Show Dashboard as a space&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Automatically rearrange Spaces based on most recent use&lt;/li&gt;
+&lt;li&gt;Set up hot corners&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;language--text&#34;&gt;Language &amp;amp; Text&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove unneeded languages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;security--privacy&#34;&gt;Security &amp;amp; Privacy&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Require password &amp;ldquo;5 seconds&amp;rdquo; after sleep or screensaver begins&lt;/li&gt;
+&lt;li&gt;activate &amp;ldquo;FileVault&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;activate &amp;ldquo;Firewall&amp;rdquo; (and/or set up pf)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;notifications&#34;&gt;Notifications&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Mail -&amp;gt; Alert &amp;amp;&amp;amp; in the Mail application set only VIP send notifications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;display&#34;&gt;Display&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;[ ] Automatically adjust brightness&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;energy-saver&#34;&gt;Energy Saver&lt;/h3&gt;
+&lt;p&gt;Set sleeping times&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Wake for network access (For laptops off)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;keyboard&#34;&gt;Keyboard&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Adjust keyboard brightness in low light&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; All controls&lt;/li&gt;
+&lt;li&gt;Map &amp;ldquo;Tab&amp;rdquo; to &amp;ldquo;Ctrl&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;higher Key Repeat rate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;network&#34;&gt;Network&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;[  ] Ask to join new networks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;sharing&#34;&gt;Sharing&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Remote login&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;software-update&#34;&gt;Software Update&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Install system data files and security updates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;applications&#34;&gt;Applications&lt;/h2&gt;
+&lt;h3 id=&#34;finder-preferences&#34;&gt;Finder Preferences&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;New Finder windows show: home&lt;/li&gt;
+&lt;li&gt;Show these items in the sidebar -&amp;gt; add your home folder&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Show all filename extensions&lt;/li&gt;
+&lt;li&gt;Remove &amp;ldquo;All My Files&amp;rdquo; from Sidebar&lt;/li&gt;
+&lt;li&gt;Show Path Bar&lt;/li&gt;
+&lt;li&gt;Show Status Bar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contacts&#34;&gt;Contacts&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Default Account&lt;/li&gt;
+&lt;li&gt;Adress Format&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;iterm2&#34;&gt;iTerm2&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;set scrollback buffer higher&lt;/li&gt;
+&lt;li&gt;Right option key acts as +ESC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;applications-needed&#34;&gt;Applications needed&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;iTerm2&lt;/li&gt;
+&lt;li&gt;Adium&lt;/li&gt;
+&lt;li&gt;AppCleaner&lt;/li&gt;
+&lt;li&gt;Evernote&lt;/li&gt;
+&lt;li&gt;Chrome&lt;/li&gt;
+&lt;li&gt;Firefox&lt;/li&gt;
+&lt;li&gt;sublime2&lt;/li&gt;
+&lt;li&gt;Xcode
+&lt;ul&gt;
+&lt;li&gt;install simulator&lt;/li&gt;
+&lt;li&gt;install documentation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;tunnelblick&lt;/li&gt;
+&lt;li&gt;flux&lt;/li&gt;
+&lt;li&gt;nvALT&lt;/li&gt;
+&lt;li&gt;Trim Enabler&lt;/li&gt;
+&lt;li&gt;Xee&lt;/li&gt;
+&lt;li&gt;Pester&lt;/li&gt;
+&lt;li&gt;Caffeine (TODO: Rewrite that tool)&lt;/li&gt;
+&lt;li&gt;XQuartz&lt;/li&gt;
+&lt;li&gt;Tunnelblick&lt;/li&gt;
+&lt;li&gt;Dash&lt;/li&gt;
+&lt;li&gt;Timingapp&lt;/li&gt;
+&lt;li&gt;DOSBox&lt;/li&gt;
+&lt;li&gt;puu.sh&lt;/li&gt;
+&lt;li&gt;ReadKit&lt;/li&gt;
+&lt;li&gt;TestFlight&lt;/li&gt;
+&lt;li&gt;Crashlytics&lt;/li&gt;
+&lt;li&gt;CoverStory&lt;/li&gt;
+&lt;li&gt;SQLite Professional&lt;/li&gt;
+&lt;li&gt;Liya&lt;/li&gt;
+&lt;li&gt;Spectacle&lt;/li&gt;
+&lt;li&gt;VLC&lt;/li&gt;
+&lt;li&gt;texstudio&lt;/li&gt;
+&lt;li&gt;Tyme&lt;/li&gt;
+&lt;li&gt;Spotify&lt;/li&gt;
+&lt;li&gt;1Password&lt;/li&gt;
+&lt;li&gt;Keyboard Cleaner&lt;/li&gt;
+&lt;li&gt;Sourcetree&lt;/li&gt;
+&lt;li&gt;Caffeine&lt;/li&gt;
+&lt;li&gt;Shiori&lt;/li&gt;
+&lt;li&gt;Marked 2&lt;/li&gt;
+&lt;li&gt;Pixelmator&lt;/li&gt;
+&lt;li&gt;DayOne&lt;/li&gt;
+&lt;li&gt;PaintCode&lt;/li&gt;
+&lt;li&gt;Anki&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;homebrew&#34;&gt;homebrew&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;wine (put it up here, so it will install deps with -universal)&lt;/li&gt;
+&lt;li&gt;hydra (nikto)&lt;/li&gt;
+&lt;li&gt;dsniff&lt;/li&gt;
+&lt;li&gt;htop-osx&lt;/li&gt;
+&lt;li&gt;metas*****&lt;/li&gt;
+&lt;li&gt;mplayer&lt;/li&gt;
+&lt;li&gt;ngrep&lt;/li&gt;
+&lt;li&gt;nmap&lt;/li&gt;
+&lt;li&gt;p0f&lt;/li&gt;
+&lt;li&gt;smartmontools&lt;/li&gt;
+&lt;li&gt;unrar&lt;/li&gt;
+&lt;li&gt;wget&lt;/li&gt;
+&lt;li&gt;wine&lt;/li&gt;
+&lt;li&gt;wireshark&lt;/li&gt;
+&lt;li&gt;colordiff&lt;/li&gt;
+&lt;li&gt;appledoc&lt;/li&gt;
+&lt;li&gt;git (the version in brew is much better then the XCode version)&lt;/li&gt;
+&lt;li&gt;duply&lt;/li&gt;
+&lt;li&gt;openvpn&lt;/li&gt;
+&lt;li&gt;sshfs&lt;/li&gt;
+&lt;li&gt;sloccount&lt;/li&gt;
+&lt;li&gt;mmv&lt;/li&gt;
+&lt;li&gt;git-cal&lt;/li&gt;
+&lt;li&gt;mpv (needs extra repo)&lt;/li&gt;
+&lt;li&gt;cmake&lt;/li&gt;
+&lt;li&gt;curl&lt;/li&gt;
+&lt;li&gt;ddate&lt;/li&gt;
+&lt;li&gt;dos2unix&lt;/li&gt;
+&lt;li&gt;figlet&lt;/li&gt;
+&lt;li&gt;toilet&lt;/li&gt;
+&lt;li&gt;fortune&lt;/li&gt;
+&lt;li&gt;geoip&lt;/li&gt;
+&lt;li&gt;hexedit&lt;/li&gt;
+&lt;li&gt;jq (nice json parser)&lt;/li&gt;
+&lt;li&gt;svg2png&lt;/li&gt;
+&lt;li&gt;tcpflow&lt;/li&gt;
+&lt;li&gt;tcpreplay&lt;/li&gt;
+&lt;li&gt;mitmproxy&lt;/li&gt;
+&lt;li&gt;class-dump&lt;/li&gt;
+&lt;li&gt;arpoison&lt;/li&gt;
+&lt;li&gt;pngquant&lt;/li&gt;
+&lt;li&gt;mpv&lt;/li&gt;
+&lt;li&gt;sntop&lt;/li&gt;
+&lt;li&gt;sslscan&lt;/li&gt;
+&lt;li&gt;fasd&lt;/li&gt;
+&lt;li&gt;ag&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;other&#34;&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;cocoapods&lt;/li&gt;
+&lt;li&gt;homebrew&lt;/li&gt;
+&lt;li&gt;copy over your ~/Library/Keychain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;config-files-to-copy&#34;&gt;Config files to copy&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;.vim*&lt;/li&gt;
+&lt;li&gt;.screenrc&lt;/li&gt;
+&lt;li&gt;.mplayer&lt;/li&gt;
+&lt;li&gt;.mpv&lt;/li&gt;
+&lt;li&gt;.lldbinit&lt;/li&gt;
+&lt;li&gt;.zsh*&lt;/li&gt;
+&lt;li&gt;.oh-my-zsh&lt;/li&gt;
+&lt;li&gt;.ssh&lt;/li&gt;
+&lt;li&gt;.git*&lt;/li&gt;
+&lt;li&gt;.ssh*&lt;/li&gt;
+&lt;li&gt;Library/lldb&lt;/li&gt;
+&lt;li&gt;Library/Services&lt;/li&gt;
+&lt;li&gt;Library/Saved\ Searches&lt;/li&gt;
+&lt;li&gt;Library/PDF\ Services&lt;/li&gt;
+&lt;li&gt;other important folders:
+&lt;ul&gt;
+&lt;li&gt;Music, Movies, Pictures, Documents, Desktop&lt;/li&gt;
+&lt;li&gt;src, wichtig, script&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;plist-files-and-other-hacks&#34;&gt;plist files and other hacks&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;##&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# defaults write&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;##&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# iTerm2 testing&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# defaults write com.googlecode.iterm2.plist SetCtype -bool true&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Make Safari’s search banners default to Contains instead of Starts With&lt;/span&gt;
+defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool FALSE
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Prevent Safari from opening ‘safe’ files automatically after downloading&lt;/span&gt;
+defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Enable Safari’s debug menu&lt;/span&gt;
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Enable the Develop menu and the Web Inspector in Safari&lt;/span&gt;
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Speed up Mission Control animations&lt;/span&gt;
+defaults write com.apple.dock expose-animation-duration -float 0.12
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Make Dock icons of hidden applications translucent&lt;/span&gt;
+defaults write com.apple.dock showhidden -bool TRUE
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Enable highlight hover effect for the grid view of a stack (Dock)&lt;/span&gt;
+defaults write com.apple.dock mouse-over-hilite-stack -bool TRUE
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Remove the auto-hiding Dock delay&lt;/span&gt;
+defaults write com.apple.dock autohide-delay -float &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# Remove the animation when hiding/showing the Dock&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# defaults write com.apple.dock autohide-time-modifier -float 0&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Finder: allow text selection in Quick Look&lt;/span&gt;
+defaults write com.apple.finder QLEnableTextSelection -bool TRUE
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Finder: show all filename extensions&lt;/span&gt;
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Finder: show status bar&lt;/span&gt;
+defaults write com.apple.finder ShowStatusBar -bool true
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Finder: show path bar&lt;/span&gt;
+defaults write com.apple.finder ShowPathbar -bool true
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# When performing a search, search the current folder by default&lt;/span&gt;
+defaults write com.apple.finder FXDefaultSearchScope -string &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;SCcf&amp;#34;&lt;/span&gt;
+
+
+
+
+&lt;span style=&#34;color:#75715e&#34;&gt;##&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# chflags&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;##&lt;/span&gt;
+
+chflags nohidden ~/Library/
+
+
+&lt;span style=&#34;color:#75715e&#34;&gt;##&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# power management&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;##&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Disable the sudden motion sensor as it’s not useful for SSDs&lt;/span&gt;
+sudo pmset -a sms &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+
+
+
+killall Dock
+killall Finder
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# for app in &amp;#34;Activity Monitor&amp;#34; &amp;#34;Address Book&amp;#34; &amp;#34;Calendar&amp;#34; &amp;#34;Contacts&amp;#34; &amp;#34;cfprefsd&amp;#34; \&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# &amp;#34;Dock&amp;#34; &amp;#34;Finder&amp;#34; &amp;#34;Mail&amp;#34; &amp;#34;Messages&amp;#34; &amp;#34;Safari&amp;#34; &amp;#34;SizeUp&amp;#34; &amp;#34;SystemUIServer&amp;#34; \&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# &amp;#34;Terminal&amp;#34; &amp;#34;Transmission&amp;#34; &amp;#34;Twitter&amp;#34; &amp;#34;iCal&amp;#34;; do&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# killall &amp;#34;${app}&amp;#34; &amp;gt; /dev/null 2&amp;gt;&amp;amp;1&lt;/span&gt;
+
+
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# sources:&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# http://secrets.blacktree.com&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# https://github.com/mathiasbynens/dotfiles/blob/master/.osx&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;updated&#34;&gt;Updated&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2013 06 01: Some apps and plist tweaks added&lt;/li&gt;
+&lt;li&gt;2013 11 20: More homebrew stuff + lots of Mac apps (mostly dev. stuff)&lt;/li&gt;
+&lt;li&gt;2014 02 14: More homebrew stuff&lt;/li&gt;
+&lt;li&gt;2014 08 06: More apps and plist&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

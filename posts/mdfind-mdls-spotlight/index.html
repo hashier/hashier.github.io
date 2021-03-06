@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>mdfind &amp; mdls &amp; Spotlight - ~/christopher.loessl</title>
+<meta name="description" content="Private homepage of Christopher Loessl">
+
+<link rel="icon" type="image/x-icon" href="https://loessl.org/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://loessl.org/favicon.png">
+
+<link rel="stylesheet" href="https://loessl.org/css/style.css?rnd=1615051686" />
+
+<link rel="stylesheet" href="https://loessl.org/css/custom.css?rnd=1615051686">
+
+<meta property="og:title" content="mdfind &amp; mdls &amp; Spotlight" />
+<meta property="og:description" content="Searching for files with Spotlight is awesome and you can actually use the power of Spotlight even in the console. But first let me show you some nice features of Spotlight." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loessl.org/posts/mdfind-mdls-spotlight/" />
+<meta property="article:published_time" content="2013-12-27T20:02:00+00:00" />
+<meta property="article:modified_time" content="2013-12-27T20:02:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="mdfind &amp; mdls &amp; Spotlight"/>
+<meta name="twitter:description" content="Searching for files with Spotlight is awesome and you can actually use the power of Spotlight even in the console. But first let me show you some nice features of Spotlight."/>
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">~/christopher.loessl</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://loessl.org/projects/" title="">~/projects</a>
+    
+    <a class="" href="https://loessl.org/posts/" title="">~/blog</a>
+    
+    <a class="" href="https://loessl.org/tags/" title="">~/tags</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">mdfind &amp; mdls &amp; Spotlight</h1>
+        </header>
+        <div class="content">
+            <p>Searching for files with Spotlight is awesome and you can actually use the power of Spotlight even in the console. But first let me show you some nice features of Spotlight.</p>
+<h2 id="spotlight">Spotlight</h2>
+<p>Searching for all images that contain <code>me</code>, are of kind image and were taken with flash:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdfind kind:image flash:1
+</code></pre></div><p>Spotlight supports a whole lot of these search fields like, duration, pixel height, width, last opened, ISO speed, aperture, exposure time and so forth for a full list check this <a href="http://hints.macworld.com/dlfiles/spotlight_cmds.pdf">PDF</a>.</p>
+<h2 id="mdfind">mdfind</h2>
+<p>Now let’s move over to the console. Here you can do this cool stuff with a tool called <code>mdfind</code>.</p>
+<p>Let’s find all audio files that are longer than 10 minutes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdfind -interpret <span style="color:#e6db74">&#39;duration:&gt;=600 kind:music&#39;</span>
+</code></pre></div><p><code>-interpret</code> interprets the search string as if you typed it into Spotlight. <code>mdfind</code> supports another mode in which you can search on fields of the meta information directly.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdfind -literal <span style="color:#e6db74">&#39;kMDItemDurationSeconds &gt; 600 &amp;&amp; kMDItemContentTypeTree == public.audio&#39;</span>
+</code></pre></div><p>All mp3s that are longer than 10 minutes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdfind <span style="color:#e6db74">&#39;kMDItemDurationSeconds &gt; 600 &amp;&amp; kMDItemKind = &#34;MPEG Audio Layer 3&#34;&#39;</span>
+</code></pre></div><p>All <a href="https://atp.fm">ATP</a> podcasts:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdfind <span style="color:#e6db74">&#39;(kMDItemAuthors == &#34;atp&#34;cdw)&#39;</span>
+</code></pre></div><p>cdw stands for:</p>
+<ul>
+<li>ignore case</li>
+<li>ignore diacritical</li>
+<li>word based</li>
+</ul>
+<p>All by the <a href="http://5by5.tv">5by5</a> network</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdfind <span style="color:#e6db74">&#39;kMDItemAuthors = &#34;*5by5.tv*&#34;&#39;</span>
+</code></pre></div><p>Both are of course possible in Spotlight as well by simply searching for:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">author:atp
+author:5by5
+</code></pre></div><p>Find all pictures taken with an iPhone 4S on the last day of the year 2011 and the first day of 2012. The range includes the from date but not the until date.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdfind <span style="color:#e6db74">&#39;kind:image created:31/12/11-2/1/12 model:&#34;iPhone 4S&#34;&#39;</span>
+</code></pre></div><h2 id="mdls">mdls</h2>
+<p>How to figure out these strange looking search fields, that’s where <code>mdls</code> comes into play.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdls &lt;file&gt;
+</code></pre></div><p>Prints out all meta information fields for that file. With <code>mdfind</code> you can then search for those fields.</p>
+<p>If you are curious about all possible field values you can get them with</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdimport -X
+</code></pre></div><p>and</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdimport -A
+</code></pre></div><p>Be warned, it is a lot of information.</p>
+<h2 id="final-note">Final note</h2>
+<p>It’s worth having a look at the man page of these commands and the help provided with <code>mdfind -h</code> because the information is not consistent. For example the man page doesn’t tell you about the <code>-s</code> flag which brings smart folders to the command line.</p>
+<p>And for the curious how I came across <code>mdfind</code>. I stumbled upon that command while reading this <a href="http://brettterpstra.com/2013/12/22/quick-tip-tag-filer-without-hazel/">blog post</a> by Brett Terpstra.</p>
+<p>Sources:
+<a href="http://hints.macworld.com/dlfiles/spotlight_cmds.pdf">Spotlight reference</a>
+<a href="http://www.macdevcenter.com/pub/a/mac/2006/01/04/mdfind.html?page=1">MacDevCenter about mdfind</a></p>
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-12-27</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://loessl.org/categories/computer">computer</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://loessl.org/tags/apple">#apple</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/console">#console</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/mac">#mac</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/tool">#tool</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/tip">#tip</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Christopher Loessl, 2021<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme Sibuna, based on <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+</p>
+
+            
+        </footer>
+    </div>
+</body>
+</html>

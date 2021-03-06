@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Java, the hopefully last round - ~/christopher.loessl</title>
+<meta name="description" content="Private homepage of Christopher Loessl">
+
+<link rel="icon" type="image/x-icon" href="https://loessl.org/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://loessl.org/favicon.png">
+
+<link rel="stylesheet" href="https://loessl.org/css/style.css?rnd=1615051686" />
+
+<link rel="stylesheet" href="https://loessl.org/css/custom.css?rnd=1615051686">
+
+<meta property="og:title" content="Java, the hopefully last round" />
+<meta property="og:description" content="I had a fresh installation of Mountain Lion and installed Java 7. The problem was when I tried to run StandAloneJava applications ML always asked me whether it should install Java 6. Apparently a lot of people have this problem and here is the solution how to solve it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loessl.org/posts/java-hopefully-last-round/" />
+<meta property="article:published_time" content="2013-02-07T18:37:00+00:00" />
+<meta property="article:modified_time" content="2013-02-07T18:37:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Java, the hopefully last round"/>
+<meta name="twitter:description" content="I had a fresh installation of Mountain Lion and installed Java 7. The problem was when I tried to run StandAloneJava applications ML always asked me whether it should install Java 6. Apparently a lot of people have this problem and here is the solution how to solve it."/>
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">~/christopher.loessl</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://loessl.org/projects/" title="">~/projects</a>
+    
+    <a class="" href="https://loessl.org/posts/" title="">~/blog</a>
+    
+    <a class="" href="https://loessl.org/tags/" title="">~/tags</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Java, the hopefully last round</h1>
+        </header>
+        <div class="content">
+            <p>I had a fresh installation of Mountain Lion and installed Java 7. The problem was when I tried to run StandAloneJava applications ML always asked me whether it should install Java 6. Apparently a lot of people have this problem and here is the solution how to solve it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mkdir /System/Library/Java/JavaVirtualMachines
+sudo ln -s /Library/Java/JavaVirtualMachines/jdk_VERSION /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+</code></pre></div><p>of course you have to amend VERSION to match your Java 7 version.</p>
+<p>Caveat:</p>
+<blockquote>
+<p>Watch out for doing the symlink&hellip; Apple released 1.6 security update recently. If you apply this update from Apple, the symlink seems to fool the update and installs 1.6 update into where the symlink points to, i.e. Oracle&rsquo;s 1.7.</p>
+</blockquote>
+<p><a href="http://apple.stackexchange.com/questions/58203/mountain-lion-with-java-7-only">– Jonah Tsai Jan 19 at 18:04</a></p>
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-02-07</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://loessl.org/categories/computer">computer</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://loessl.org/tags/apple">#apple</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/installation">#installation</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/java">#java</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/mac">#mac</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/oracle">#oracle</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/setup">#setup</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/software">#software</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Christopher Loessl, 2021<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme Sibuna, based on <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+</p>
+
+            
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tool on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/tool/</link>
+    <description>~/christopher.loessl (tool)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Dec 2013 20:02:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mdfind &amp; mdls &amp; Spotlight</title>
+      <link>https://loessl.org/posts/mdfind-mdls-spotlight/</link>
+      <pubDate>Fri, 27 Dec 2013 20:02:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/mdfind-mdls-spotlight/</guid>
+      <description>&lt;p&gt;Searching for files with Spotlight is awesome and you can actually use the power of Spotlight even in the console. But first let me show you some nice features of Spotlight.&lt;/p&gt;
+&lt;h2 id=&#34;spotlight&#34;&gt;Spotlight&lt;/h2&gt;
+&lt;p&gt;Searching for all images that contain &lt;code&gt;me&lt;/code&gt;, are of kind image and were taken with flash:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind kind:image flash:1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Spotlight supports a whole lot of these search fields like, duration, pixel height, width, last opened, ISO speed, aperture, exposure time and so forth for a full list check this &lt;a href=&#34;http://hints.macworld.com/dlfiles/spotlight_cmds.pdf&#34;&gt;PDF&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;mdfind&#34;&gt;mdfind&lt;/h2&gt;
+&lt;p&gt;Now let’s move over to the console. Here you can do this cool stuff with a tool called &lt;code&gt;mdfind&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Let’s find all audio files that are longer than 10 minutes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind -interpret &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;duration:&amp;gt;=600 kind:music&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;-interpret&lt;/code&gt; interprets the search string as if you typed it into Spotlight. &lt;code&gt;mdfind&lt;/code&gt; supports another mode in which you can search on fields of the meta information directly.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind -literal &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;kMDItemDurationSeconds &amp;gt; 600 &amp;amp;&amp;amp; kMDItemContentTypeTree == public.audio&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;All mp3s that are longer than 10 minutes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;kMDItemDurationSeconds &amp;gt; 600 &amp;amp;&amp;amp; kMDItemKind = &amp;#34;MPEG Audio Layer 3&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;All &lt;a href=&#34;https://atp.fm&#34;&gt;ATP&lt;/a&gt; podcasts:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;(kMDItemAuthors == &amp;#34;atp&amp;#34;cdw)&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;cdw stands for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ignore case&lt;/li&gt;
+&lt;li&gt;ignore diacritical&lt;/li&gt;
+&lt;li&gt;word based&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All by the &lt;a href=&#34;http://5by5.tv&#34;&gt;5by5&lt;/a&gt; network&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;kMDItemAuthors = &amp;#34;*5by5.tv*&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Both are of course possible in Spotlight as well by simply searching for:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;author:atp
+author:5by5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Find all pictures taken with an iPhone 4S on the last day of the year 2011 and the first day of 2012. The range includes the from date but not the until date.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;kind:image created:31/12/11-2/1/12 model:&amp;#34;iPhone 4S&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;mdls&#34;&gt;mdls&lt;/h2&gt;
+&lt;p&gt;How to figure out these strange looking search fields, that’s where &lt;code&gt;mdls&lt;/code&gt; comes into play.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdls &amp;lt;file&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Prints out all meta information fields for that file. With &lt;code&gt;mdfind&lt;/code&gt; you can then search for those fields.&lt;/p&gt;
+&lt;p&gt;If you are curious about all possible field values you can get them with&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdimport -X
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdimport -A
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Be warned, it is a lot of information.&lt;/p&gt;
+&lt;h2 id=&#34;final-note&#34;&gt;Final note&lt;/h2&gt;
+&lt;p&gt;It’s worth having a look at the man page of these commands and the help provided with &lt;code&gt;mdfind -h&lt;/code&gt; because the information is not consistent. For example the man page doesn’t tell you about the &lt;code&gt;-s&lt;/code&gt; flag which brings smart folders to the command line.&lt;/p&gt;
+&lt;p&gt;And for the curious how I came across &lt;code&gt;mdfind&lt;/code&gt;. I stumbled upon that command while reading this &lt;a href=&#34;http://brettterpstra.com/2013/12/22/quick-tip-tag-filer-without-hazel/&#34;&gt;blog post&lt;/a&gt; by Brett Terpstra.&lt;/p&gt;
+&lt;p&gt;Sources:
+&lt;a href=&#34;http://hints.macworld.com/dlfiles/spotlight_cmds.pdf&#34;&gt;Spotlight reference&lt;/a&gt;
+&lt;a href=&#34;http://www.macdevcenter.com/pub/a/mac/2006/01/04/mdfind.html?page=1&#34;&gt;MacDevCenter about mdfind&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Brendan&#39;s blog » The USE Method: Mac OS X Performance Checklist</title>
+      <link>https://loessl.org/posts/brendans-blog-the-use-method-mac-os-x-performance-checklist/</link>
+      <pubDate>Sun, 06 Oct 2013 17:24:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/brendans-blog-the-use-method-mac-os-x-performance-checklist/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Mac OS X Performance Checklist&amp;rdquo; is one of the best blog posts I have read in a long time.&lt;/p&gt;
+&lt;p&gt;The posts describes how to find bottlenecks if something is not working as it should be. Awesome read!&lt;/p&gt;
+&lt;p&gt;via &lt;a href=&#34;http://dtrace.org/blogs/brendan/2013/09/18/the-use-method-mac-os-x-performance-checklist/&#34;&gt;Brendan&amp;rsquo;s blog » The USE Method: Mac OS X Performance Checklist&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Who opens my UPnP ports?</title>
+      <link>https://loessl.org/posts/who-opens-my-upnp-ports/</link>
+      <pubDate>Tue, 07 May 2013 16:11:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/who-opens-my-upnp-ports/</guid>
+      <description>&lt;p&gt;Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and instantly noticed that someone/something opened some ports in my router and forwarded them to my machine. So of course I wanted to know what&amp;rsquo;s going on on my network.&lt;/p&gt;
+&lt;p&gt;First idea &amp;ldquo;wireshark&amp;rdquo; but this only gives you information from which port these UPnP stuff goes, it doesn&amp;rsquo;t tell you the application that initiated these packages. For the curious here is the &lt;a href=&#34;http://wiki.wireshark.org/SSDP&#34;&gt;filter&lt;/a&gt; you can use:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;udp.dstport &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1900&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; http &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ip.addr &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; 192.168.1.100
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;UPnP uses the &lt;a href=&#34;http://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol&#34;&gt;SSDP&lt;/a&gt; protocol which isn&amp;rsquo;t implemented by wireshark but you can simply use the http protocol because SSDP is based on &lt;a href=&#34;http://en.wikipedia.org/wiki/HTTPU&#34;&gt;HTTPU&lt;/a&gt; (yes, HTTPU).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Imagine a picture that shows you that port 4500 and 5353 are open&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So port 4500 and 5353 (both UDP) are forwarded to my Mac but which software is behind this? Strangely&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;lsof -i :4500
+lsof -i :5353
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Booth show nothing&amp;hellip; which means right now nothing is listening on those ports on my machine.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Let&amp;rsquo;s see which &amp;ldquo;normal&amp;rdquo; services listen on those ports. Of course this is not 100 % certain since any program could listen on those ports.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ grep &lt;span style=&#34;color:#ae81ff&#34;&gt;4500&lt;/span&gt; /etc/services
+ipsec-msft      4500/udp    &lt;span style=&#34;color:#75715e&#34;&gt;# Microsoft IPsec NAT-T&lt;/span&gt;
+ipsec-msft      4500/tcp    &lt;span style=&#34;color:#75715e&#34;&gt;# Microsoft IPsec NAT-T&lt;/span&gt;
+
+$ grep &lt;span style=&#34;color:#ae81ff&#34;&gt;5353&lt;/span&gt; /etc/services
+&lt;span style=&#34;color:#75715e&#34;&gt;#               5353        Unassigned&lt;/span&gt;
+mdns            5353/udp    &lt;span style=&#34;color:#75715e&#34;&gt;# Multicast DNS&lt;/span&gt;
+mdns            5353/tcp    &lt;span style=&#34;color:#75715e&#34;&gt;# Multicast DNS&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I didn&amp;rsquo;t do anything with VPN or IPsec so I started googling and found this &lt;a href=&#34;http://support.apple.com/kb/TS1629&#34;&gt;Apple KB entry&lt;/a&gt; which explained to me which services forward those ports and apparently it&amp;rsquo;s just &amp;ldquo;Back to My Mac&amp;rdquo; and some &amp;ldquo;Bonjour&amp;rdquo; stuff.&lt;/p&gt;
+&lt;p&gt;For the case that the service is still up and running on the port the &lt;code&gt;lsof&lt;/code&gt; output would look something like this, where you can easily read the &lt;code&gt;command&lt;/code&gt; and &lt;code&gt;PID&lt;/code&gt; that is listening on a given port:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ lsof -i :32323
+COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+Python  &lt;span style=&#34;color:#ae81ff&#34;&gt;21495&lt;/span&gt; hashier    3u  IPv4 0x23f1441a8dbc1b79      0t0  TCP *:32323 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;LISTEN&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this case I just started a python script which binds to port &lt;code&gt;32323&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Some other quick tips of &lt;code&gt;lsof&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Print established TCP connections:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;lsof -P -iTCP -sTCP:ESTABLISHED
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Print listening TCP connections:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ lsof -P -iTCP -sTCP:LISTEN
+...
+Python    &lt;span style=&#34;color:#ae81ff&#34;&gt;21495&lt;/span&gt; hashier    3u  IPv4 0x23f1441a8dbc1b79      0t0  TCP *:32323 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;LISTEN&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and here we can as well see the listening python TCP server on &lt;code&gt;32323&lt;/code&gt;. This is a very quick way to find out all the services that are waiting for a connection.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to run FreeMind on Mountain Lion</title>
+      <link>https://loessl.org/posts/how-to-run-freemind-on-ml/</link>
+      <pubDate>Thu, 07 Feb 2013 20:05:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/how-to-run-freemind-on-ml/</guid>
+      <description>&lt;p&gt;If you try to run FreeMind on Mountain Lion you get this &amp;ldquo;nice&amp;rdquo; error message:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;FreeMind.app&amp;rdquo; is damaged and can&amp;rsquo;t be opened. You should move it to the Trash.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To persuade FreeMind to run anyway you can type this command into your console:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;java -jar /Applications/FreeMind.app/Contents/Resources/Java/lib/freemind.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I read on the internet that you can disable GateKeeper as well to run FreeMind but I didn&amp;rsquo;t try it.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssh on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/ssh/</link>
+    <description>~/christopher.loessl (ssh)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Jul 2013 17:50:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Improving the security of your SSH private key files — Martin Kleppmann’s blog</title>
+      <link>https://loessl.org/posts/improving-the-security-of-your-ssh-private-key-files-martin-kleppmanns-blog/</link>
+      <pubDate>Wed, 03 Jul 2013 17:50:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/improving-the-security-of-your-ssh-private-key-files-martin-kleppmanns-blog/</guid>
+      <description>&lt;p&gt;Read this great article:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://martin.kleppmann.com/2013/05/24/improving-security-of-ssh-private-keys.html&#34;&gt;Improving the security of your SSH private key files — Martin Kleppmann’s blog.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For my own convenience I just put all the important commands together but won&amp;rsquo;t explain anything. Again: Go and read the article.&lt;/p&gt;
+&lt;p&gt;Reading &amp;ldquo;normal&amp;rdquo; ASN.1 key (RSA and DSA without passphrase):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;openssl asn1parse -in test_rsa_key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Reading passphrase protected RSA key:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;openssl rsa -text -in test_rsa_key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Update key from MD5 hashing to PKCS:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mv key key.old
+openssl pkcs8 -topk8 -v2 des3 -in key.old -out key
+chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt; key &lt;span style=&#34;color:#75715e&#34;&gt;# IMPORTANT !&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The key is now back to ASN.1 structure so you can read it with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;openssl asn1parse -in test_rsa_key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Test the new key. If it works just remove the old one. If it doesn&amp;rsquo;t you still have you old key.&lt;/p&gt;
+&lt;p&gt;Done.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SSH key Length and fingerprint</title>
+      <link>https://loessl.org/posts/ssh-key-length-and-fpr/</link>
+      <pubDate>Tue, 05 Feb 2013 16:19:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/ssh-key-length-and-fpr/</guid>
+      <description>&lt;p&gt;I always forget how to figure out the length and the fingerprint of a key, so here we go&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;ssh-keygen -lf ~/.ssh/id_rsa.pub
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

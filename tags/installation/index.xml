@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>installation on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/installation/</link>
+    <description>~/christopher.loessl (installation)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 May 2013 13:47:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/installation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Finding the right LaTeX packages</title>
+      <link>https://loessl.org/posts/finding-the-right-latex-packages/</link>
+      <pubDate>Wed, 22 May 2013 13:47:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/finding-the-right-latex-packages/</guid>
+      <description>&lt;p&gt;If you have little space on your machine and therefore want to install the LaTeX Basic package (which is only around 150MB instead of a couple of GB) you might run into problems that packages are missing but with &lt;code&gt;tlmgr&lt;/code&gt; this is quite easy to solve&lt;/p&gt;
+&lt;p&gt;You might get errors like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;I couldn&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;t open style file alphadin.bst
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;---line 222 of file bachelor.aux
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; : \bibstyle{alphadin
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; :                   }
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;I&amp;#39;&lt;/span&gt;m skipping whatever remains of this command
+I found no style file---while reading file bachelor.aux
+&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;There were &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; error messages&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+/usr/bin/texi2dvi: bibtex exited with bad status, quitting.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or similar. You can easily search for it with&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ tlmgr search --global --file alphadin.bst
+din1505: texmf-dist/bibtex/bst/din1505/alphadin.bst
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;--all&lt;/code&gt; is a useful search flag as well.&lt;/p&gt;
+&lt;p&gt;PS: Installing works with &lt;code&gt;tlmgr&lt;/code&gt; of course as well&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mission Control</title>
+      <link>https://loessl.org/posts/mission-control/</link>
+      <pubDate>Mon, 20 May 2013 18:29:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/mission-control/</guid>
+      <description>&lt;p&gt;To get mission control to pop up fast just write this to your plist file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;defaults write com.apple.dock expose-animation-duration -float 0.1; killall Dock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And with&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;defaults delete com.apple.dock expose-animation-duration; killall Dock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;you can get back to default setting.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to fix slow Ubuntu in VirtualBox</title>
+      <link>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</link>
+      <pubDate>Sat, 23 Feb 2013 00:18:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;apt-get install linux-headers-generic build-essential 2. compizconfig-settings-manager dkms&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install the guest drivers&lt;/li&gt;
+&lt;li&gt;Open ccsm (from the console) and disable &amp;ldquo;Framebuffer object&amp;rdquo; option under &amp;ldquo;OpenGL&amp;rdquo; (be prepared that you won&amp;rsquo;t be able to read much, but if you activate 3D first, then it will be even worse)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;shutdown -h now&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Activate 3D acceleration in VirtualBox&lt;/li&gt;
+&lt;li&gt;power on&lt;/li&gt;
+&lt;li&gt;done.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/usr/lib/nux/unity_support_test -p
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Source:
+&lt;a href=&#34;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&#34;&gt;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Java, the hopefully last round</title>
+      <link>https://loessl.org/posts/java-hopefully-last-round/</link>
+      <pubDate>Thu, 07 Feb 2013 18:37:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/java-hopefully-last-round/</guid>
+      <description>&lt;p&gt;I had a fresh installation of Mountain Lion and installed Java 7. The problem was when I tried to run StandAloneJava applications ML always asked me whether it should install Java 6. Apparently a lot of people have this problem and here is the solution how to solve it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo mkdir /System/Library/Java/JavaVirtualMachines
+sudo ln -s /Library/Java/JavaVirtualMachines/jdk_VERSION /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;of course you have to amend VERSION to match your Java 7 version.&lt;/p&gt;
+&lt;p&gt;Caveat:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Watch out for doing the symlink&amp;hellip; Apple released 1.6 security update recently. If you apply this update from Apple, the symlink seems to fool the update and installs 1.6 update into where the symlink points to, i.e. Oracle&amp;rsquo;s 1.7.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://apple.stackexchange.com/questions/58203/mountain-lion-with-java-7-only&#34;&gt;– Jonah Tsai Jan 19 at 18:04&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

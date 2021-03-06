@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ObjC on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/objc/</link>
+    <description>~/christopher.loessl (ObjC)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Mar 2014 01:56:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/objc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blocks and Closures on Stack and Heap</title>
+      <link>https://loessl.org/posts/blocks-closures-on-stack-and-heap/</link>
+      <pubDate>Tue, 04 Mar 2014 01:56:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/blocks-closures-on-stack-and-heap/</guid>
+      <description>&lt;h2 id=&#34;blocks-on-the-stack&#34;&gt;Blocks on the Stack&lt;/h2&gt;
+&lt;p&gt;While reading through Apple’s open source code (headers) I came across &lt;a href=&#34;http://opensource.apple.com/source/libdispatch/libdispatch-339.1.9/dispatch/queue.h&#34;&gt;queue.h&lt;/a&gt; and stumbled over the following warning:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-objc&#34; data-lang=&#34;objc&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;/*!
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; *
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; [...]
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; *
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * dispatch_block_t block;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; *
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * if (x) {
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; *     block = ^{ printf(&amp;#34;true\n&amp;#34;); };
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * } else {
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; *     block = ^{ printf(&amp;#34;false\n&amp;#34;); };
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * }
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * block(); // unsafe!!!
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; *
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * What is happening behind the scenes:
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; *
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * if (x) {
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; *     struct Block __tmp_1 = ...; // setup details
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; *     block = &amp;amp;__tmp_1;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * } else {
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; *     struct Block __tmp_2 = ...; // setup details
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; *     block = &amp;amp;__tmp_2;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * }
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; *
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * As the example demonstrates, the address of a stack variable is escaping the
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; * scope in which it is allocated. That is a classic C bug.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt; */&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I got curious and so I followed the rabbit &lt;a href=&#34;http://opensource.apple.com/source/libdispatch/libdispatch-339.1.9/dispatch/queue.h&#34;&gt;down&lt;/a&gt; &lt;a href=&#34;http://objectivistc.tumblr.com/post/10523983325/would-you-please-crash-my-out-of-scope-stack-closure&#34;&gt;the&lt;/a&gt; &lt;a href=&#34;http://www.friday.com/bbum/2009/08/29/blocks-tips-tricks/&#34;&gt;rabbit&lt;/a&gt; &lt;a href=&#34;https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Blocks/Articles/bxUsing.html&#34;&gt;hole&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;First of, a block in C is defined by &lt;code&gt;{ ... }&lt;/code&gt;. Identifiers defined inside this block have scope visibility / lifetime (used from now on interchangeable) limited to that block. The &lt;code&gt;if (x)&lt;/code&gt; statement in Apple’s example above is creating such a C block, in which a struct is created and that struct is assigned to (Objective-C) block (called closures from now on for easier differentiation).
+Every C block creates a new visibility scope were stack variables are stored (stack area) similar to &lt;a href=&#34;https://en.wikipedia.org/wiki/Call_stack#Structure&#34;&gt;stack frames&lt;/a&gt;. Which means after the block is closed it is not save any more to access these memory locations.&lt;/p&gt;
+&lt;p&gt;Closures are (apparently) the only Objective-C objects that start on the stack, the problem with that is, that the visibility is gone after the closing brace of the if-then-else and hence the block is lost. So the block has to be “saved” by copying it from the stack to the heap before the C block is finished.&lt;/p&gt;
+&lt;h2 id=&#34;compilers&#34;&gt;Compilers&lt;/h2&gt;
+&lt;p&gt;If you run the example code from Apple you will realise, that the code works flawless. It does not crash with a dreaded segfault and it even behaves exactly as you would expect it to.
+Why? This is because clang does not reuse stack areas that were previously used and therefore nothing overwrite the memory location with something different (assuming you are not doing it from a different thread). The situation looks different if you are using gcc with the -O2 flag. gcc then reuses stack areas and overwrites your stack area. Since gcc is not capable of closures and clang doesn’t reuse stack areas you might be never run actually into a problem (There is a &lt;a href=&#34;#closures-inside-of-an-array&#34;&gt;caveat&lt;/a&gt; tought&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;). This behaviour is, though, just an implementation detail that might change or vary from compiler to compiler and therefore you should not bet on it, it might change.
+You can find some demo source code &lt;a href=&#34;http://objectivistc.tumblr.com/post/10523983325/would-you-please-crash-my-out-of-scope-stack-closure&#34;&gt;here&lt;/a&gt; that shows &lt;code&gt;gcc -O0&lt;/code&gt; versus &lt;code&gt;gcc -O2&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;closures-inside-of-an-array&#34;&gt;Closures inside of an Array&lt;/h2&gt;
+&lt;p&gt;A time where you run into problems is, when you try to save closures in an array like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-objc&#34; data-lang=&#34;objc&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;typedef&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;int&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt;Blocky)(&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt;);
+Blocky b[&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;];
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;; i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+    b[i] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt;{ &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; i;};
+}
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;; i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+    printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;b %d&amp;#34;&lt;/span&gt;, b[i]());
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://www.friday.com/bbum/2009/08/29/blocks-tips-tricks/&#34;&gt;Code&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The output is “2 2 2” instead of the expected &amp;ldquo;1 2 3&amp;rdquo;. This is because the stack area used for the &lt;code&gt;for loop&lt;/code&gt; is the same for all iterations and therefore every new created closures overwrites the closures created in the previous iteration. In &lt;code&gt;b[1]&lt;/code&gt;, &lt;code&gt;b[2]&lt;/code&gt; and &lt;code&gt;b[3]&lt;/code&gt; is just a pointer stored to the closure and since the place of creation on the stack was the same for all three closures the pointer is the same which leads to &lt;code&gt;b[1]==b[2]==b[3]&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I wrote a small program that shows the different behaviours of closures on stack, closures on heap and blocks that use different stack areas.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-objc&#34; data-lang=&#34;objc&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#import &amp;lt;Foundation/Foundation.h&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; argc, &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;argv[]) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;@autoreleasepool&lt;/span&gt; {
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;typedef&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt;Block)(&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt;);
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;p0, &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;p1;
+
+        Block blockOnStack[&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;];
+        Block blockOnHeap [&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;];
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;; i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; int1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; int2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;;
+            Block closure &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt;{ &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; i; };
+
+            blockOnStack[i] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;             closure;
+            blockOnHeap [i] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Block_copy( closure );
+
+            printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;closure pointer:     %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;,                blockOnStack[i] );
+            printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Block_copy pointer:                 %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, blockOnHeap [i] );
+        }
+
+        printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Executing blocks from the stack&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;; i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+            printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pointer b[%d]: %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, i, blockOnStack[i]   );
+            printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Execute b[%d]: %d&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, i, blockOnStack[i]() );
+        }
+        printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Executing blocks from the heap&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;; i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+            printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pointer b[%d]: %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, i, blockOnHeap[i]   );
+            printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Execute b[%d]: %d&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, i, blockOnHeap[i]() );
+        }
+        printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;C blocks&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;);
+        &lt;span style=&#34;color:#75715e&#34;&gt;// &amp;#34;normal&amp;#34; C block scope 1
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; blockInt0 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;;
+            p0 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;blockInt0;
+        }
+
+        &lt;span style=&#34;color:#75715e&#34;&gt;// &amp;#34;normal&amp;#34; block scope 2
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; blockInt1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;;
+            p1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;blockInt1;
+        }
+
+        printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;p0 = %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;p1 = %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, p0, p1);
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Every closure that is created inside the
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; loop is created at the exact same
+memory location on the stack.
+
+The copied closures on the heap all have
+different pointer addresses
+
+closure pointer:     0x7fff54850bf0
+Block_copy pointer:                 0x7fe5eac07c70
+closure pointer:     0x7fff54850bf0
+Block_copy pointer:                 0x7fe5eac07ca0
+closure pointer:     0x7fff54850bf0
+Block_copy pointer:                 0x7fe5eac07cd0
+Stack pointers, all same ^^^^^^^^^^
+Heap pointers, all distinct         ^^^^^^^^^^^^^^
+
+Executing blocks from the stack
+pointer b&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: 0x7fff54850bf0
+Execute b&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+pointer b&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: 0x7fff54850bf0
+Execute b&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+pointer b&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;2&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: 0x7fff54850bf0
+Execute b&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;2&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+
+Executing blocks from the heap
+pointer b&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: 0x7fe5eac07c70
+Execute b&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+pointer b&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: 0x7fe5eac07ca0
+Execute b&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;1&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+pointer b&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;2&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: 0x7fe5eac07cd0
+Execute b&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;2&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+
+C blocks
+Unlike the &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; loop C block scopes create a new stack
+area &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; every visibility scope.
+Unless compiled with e.g. gcc -O2
+Remember: This is a implementation detail!!!
+p0 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; 0x7fff54850be4
+p1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; 0x7fff54850be0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The code and output can be found for easy reading and copying in this &lt;a href=&#34;https://gist.github.com/hashier/9317235&#34;&gt;gist&lt;/a&gt;.&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;there always is &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description>
+    </item>
+    
+    <item>
+      <title>Property: strong and copy</title>
+      <link>https://loessl.org/posts/property-strong-and-copy/</link>
+      <pubDate>Tue, 25 Feb 2014 22:36:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/property-strong-and-copy/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-objc&#34; data-lang=&#34;objc&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//  main.m
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//  strong_retain_copy
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//  Created by Christopher Loessl on 25/02/14.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//  Copyright (c) 2014 Christopher Loessl. All rights reserved.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#import &amp;lt;Foundation/Foundation.h&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;@interface&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Person&lt;/span&gt; : &lt;span style=&#34;color:#a6e22e&#34;&gt;NSObject&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;@property&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;strong&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;nonatomic&lt;/span&gt;) NSString &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;name;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;@property&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;copy&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;nonatomic&lt;/span&gt;) NSString &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;nick;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;@end&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;@implementation&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Person&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;@end&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; main(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; argc, &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; argv[])
+{
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;@autoreleasepool&lt;/span&gt; {
+
+        Person &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;per &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [[Person alloc] init];
+        NSMutableString &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;aName &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [NSMutableString stringWithString:&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;Christopher&amp;#34;&lt;/span&gt;];
+
+        &lt;span style=&#34;color:#75715e&#34;&gt;// The pointer &amp;#34;per.name&amp;#34; is changed.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// &amp;#34;per.name&amp;#34; points at the same location as &amp;#34;someName&amp;#34; afterwards
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        per.name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; aName;
+
+        &lt;span style=&#34;color:#75715e&#34;&gt;// This is equal to
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// per.address = [someName copy];
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// Therefore the points are not the same afterwards
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        per.nick &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; aName;
+
+        &lt;span style=&#34;color:#75715e&#34;&gt;// Changing &amp;#34;someName&amp;#34; to
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        [aName setString:&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;hashier&amp;#34;&lt;/span&gt;];
+
+        NSLog(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;per.name   : %@&amp;#34;&lt;/span&gt;, per.name);
+        NSLog(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;per.nick   : %@&amp;#34;&lt;/span&gt;, per.nick);
+        NSLog(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;someName   : %@&amp;#34;&lt;/span&gt;, aName);
+        NSLog(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Pointer 1: %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Pointer 2: %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Pointer 3: %p&amp;#34;&lt;/span&gt;, per.name, per.nick, aName);
+
+    }
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can find this code in my github gists &lt;a href=&#34;https://gist.github.com/hashier/9218108&#34;&gt;here&lt;/a&gt; for easy copy and compile&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;The code is commented so you should really quickly see what the difference between &lt;code&gt;copy&lt;/code&gt; and &lt;code&gt;strong&lt;/code&gt; is doing here. By marking the pointer &lt;code&gt;copy&lt;/code&gt; the object is copied during assignment and not just the pointer is copied over. For that to work, the &lt;code&gt;NSCopying&lt;/code&gt; has the be implemented for that class. Luckily &lt;code&gt;NSString&lt;/code&gt;, &lt;code&gt;NSDictionary&lt;/code&gt;, and many others already support this protocol.&lt;/p&gt;
+&lt;p&gt;So now after you know what it makes for a difference with pointers, let’s see when you would want to use one over the other.&lt;/p&gt;
+&lt;p&gt;Even though &lt;code&gt;per.name&lt;/code&gt; is &lt;code&gt;NSString&lt;/code&gt; and should not be mutable it is possible to alter it through the 2nd pointer to the same address which is a &lt;code&gt;NSMutableString&lt;/code&gt; pointer. This said you can use &lt;code&gt;copy&lt;/code&gt; to help you prevent this kind of trap so you might always want to use &lt;code&gt;copy&lt;/code&gt; if the immutable class you are using conforms to &lt;code&gt;NSCopying&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;On the other hand, if you keep good track of your pointers and you know what you are doing, this could save you time during assignment because the assignment is much faster than copying the whole object&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. So if you are only using immutable objects pointer assignments can help get some more speed. But remember&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Premature optimization is the root of all evil [Knuth]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;clang -std=c99 -framework Foundation &amp;lt;file.m&amp;gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Depending of the implementation of the object, this might be a shallow or deep copy. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</description>
+    </item>
+    
+    <item>
+      <title>Multiple Xcode Targets and Tests</title>
+      <link>https://loessl.org/posts/multiple-xcode-targets-and-tests/</link>
+      <pubDate>Sun, 09 Feb 2014 15:58:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/multiple-xcode-targets-and-tests/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Go to targets -&amp;gt; Select target -&amp;gt; Duplicate (I duplicated a target which name was “tests”)&lt;/li&gt;
+&lt;li&gt;Rename the target to whatever you want (I use “Tooth” here)&lt;/li&gt;
+&lt;li&gt;Go to “Manage Schemes” and delete the scheme with the old name (“tests copy”) and click on “Autocreate Schemes Now”&lt;/li&gt;
+&lt;li&gt;Rename the “tests copy-Info.plist” to “Tooth-Info.plist” in your “Project Navigator” (or the path where Xcode can find the .plist file)&lt;/li&gt;
+&lt;li&gt;(If you need a different .pch file, you have to duplicate it in finder and add it to your project, otherwise “Tooth” will use the same .pch file as “tests”)&lt;/li&gt;
+&lt;li&gt;Go to the “Build Settings” of your new target and make sure that you check the following key value pairs:
+&lt;ul&gt;
+&lt;li&gt;Info.plist File: Change from “tests copy-Info.plist” to “Tooth-Info.plist”&lt;/li&gt;
+&lt;li&gt;Product Name: Change from “tests copy” to “$(TARGET_NAME)”&lt;/li&gt;
+&lt;li&gt;Prefix Header: Change accordingly if you need a different .pch file and created it earlier&lt;/li&gt;
+&lt;li&gt;Preprocessor Macros
+&lt;ul&gt;
+&lt;li&gt;Add something like “TOOTH=1” to your “Tooth” target and “TESTS=1” to your “tests” target (in Debug and Release)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If your project doesn’t build (or link) any more now, just reopen Xcode.&lt;/p&gt;
+&lt;p&gt;This is how you can decide in which target you are inside your code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-objc&#34; data-lang=&#34;objc&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#if TESTS
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    NSLog(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;I&amp;#39;m the tests target&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#75715e&#34;&gt;#elif TOOTH
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    NSLog(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;I&amp;#39;m the Tooth target&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#75715e&#34;&gt;#else
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    NSLog(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;Error: You added a new target and didn&amp;#39;t set the Macros&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#75715e&#34;&gt;#endif
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;adding-a-new-test-target&#34;&gt;Adding a new test target&lt;/h2&gt;
+&lt;p&gt;Of course you want to be able to write tests for your new target as well.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to the “Test Navigator”&lt;/li&gt;
+&lt;li&gt;On the bottom left click the “+” sign and chose “New Test Target…”&lt;/li&gt;
+&lt;li&gt;Select the Target you want to build tests for&lt;/li&gt;
+&lt;li&gt;WAIT! Don’t worry that you don’t see any tests for the new test target, just wait…. until it’s there, or restart Xcode&lt;/li&gt;
+&lt;li&gt;Right click on it and enable your test target&lt;/li&gt;
+&lt;li&gt;Go to “Build Settings” and select your tests target
+&lt;ul&gt;
+&lt;li&gt;Framework Search Path: Add “$(SRCROOT)” otherwise you will get errors with Frameworks like Crashlytics that it can’t find #import “Crashlytics/Crashlytics.h” (I add this as a project key value so I don’t have to do it for every new test target)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Start writing tests (:&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>git diff and ObjectiveC</title>
+      <link>https://loessl.org/posts/git-diff-and-objective-c/</link>
+      <pubDate>Thu, 28 Nov 2013 23:51:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/git-diff-and-objective-c/</guid>
+      <description>&lt;p&gt;When writing Objective-C code and using git you probably realised that the &lt;code&gt;git diff&lt;/code&gt; output does not mention the function name in which the change occurred. This can easily be changed.&lt;/p&gt;
+&lt;p&gt;Run the following command inside your git repository&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;*.m diff=objc&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; .gitattributes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Source: &lt;a href=&#34;https://gist.github.com/bjhomer/2473281&#34;&gt;https://gist.github.com/bjhomer/2473281&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>common.h</title>
+      <link>https://loessl.org/posts/common-h/</link>
+      <pubDate>Wed, 04 Sep 2013 15:24:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/common-h/</guid>
+      <description>&lt;p&gt;So I got sick with NSLog and wrote myself a simple wrapper around it.&lt;/p&gt;
+&lt;p&gt;Which you can find &lt;a href=&#34;https://gist.github.com/hashier/6436829&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Syntax is the same but the printout is why nicer to read, it looks like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-objc&#34; data-lang=&#34;objc&#34;&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2013&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;09&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;02&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;17&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;00&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;49.543&lt;/span&gt; AppName[&lt;span style=&#34;color:#ae81ff&#34;&gt;4841&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;a0b] (FilterAppDelegate.m:&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;[FilterAppDelegate application:didFinishLaunchingWithOptions:]) TEST LOG
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So you can see the filename, line number, function and everything else important directly.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

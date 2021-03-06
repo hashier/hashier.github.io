@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/linux/</link>
+    <description>~/christopher.loessl (linux)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 May 2013 13:47:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Finding the right LaTeX packages</title>
+      <link>https://loessl.org/posts/finding-the-right-latex-packages/</link>
+      <pubDate>Wed, 22 May 2013 13:47:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/finding-the-right-latex-packages/</guid>
+      <description>&lt;p&gt;If you have little space on your machine and therefore want to install the LaTeX Basic package (which is only around 150MB instead of a couple of GB) you might run into problems that packages are missing but with &lt;code&gt;tlmgr&lt;/code&gt; this is quite easy to solve&lt;/p&gt;
+&lt;p&gt;You might get errors like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;I couldn&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;t open style file alphadin.bst
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;---line 222 of file bachelor.aux
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; : \bibstyle{alphadin
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; :                   }
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;I&amp;#39;&lt;/span&gt;m skipping whatever remains of this command
+I found no style file---while reading file bachelor.aux
+&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;There were &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; error messages&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+/usr/bin/texi2dvi: bibtex exited with bad status, quitting.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or similar. You can easily search for it with&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ tlmgr search --global --file alphadin.bst
+din1505: texmf-dist/bibtex/bst/din1505/alphadin.bst
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;--all&lt;/code&gt; is a useful search flag as well.&lt;/p&gt;
+&lt;p&gt;PS: Installing works with &lt;code&gt;tlmgr&lt;/code&gt; of course as well&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Who opens my UPnP ports?</title>
+      <link>https://loessl.org/posts/who-opens-my-upnp-ports/</link>
+      <pubDate>Tue, 07 May 2013 16:11:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/who-opens-my-upnp-ports/</guid>
+      <description>&lt;p&gt;Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and instantly noticed that someone/something opened some ports in my router and forwarded them to my machine. So of course I wanted to know what&amp;rsquo;s going on on my network.&lt;/p&gt;
+&lt;p&gt;First idea &amp;ldquo;wireshark&amp;rdquo; but this only gives you information from which port these UPnP stuff goes, it doesn&amp;rsquo;t tell you the application that initiated these packages. For the curious here is the &lt;a href=&#34;http://wiki.wireshark.org/SSDP&#34;&gt;filter&lt;/a&gt; you can use:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;udp.dstport &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1900&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; http &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ip.addr &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; 192.168.1.100
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;UPnP uses the &lt;a href=&#34;http://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol&#34;&gt;SSDP&lt;/a&gt; protocol which isn&amp;rsquo;t implemented by wireshark but you can simply use the http protocol because SSDP is based on &lt;a href=&#34;http://en.wikipedia.org/wiki/HTTPU&#34;&gt;HTTPU&lt;/a&gt; (yes, HTTPU).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Imagine a picture that shows you that port 4500 and 5353 are open&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So port 4500 and 5353 (both UDP) are forwarded to my Mac but which software is behind this? Strangely&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;lsof -i :4500
+lsof -i :5353
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Booth show nothing&amp;hellip; which means right now nothing is listening on those ports on my machine.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Let&amp;rsquo;s see which &amp;ldquo;normal&amp;rdquo; services listen on those ports. Of course this is not 100 % certain since any program could listen on those ports.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ grep &lt;span style=&#34;color:#ae81ff&#34;&gt;4500&lt;/span&gt; /etc/services
+ipsec-msft      4500/udp    &lt;span style=&#34;color:#75715e&#34;&gt;# Microsoft IPsec NAT-T&lt;/span&gt;
+ipsec-msft      4500/tcp    &lt;span style=&#34;color:#75715e&#34;&gt;# Microsoft IPsec NAT-T&lt;/span&gt;
+
+$ grep &lt;span style=&#34;color:#ae81ff&#34;&gt;5353&lt;/span&gt; /etc/services
+&lt;span style=&#34;color:#75715e&#34;&gt;#               5353        Unassigned&lt;/span&gt;
+mdns            5353/udp    &lt;span style=&#34;color:#75715e&#34;&gt;# Multicast DNS&lt;/span&gt;
+mdns            5353/tcp    &lt;span style=&#34;color:#75715e&#34;&gt;# Multicast DNS&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I didn&amp;rsquo;t do anything with VPN or IPsec so I started googling and found this &lt;a href=&#34;http://support.apple.com/kb/TS1629&#34;&gt;Apple KB entry&lt;/a&gt; which explained to me which services forward those ports and apparently it&amp;rsquo;s just &amp;ldquo;Back to My Mac&amp;rdquo; and some &amp;ldquo;Bonjour&amp;rdquo; stuff.&lt;/p&gt;
+&lt;p&gt;For the case that the service is still up and running on the port the &lt;code&gt;lsof&lt;/code&gt; output would look something like this, where you can easily read the &lt;code&gt;command&lt;/code&gt; and &lt;code&gt;PID&lt;/code&gt; that is listening on a given port:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ lsof -i :32323
+COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+Python  &lt;span style=&#34;color:#ae81ff&#34;&gt;21495&lt;/span&gt; hashier    3u  IPv4 0x23f1441a8dbc1b79      0t0  TCP *:32323 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;LISTEN&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this case I just started a python script which binds to port &lt;code&gt;32323&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Some other quick tips of &lt;code&gt;lsof&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Print established TCP connections:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;lsof -P -iTCP -sTCP:ESTABLISHED
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Print listening TCP connections:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ lsof -P -iTCP -sTCP:LISTEN
+...
+Python    &lt;span style=&#34;color:#ae81ff&#34;&gt;21495&lt;/span&gt; hashier    3u  IPv4 0x23f1441a8dbc1b79      0t0  TCP *:32323 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;LISTEN&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and here we can as well see the listening python TCP server on &lt;code&gt;32323&lt;/code&gt;. This is a very quick way to find out all the services that are waiting for a connection.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LD_PRELOAD and DYLD_INSERT_LIBRARIES</title>
+      <link>https://loessl.org/posts/ld_preload-and-dyld_insert_libraries/</link>
+      <pubDate>Thu, 25 Apr 2013 14:43:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/ld_preload-and-dyld_insert_libraries/</guid>
+      <description>&lt;p&gt;A simple LD_PRELOAD tutorial that works under Linux can be found &lt;a href=&#34;http://www.catonmat.net/blog/simple-ld-preload-tutorial/&#34;&gt;here&lt;/a&gt;. One that can be used under OS X you should also read &lt;a href=&#34;http://blog.client9.com/2012/06/ldpreload-on-mac-os-x.html&#34;&gt;this one&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>No Such File or Directory</title>
+      <link>https://loessl.org/posts/no-such-file-or-directory/</link>
+      <pubDate>Fri, 15 Mar 2013 02:58:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/no-such-file-or-directory/</guid>
+      <description>&lt;p&gt;bash: ./adb: No such file or directory&lt;/p&gt;
+&lt;p&gt;Fix:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apt-get install ia32-libs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;via &lt;a href=&#34;http://ubuntuforums.org/showthread.php?t=1520697&#34;&gt;ubuntu bash: ./adb: No such file or directory&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to fix slow Ubuntu in VirtualBox</title>
+      <link>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</link>
+      <pubDate>Sat, 23 Feb 2013 00:18:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;apt-get install linux-headers-generic build-essential 2. compizconfig-settings-manager dkms&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install the guest drivers&lt;/li&gt;
+&lt;li&gt;Open ccsm (from the console) and disable &amp;ldquo;Framebuffer object&amp;rdquo; option under &amp;ldquo;OpenGL&amp;rdquo; (be prepared that you won&amp;rsquo;t be able to read much, but if you activate 3D first, then it will be even worse)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;shutdown -h now&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Activate 3D acceleration in VirtualBox&lt;/li&gt;
+&lt;li&gt;power on&lt;/li&gt;
+&lt;li&gt;done.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/usr/lib/nux/unity_support_test -p
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Source:
+&lt;a href=&#34;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&#34;&gt;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FreeMind</title>
+      <link>https://loessl.org/posts/freemind/</link>
+      <pubDate>Wed, 20 Feb 2013 11:17:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/freemind/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://freemind.sourceforge.net/wiki/index.php/Main_Page&#34;&gt;FreeMind&lt;/a&gt; is a mind-mapping software I recently started to use and I like it, so far. But let the webpage talk for itself:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;FreeMind is a premier free mind-mapping software written in Java. The recent development has hopefully turned it into high productivity tool. We are proud that the operation and navigation of FreeMind is faster than that of MindManager because of one-click &amp;ldquo;fold / unfold&amp;rdquo; and &amp;ldquo;follow link&amp;rdquo; operations.&lt;/p&gt;
+&lt;p&gt;So you want to write a completely new metaphysics? Why don&amp;rsquo;t you use FreeMind? You have a tool at hand that remarkably resembles the tray slips of Robert Pirsig, described in his sequel to Zen and the Art of Motorcycle Maintenance called Lila. Do you want to refactor your essays in a similar way you would refactor software? Or do you want to keep personal knowledge base, which is easy to manage? Why don&amp;rsquo;t you try FreeMind? Do you want to prioritize, know where you are, where you&amp;rsquo;ve been and where you are heading, as Stephen Covey would advise you? Have you tried FreeMind to keep track of all the things that are needed for that?&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,37 @@
+@media (prefers-color-scheme: dark) {
+    /* main */
+    body {
+        color: #fafafa;
+        background: #232323;
+    }
+
+    /* Pager */
+    .pagination-item {
+        background: #333;
+    }
+
+    .pagination-item a {
+        color: #fafafa;
+    }
+
+    /* Navigation */
+    header a {
+        color: #9b9b9b;
+    }
+
+    header nav {
+        background: #232323;
+    }
+
+    /* Title of posts */
+    article header h1 a {
+        color: #ccc;
+    }
+
+    @media (max-width: 840px) {
+        /* Have a nice box around menu on phones */
+        header nav {
+            background: #333;
+        }
+    }
+}

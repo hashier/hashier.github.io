@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fix on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/fix/</link>
+    <description>~/christopher.loessl (fix)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Sep 2013 20:33:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/fix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fixing TruePreview for Apple Mail 6.6</title>
+      <link>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-6/</link>
+      <pubDate>Mon, 23 Sep 2013 20:33:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-6/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;defaults write ~/Library/Mail/Bundles/TruePreview.mailbundle/Contents/Info SupportedPluginCompatibilityUUIDs -array-add DAFFB2B4-77BC-4C25-8CE1-2405E652D54B
+defaults write ~/Library/Mail/Bundles/TruePreview.mailbundle/Contents/Info SupportedPluginCompatibilityUUIDs -array-add 2B98D2DD-000B-4521-83EB-7BFCB9B161C8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you started mail before executing these two commands, make sure to copy the plugin from the Bundle &lt;code&gt;(Disbaled)&lt;/code&gt; folder back to the Bundle folder.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

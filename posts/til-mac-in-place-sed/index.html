@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>TIL: Mac in-place sed - ~/christopher.loessl</title>
+<meta name="description" content="Private homepage of Christopher Loessl">
+
+<link rel="icon" type="image/x-icon" href="https://loessl.org/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://loessl.org/favicon.png">
+
+<link rel="stylesheet" href="https://loessl.org/css/style.css?rnd=1615051687" />
+
+<link rel="stylesheet" href="https://loessl.org/css/custom.css?rnd=1615051687">
+
+<meta property="og:title" content="TIL: Mac in-place sed" />
+<meta property="og:description" content="TIL how to use in-place sed on Mac." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loessl.org/posts/til-mac-in-place-sed/" />
+<meta property="article:published_time" content="2020-06-17T22:16:31+02:00" />
+<meta property="article:modified_time" content="2020-06-17T22:16:31+02:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TIL: Mac in-place sed"/>
+<meta name="twitter:description" content="TIL how to use in-place sed on Mac."/>
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">~/christopher.loessl</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://loessl.org/projects/" title="">~/projects</a>
+    
+    <a class="" href="https://loessl.org/posts/" title="">~/blog</a>
+    
+    <a class="" href="https://loessl.org/tags/" title="">~/tags</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">TIL: Mac in-place sed</h1>
+        </header>
+        <div class="content">
+            <p>TIL how to use in-place sed on Mac.</p>
+<p>I always thought I have to use the GNU tools version of sed for in-place sed, but I was wrong. Mac sed supports in-place editing as well.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#e6db74">&#39;/pattern/d&#39;</span> ./infile
+</code></pre></div><p>There is a caveat though:</p>
+<blockquote>
+<p>Edit files in-place, saving backups with the specified extension.  If a zero-length extension is given, no backup will be saved.  It is not recommended to give a zero-length extension when in-place editing files, as you risk corruption or partial content in situations where disk space is exhausted, etc.</p>
+</blockquote>
+<blockquote>
+<p>Replace all occurances of <code>foo</code> with <code>bar</code> in the file test.txt, without creating a backup of the file:</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#39;&#39;</span> -e <span style="color:#e6db74">&#39;s/foo/bar/g&#39;</span> test.txt
+</code></pre></div>
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2020-06-17</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://loessl.org/categories/computer">computer</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://loessl.org/tags/til">#til</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/shell">#shell</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Christopher Loessl, 2021<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme Sibuna, based on <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+</p>
+
+            
+        </footer>
+    </div>
+</body>
+</html>

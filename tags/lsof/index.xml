@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lsof on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/lsof/</link>
+    <description>~/christopher.loessl (lsof)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 May 2013 16:11:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/lsof/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Who opens my UPnP ports?</title>
+      <link>https://loessl.org/posts/who-opens-my-upnp-ports/</link>
+      <pubDate>Tue, 07 May 2013 16:11:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/who-opens-my-upnp-ports/</guid>
+      <description>&lt;p&gt;Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and instantly noticed that someone/something opened some ports in my router and forwarded them to my machine. So of course I wanted to know what&amp;rsquo;s going on on my network.&lt;/p&gt;
+&lt;p&gt;First idea &amp;ldquo;wireshark&amp;rdquo; but this only gives you information from which port these UPnP stuff goes, it doesn&amp;rsquo;t tell you the application that initiated these packages. For the curious here is the &lt;a href=&#34;http://wiki.wireshark.org/SSDP&#34;&gt;filter&lt;/a&gt; you can use:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;udp.dstport &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1900&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; http &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ip.addr &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; 192.168.1.100
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;UPnP uses the &lt;a href=&#34;http://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol&#34;&gt;SSDP&lt;/a&gt; protocol which isn&amp;rsquo;t implemented by wireshark but you can simply use the http protocol because SSDP is based on &lt;a href=&#34;http://en.wikipedia.org/wiki/HTTPU&#34;&gt;HTTPU&lt;/a&gt; (yes, HTTPU).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Imagine a picture that shows you that port 4500 and 5353 are open&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So port 4500 and 5353 (both UDP) are forwarded to my Mac but which software is behind this? Strangely&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;lsof -i :4500
+lsof -i :5353
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Booth show nothing&amp;hellip; which means right now nothing is listening on those ports on my machine.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Let&amp;rsquo;s see which &amp;ldquo;normal&amp;rdquo; services listen on those ports. Of course this is not 100 % certain since any program could listen on those ports.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ grep &lt;span style=&#34;color:#ae81ff&#34;&gt;4500&lt;/span&gt; /etc/services
+ipsec-msft      4500/udp    &lt;span style=&#34;color:#75715e&#34;&gt;# Microsoft IPsec NAT-T&lt;/span&gt;
+ipsec-msft      4500/tcp    &lt;span style=&#34;color:#75715e&#34;&gt;# Microsoft IPsec NAT-T&lt;/span&gt;
+
+$ grep &lt;span style=&#34;color:#ae81ff&#34;&gt;5353&lt;/span&gt; /etc/services
+&lt;span style=&#34;color:#75715e&#34;&gt;#               5353        Unassigned&lt;/span&gt;
+mdns            5353/udp    &lt;span style=&#34;color:#75715e&#34;&gt;# Multicast DNS&lt;/span&gt;
+mdns            5353/tcp    &lt;span style=&#34;color:#75715e&#34;&gt;# Multicast DNS&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I didn&amp;rsquo;t do anything with VPN or IPsec so I started googling and found this &lt;a href=&#34;http://support.apple.com/kb/TS1629&#34;&gt;Apple KB entry&lt;/a&gt; which explained to me which services forward those ports and apparently it&amp;rsquo;s just &amp;ldquo;Back to My Mac&amp;rdquo; and some &amp;ldquo;Bonjour&amp;rdquo; stuff.&lt;/p&gt;
+&lt;p&gt;For the case that the service is still up and running on the port the &lt;code&gt;lsof&lt;/code&gt; output would look something like this, where you can easily read the &lt;code&gt;command&lt;/code&gt; and &lt;code&gt;PID&lt;/code&gt; that is listening on a given port:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ lsof -i :32323
+COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+Python  &lt;span style=&#34;color:#ae81ff&#34;&gt;21495&lt;/span&gt; hashier    3u  IPv4 0x23f1441a8dbc1b79      0t0  TCP *:32323 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;LISTEN&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this case I just started a python script which binds to port &lt;code&gt;32323&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Some other quick tips of &lt;code&gt;lsof&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Print established TCP connections:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;lsof -P -iTCP -sTCP:ESTABLISHED
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Print listening TCP connections:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ lsof -P -iTCP -sTCP:LISTEN
+...
+Python    &lt;span style=&#34;color:#ae81ff&#34;&gt;21495&lt;/span&gt; hashier    3u  IPv4 0x23f1441a8dbc1b79      0t0  TCP *:32323 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;LISTEN&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and here we can as well see the listening python TCP server on &lt;code&gt;32323&lt;/code&gt;. This is a very quick way to find out all the services that are waiting for a connection.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FreeMind on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/freemind/</link>
+    <description>~/christopher.loessl (FreeMind)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Feb 2013 11:17:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/freemind/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FreeMind</title>
+      <link>https://loessl.org/posts/freemind/</link>
+      <pubDate>Wed, 20 Feb 2013 11:17:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/freemind/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://freemind.sourceforge.net/wiki/index.php/Main_Page&#34;&gt;FreeMind&lt;/a&gt; is a mind-mapping software I recently started to use and I like it, so far. But let the webpage talk for itself:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;FreeMind is a premier free mind-mapping software written in Java. The recent development has hopefully turned it into high productivity tool. We are proud that the operation and navigation of FreeMind is faster than that of MindManager because of one-click &amp;ldquo;fold / unfold&amp;rdquo; and &amp;ldquo;follow link&amp;rdquo; operations.&lt;/p&gt;
+&lt;p&gt;So you want to write a completely new metaphysics? Why don&amp;rsquo;t you use FreeMind? You have a tool at hand that remarkably resembles the tray slips of Robert Pirsig, described in his sequel to Zen and the Art of Motorcycle Maintenance called Lila. Do you want to refactor your essays in a similar way you would refactor software? Or do you want to keep personal knowledge base, which is easy to manage? Why don&amp;rsquo;t you try FreeMind? Do you want to prioritize, know where you are, where you&amp;rsquo;ve been and where you are heading, as Stephen Covey would advise you? Have you tried FreeMind to keep track of all the things that are needed for that?&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to run FreeMind on Mountain Lion</title>
+      <link>https://loessl.org/posts/how-to-run-freemind-on-ml/</link>
+      <pubDate>Thu, 07 Feb 2013 20:05:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/how-to-run-freemind-on-ml/</guid>
+      <description>&lt;p&gt;If you try to run FreeMind on Mountain Lion you get this &amp;ldquo;nice&amp;rdquo; error message:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;FreeMind.app&amp;rdquo; is damaged and can&amp;rsquo;t be opened. You should move it to the Trash.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To persuade FreeMind to run anyway you can type this command into your console:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;java -jar /Applications/FreeMind.app/Contents/Resources/Java/lib/freemind.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I read on the internet that you can disable GateKeeper as well to run FreeMind but I didn&amp;rsquo;t try it.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

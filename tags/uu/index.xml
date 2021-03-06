@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>uu on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/uu/</link>
+    <description>~/christopher.loessl (uu)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Mar 2013 10:28:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/uu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Script to automatically login to UpUnet-S at Uppsala University</title>
+      <link>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</link>
+      <pubDate>Tue, 26 Mar 2013 10:28:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</guid>
+      <description>&lt;p&gt;If you want a small bash, zsh or shell script that auto authenticates you with Uppsala Universities UpUnet-S you can use this simple one liner, just add our username and password and up you go&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl --data &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;action=Login&amp;#34;&lt;/span&gt; --data &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;usergroup=UpUnet-S&amp;#34;&lt;/span&gt; --data-urlencode &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;username=YOUR_USERNAME&amp;#34;&lt;/span&gt; --data-urlencode &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;password=YOUR_PASSWORD&amp;#34;&lt;/span&gt; https://netlogon.student.uu.se
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you are a student at SLU you can try to substitute &lt;code&gt;usergroup=UpUnet-S&lt;/code&gt; with &lt;code&gt;usergroup=SLU&lt;/code&gt; and it should work for you as well. It&amp;rsquo;s untested though.&lt;/p&gt;
+&lt;p&gt;There is even an iPhone app that I wrote for it: &lt;a href=&#34;https://github.com/hashier/UpUnet-S&#34;&gt;https://github.com/hashier/UpUnet-S&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

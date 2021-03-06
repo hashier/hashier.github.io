@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pkgutil on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/pkgutil/</link>
+    <description>~/christopher.loessl (pkgutil)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Feb 2013 11:38:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/pkgutil/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting rid of Java on a Mac</title>
+      <link>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</link>
+      <pubDate>Sat, 02 Feb 2013 11:38:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</guid>
+      <description>&lt;p&gt;If you installed Java from Apple then you have the problem, that you have got a very old Version of Java.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ java -version
+java version &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1.6.0_37&amp;#34;&lt;/span&gt;Java&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;TM&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; SE Runtime Environment &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;build 1.6.0_37-b06-434-11M3909&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+Java HotSpot&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;TM&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; 64-Bit Server VM &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;build 20.12-b01-434, mixed mode&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Java get&amp;rsquo;s installed as a .pkg file and here is how to figure out which files this .pkg installed (unfortunately I haven&amp;rsquo;t found out where the pre- and postflight scripts are so you have to hope they don&amp;rsquo;t do anything nasty).&lt;/p&gt;
+&lt;p&gt;First things first; some essential Java files are on your system after a fresh installation, so we have to figure out what files are there from the beginning. To do this we have look into&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/Library/Receipts/InstallHistory.plist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Right on top you can see that the &amp;ldquo;OS X Installer&amp;rdquo; installed two packages called &amp;ldquo;JavaTools&amp;rdquo; and &amp;ldquo;JavaEssentials&amp;rdquo; so we don&amp;rsquo;t touch them.&lt;/p&gt;
+&lt;p&gt;Now we try to figure out all Java .pkgs that were installed:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;grep -i Java /Library/Receipts/InstallHistory.plist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So we know that we have to uninstall: &amp;ldquo;JavaForMacOSX107&amp;rdquo;, &amp;ldquo;JavaSecurity&amp;rdquo; and &amp;ldquo;JavaMDNS&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;To get to the files that where installed by those packages we call:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cd /private/var/db/receipts
+lsbom -s com.apple.pkg.JavaSecurity.bom com.apple.pkg.JavaMDNS.bom com.apple.pkg.JavaForMacOSX107.bom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Last thing to do is remove the three .bom and three .plist files from: /private/var/db/receipts.&lt;/p&gt;
+&lt;p&gt;You are done&lt;/p&gt;
+&lt;p&gt;PS&lt;/p&gt;
+&lt;p&gt;Two folder to worth looking at are:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/System/Library/Java/JavaVirtualMachines/
+/Library/Java/JavaVirtualMachines/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

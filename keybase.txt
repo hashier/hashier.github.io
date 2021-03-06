@@ -1,0 +1,130 @@
+==================================================================
+https://keybase.io/hashier
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://loessl.org
+  * I am hashier (https://keybase.io/hashier) on keybase.
+  * I have a public key with fingerprint 8A66 095F 4960 62DB D3D1  80D5 44F1 DB06 C926 11B4
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "010108d51c4a2543f62cbd0de1208519e44edd0c2a29abb934eb74b1b31b7f4b61650a",
+            "fingerprint": "8a66095f496062dbd3d180d544f1db06c92611b4",
+            "host": "keybase.io",
+            "key_id": "44f1db06c92611b4",
+            "kid": "010108d51c4a2543f62cbd0de1208519e44edd0c2a29abb934eb74b1b31b7f4b61650a",
+            "uid": "f70b5328439584a042276bb4da2bf519",
+            "username": "hashier"
+        },
+        "service": {
+            "hostname": "loessl.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1476298385,
+    "expire_in": 157680000,
+    "prev": "179e08b0f62e403d8761bffda73a25d7bf86ba28823134453ed2d810090eb4c7",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2
+
+owGtUm1QVFUY3uVj+WiEyFFCYHUuueXMSvdr78dSbiVGUCESgkaw3rP3XLix7V3u
+rnwMCImJ1mCgDlZogZnEV8YwCFQDI9IECASGYsKQjTQiqJNSRMkk3cvYv352zo8z
+553ned7nfeatWOGp8dVG35vQ9RuCWrUDM0CT8qD0owIESHw+Yi5AsuDyA+08dLmt
+WSKPmBEUUy7DmzAbyeEmkhAo3AZ4lIcYjjImjIUkCXketeEcznIAsAQJAU0CDBAY
+oAUSUBhlQjnEiAiiIwPKTll0uBVZhqMolDUJJEuhFM4DnuAxBuVNJClgPEApG4tT
+GAZIhZgpuVSGYg5wLhgpSkpN+ViX7f0H/n/2vXtZTqBRYCJwhiRYE0NyKInjNAUA
+yXM4EBQ5FeiCsoN7CyroTM6VKUIZ2WNElGKOaINqruogDwF2Cbpc9khJzlCITlly
+SzbJrhLdbqdZpbnznSouFwLrQwUrEB28kqFCyIGyS5QciBlTkDa3qEpiJE3hLEMw
+JiMC85yiDK2iijDRFIMqR20DcxRJjGYhygBUCSQJkijBMzSFAUHgOZpQkuJpIDAU
+4HCGwQmMIEkTAXmcZzAUZVEISBuNqENlOyTETCo+uQxF0yVmODj3bhkie/zf9Qjz
+0mh9NTpvD3W7NP5+j/67cvq7gUsF9fNFjyCXItq39jaeCJ/h2MJqz0HtK3pd3tXx
+E52NU6OGyHtZB6dTzhZHfju271Bvh3bnyk07QtMTA+yr2gZ2Lo7WPLjO3dzVuN61
+d6qFO9ClbfW+r6f8znzTXa61d5Tc7mtZF332KBuSYnzxljU4eej9CMsT3b57vY98
+cloTdfiv8l/qPg6d3fhcXOcxr4CvhZ/Trq/Xky9c0L28+ZmgmFePPBmsC9OcXvm8
+Dxvou7ov/bHzscWatahP7PmqfSPTx+a+u9nww+3V9tAo7bkP6pbixnTSnbgYj/7B
+8NebYi4NJRoWLgZdbu9ODawdMSR0JX/YM1/VE65/J7k2+v418Y+Wr6KOt02+OZuT
+qE9OyY28k1R58lS2vPHTvpmEikn/oZEtlmrJeSD9xpWm8u9rKovZx4ODm6+NZ2bn
+l/wuh9l+svhYK8smKgvLCGPar165YQcHF6Ym50e2LYSMde66XBnSHzv+mv+WghXF
+G0qy56Iu9Mx5XdyfRBXFrx1eLE3/+41aS9lQSsLS2xG//Vi4/akvbqVWP60/xJ35
+/Jylu/WKIcPr2bb6+HVXm2x4+3tRJZun845KhzuCrQ1bizKDmsGMYebPDUv9xj6k
+d2AWT4vftDRRjSagScPOft2p5oGTxzc3ZOWYbzQRNZ+lWoaJvu1Vi9vuvlS6Yz5g
+zZd+FXVda6Lrc+XRVZ668ux/AA==
+=oHfu
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/hashier
+
+==================================================================
+
+==================================================================
+https://keybase.io/hashier
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://loessl.org
+  * I am hashier (https://keybase.io/hashier) on keybase.
+  * I have a public key ASAq0Tf894buqsC1rc_JXpDln76P3PXgyt_KeAqsPjRSJQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010108d51c4a2543f62cbd0de1208519e44edd0c2a29abb934eb74b1b31b7f4b61650a",
+      "host": "keybase.io",
+      "kid": "01202ad137fcf786eeaac0b5adcfc95e90e59fbe8fdcf5e0cadfca780aac3e3452250a",
+      "uid": "f70b5328439584a042276bb4da2bf519",
+      "username": "hashier"
+    },
+    "merkle_root": {
+      "ctime": 1554903312,
+      "hash": "bf1607512961d63f96e47b103c393b619118b9f6053f3c8a37388c19c9ad1ab178922ebd099f0f8dd125cc19aecd08eeee56fe89e3106a8efd875d40e834518c",
+      "hash_meta": "2a2761ea63eaa1a6d97d931a4dd52877fd326873878442635d4845c374eb36f6",
+      "seqno": 5134542
+    },
+    "service": {
+      "entropy": "fU3J4DrT0RnJ9EQnTDH1Qg28",
+      "hostname": "loessl.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "3.2.1"
+  },
+  "ctime": 1554903326,
+  "expire_in": 504576000,
+  "prev": "bcf012c21e4becfacb45004908faff7792d9794db20993762175b04896f2e901",
+  "seqno": 38,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgKtE3/PeG7qrAta3PyV6Q5Z++j9z14MrfyngKrD40UiUKp3BheWxvYWTESpcCJsQgvPASwh5L7PrLRQBJCPr/d5LZeU2yCZN2IXWwSJby6QHEIOvaaDIhrr3VjKeL/eeWEtk3Qswu8Gt/1AZTQD9vZAp5AgHCo3NpZ8RAORao6aEzD8f4fInuopR4WoMIHt7V7rsDBGY5FiqMV9q7g4NXy1+AuiacuNCntyfKlA1DbmCVKBag968l8w77CqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIHoMXP95+f5j3vjeAZuV9Q90ZPVGdhr4qu9R90gGrO1mo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/hashier
+
+==================================================================

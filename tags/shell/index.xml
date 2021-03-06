@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/shell/</link>
+    <description>~/christopher.loessl (shell)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Jun 2020 22:16:31 +0200</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TIL: Mac in-place sed</title>
+      <link>https://loessl.org/posts/til-mac-in-place-sed/</link>
+      <pubDate>Wed, 17 Jun 2020 22:16:31 +0200</pubDate>
+      
+      <guid>https://loessl.org/posts/til-mac-in-place-sed/</guid>
+      <description>&lt;p&gt;TIL how to use in-place sed on Mac.&lt;/p&gt;
+&lt;p&gt;I always thought I have to use the GNU tools version of sed for in-place sed, but I was wrong. Mac sed supports in-place editing as well.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sed -i &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/pattern/d&amp;#39;&lt;/span&gt; ./infile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;There is a caveat though:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Edit files in-place, saving backups with the specified extension.  If a zero-length extension is given, no backup will be saved.  It is not recommended to give a zero-length extension when in-place editing files, as you risk corruption or partial content in situations where disk space is exhausted, etc.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Replace all occurances of &lt;code&gt;foo&lt;/code&gt; with &lt;code&gt;bar&lt;/code&gt; in the file test.txt, without creating a backup of the file:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sed -i &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; -e &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/foo/bar/g&amp;#39;&lt;/span&gt; test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

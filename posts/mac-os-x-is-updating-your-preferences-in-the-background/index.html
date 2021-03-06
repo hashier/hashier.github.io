@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Mac OS X is updating your preferences in the background - ~/christopher.loessl</title>
+<meta name="description" content="Private homepage of Christopher Loessl">
+
+<link rel="icon" type="image/x-icon" href="https://loessl.org/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://loessl.org/favicon.png">
+
+<link rel="stylesheet" href="https://loessl.org/css/style.css?rnd=1615051686" />
+
+<link rel="stylesheet" href="https://loessl.org/css/custom.css?rnd=1615051686">
+
+<meta property="og:title" content="Mac OS X is updating your preferences in the background" />
+<meta property="og:description" content="Recently I noticed that a config file of Safari gets updated every now and then even if Safari is not running." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/" />
+<meta property="article:published_time" content="2013-05-07T16:24:00+00:00" />
+<meta property="article:modified_time" content="2013-05-07T16:24:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mac OS X is updating your preferences in the background"/>
+<meta name="twitter:description" content="Recently I noticed that a config file of Safari gets updated every now and then even if Safari is not running."/>
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">~/christopher.loessl</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://loessl.org/projects/" title="">~/projects</a>
+    
+    <a class="" href="https://loessl.org/posts/" title="">~/blog</a>
+    
+    <a class="" href="https://loessl.org/tags/" title="">~/tags</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Mac OS X is updating your preferences in the background</h1>
+        </header>
+        <div class="content">
+            <p>Recently I noticed that a config file of Safari gets updated every now and then even if Safari is not running.</p>
+<p>The same goes for these configuration files:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/Users/hashier/Library/SyncedPreferences/com.apple.Safari.plist
+/Users/hashier/Library/SyncedPreferences/com.apple.syncedpreferences.plist
+</code></pre></div><p>These two files are not directly readable with e.g. <code>cat</code> but you read them with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">defaults read /Users/hashier/Library/SyncedPreferences/com.apple.Safari.plist
+</code></pre></div><p>You can see all your open tabs on all your iPhone, iPad, iMac, MacBook etc devices that support Safari Cloud Tabs.</p>
+<p>The other file reveals other system preferences that get synced over iCloud like some settings from Apple Mail. Just have a look and poke a bit around.</p>
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-05-07</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://loessl.org/categories/computer">computer</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://loessl.org/tags/apple">#apple</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/cloud">#cloud</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/config">#config</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/icloud">#iCloud</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/mac">#mac</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/mail">#mail</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/plist">#plist</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/setting">#setting</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/sync">#sync</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/system">#system</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Christopher Loessl, 2021<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme Sibuna, based on <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+</p>
+
+            
+        </footer>
+    </div>
+</body>
+</html>

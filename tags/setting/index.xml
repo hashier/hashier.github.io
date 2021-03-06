@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>setting on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/setting/</link>
+    <description>~/christopher.loessl (setting)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 May 2013 16:24:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/setting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac OS X is updating your preferences in the background</title>
+      <link>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</link>
+      <pubDate>Tue, 07 May 2013 16:24:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</guid>
+      <description>&lt;p&gt;Recently I noticed that a config file of Safari gets updated every now and then even if Safari is not running.&lt;/p&gt;
+&lt;p&gt;The same goes for these configuration files:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/Users/hashier/Library/SyncedPreferences/com.apple.Safari.plist
+/Users/hashier/Library/SyncedPreferences/com.apple.syncedpreferences.plist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;These two files are not directly readable with e.g. &lt;code&gt;cat&lt;/code&gt; but you read them with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;defaults read /Users/hashier/Library/SyncedPreferences/com.apple.Safari.plist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can see all your open tabs on all your iPhone, iPad, iMac, MacBook etc devices that support Safari Cloud Tabs.&lt;/p&gt;
+&lt;p&gt;The other file reveals other system preferences that get synced over iCloud like some settings from Apple Mail. Just have a look and poke a bit around.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

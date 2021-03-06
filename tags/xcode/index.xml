@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xcode on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/xcode/</link>
+    <description>~/christopher.loessl (Xcode)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Feb 2014 15:58:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multiple Xcode Targets and Tests</title>
+      <link>https://loessl.org/posts/multiple-xcode-targets-and-tests/</link>
+      <pubDate>Sun, 09 Feb 2014 15:58:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/multiple-xcode-targets-and-tests/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Go to targets -&amp;gt; Select target -&amp;gt; Duplicate (I duplicated a target which name was “tests”)&lt;/li&gt;
+&lt;li&gt;Rename the target to whatever you want (I use “Tooth” here)&lt;/li&gt;
+&lt;li&gt;Go to “Manage Schemes” and delete the scheme with the old name (“tests copy”) and click on “Autocreate Schemes Now”&lt;/li&gt;
+&lt;li&gt;Rename the “tests copy-Info.plist” to “Tooth-Info.plist” in your “Project Navigator” (or the path where Xcode can find the .plist file)&lt;/li&gt;
+&lt;li&gt;(If you need a different .pch file, you have to duplicate it in finder and add it to your project, otherwise “Tooth” will use the same .pch file as “tests”)&lt;/li&gt;
+&lt;li&gt;Go to the “Build Settings” of your new target and make sure that you check the following key value pairs:
+&lt;ul&gt;
+&lt;li&gt;Info.plist File: Change from “tests copy-Info.plist” to “Tooth-Info.plist”&lt;/li&gt;
+&lt;li&gt;Product Name: Change from “tests copy” to “$(TARGET_NAME)”&lt;/li&gt;
+&lt;li&gt;Prefix Header: Change accordingly if you need a different .pch file and created it earlier&lt;/li&gt;
+&lt;li&gt;Preprocessor Macros
+&lt;ul&gt;
+&lt;li&gt;Add something like “TOOTH=1” to your “Tooth” target and “TESTS=1” to your “tests” target (in Debug and Release)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If your project doesn’t build (or link) any more now, just reopen Xcode.&lt;/p&gt;
+&lt;p&gt;This is how you can decide in which target you are inside your code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-objc&#34; data-lang=&#34;objc&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#if TESTS
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    NSLog(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;I&amp;#39;m the tests target&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#75715e&#34;&gt;#elif TOOTH
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    NSLog(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;I&amp;#39;m the Tooth target&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#75715e&#34;&gt;#else
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    NSLog(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;Error: You added a new target and didn&amp;#39;t set the Macros&amp;#34;&lt;/span&gt;);
+&lt;span style=&#34;color:#75715e&#34;&gt;#endif
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;adding-a-new-test-target&#34;&gt;Adding a new test target&lt;/h2&gt;
+&lt;p&gt;Of course you want to be able to write tests for your new target as well.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to the “Test Navigator”&lt;/li&gt;
+&lt;li&gt;On the bottom left click the “+” sign and chose “New Test Target…”&lt;/li&gt;
+&lt;li&gt;Select the Target you want to build tests for&lt;/li&gt;
+&lt;li&gt;WAIT! Don’t worry that you don’t see any tests for the new test target, just wait…. until it’s there, or restart Xcode&lt;/li&gt;
+&lt;li&gt;Right click on it and enable your test target&lt;/li&gt;
+&lt;li&gt;Go to “Build Settings” and select your tests target
+&lt;ul&gt;
+&lt;li&gt;Framework Search Path: Add “$(SRCROOT)” otherwise you will get errors with Frameworks like Crashlytics that it can’t find #import “Crashlytics/Crashlytics.h” (I add this as a project key value so I don’t have to do it for every new test target)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Start writing tests (:&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Automatically Increment Build Number (CFBundleVersion)</title>
+      <link>https://loessl.org/posts/automatically-increment-build-number-cfbundleversion/</link>
+      <pubDate>Wed, 21 Aug 2013 19:19:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/automatically-increment-build-number-cfbundleversion/</guid>
+      <description>&lt;p&gt;David wrote this nice little helper that automatically increments the build version every time.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;buildNumber&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;/usr/libexec/PlistBuddy -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Print CFBundleVersion&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$INFOPLIST_FILE&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+buildNumber&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;echo $buildNumber | sed &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;s/0*//&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+buildNumber&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$((&lt;/span&gt;$buildNumber &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;))&lt;/span&gt;
+buildNumber&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;printf &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%04d&amp;#34;&lt;/span&gt; $buildNumber&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+/usr/libexec/PlistBuddy -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Set :CFBundleVersion &lt;/span&gt;$buildNumber&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$INFOPLIST_FILE&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In Xcode just head over to &amp;ldquo;Build Phases&amp;rdquo; of your target and &amp;ldquo;Editor&amp;rdquo; -&amp;gt; &amp;ldquo;Add Build Phase&amp;rdquo; -&amp;gt; &amp;ldquo;Add Run Script Build Phase&amp;rdquo; there you can just simply paste this little script and every time you build your app the build version gets incremented.&lt;/p&gt;
+&lt;p&gt;So at least I can see how many times I build a certain project.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

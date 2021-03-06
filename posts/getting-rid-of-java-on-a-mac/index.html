@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Getting rid of Java on a Mac - ~/christopher.loessl</title>
+<meta name="description" content="Private homepage of Christopher Loessl">
+
+<link rel="icon" type="image/x-icon" href="https://loessl.org/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://loessl.org/favicon.png">
+
+<link rel="stylesheet" href="https://loessl.org/css/style.css?rnd=1615051686" />
+
+<link rel="stylesheet" href="https://loessl.org/css/custom.css?rnd=1615051686">
+
+<meta property="og:title" content="Getting rid of Java on a Mac" />
+<meta property="og:description" content="If you installed Java from Apple then you have the problem, that you have got a very old Version of Java." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loessl.org/posts/getting-rid-of-java-on-a-mac/" />
+<meta property="article:published_time" content="2013-02-02T11:38:00+00:00" />
+<meta property="article:modified_time" content="2013-02-02T11:38:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting rid of Java on a Mac"/>
+<meta name="twitter:description" content="If you installed Java from Apple then you have the problem, that you have got a very old Version of Java."/>
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">~/christopher.loessl</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://loessl.org/projects/" title="">~/projects</a>
+    
+    <a class="" href="https://loessl.org/posts/" title="">~/blog</a>
+    
+    <a class="" href="https://loessl.org/tags/" title="">~/tags</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Getting rid of Java on a Mac</h1>
+        </header>
+        <div class="content">
+            <p>If you installed Java from Apple then you have the problem, that you have got a very old Version of Java.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ java -version
+java version <span style="color:#e6db74">&#34;1.6.0_37&#34;</span>Java<span style="color:#f92672">(</span>TM<span style="color:#f92672">)</span> SE Runtime Environment <span style="color:#f92672">(</span>build 1.6.0_37-b06-434-11M3909<span style="color:#f92672">)</span>
+Java HotSpot<span style="color:#f92672">(</span>TM<span style="color:#f92672">)</span> 64-Bit Server VM <span style="color:#f92672">(</span>build 20.12-b01-434, mixed mode<span style="color:#f92672">)</span>
+</code></pre></div><p>Java get&rsquo;s installed as a .pkg file and here is how to figure out which files this .pkg installed (unfortunately I haven&rsquo;t found out where the pre- and postflight scripts are so you have to hope they don&rsquo;t do anything nasty).</p>
+<p>First things first; some essential Java files are on your system after a fresh installation, so we have to figure out what files are there from the beginning. To do this we have look into</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/Library/Receipts/InstallHistory.plist
+</code></pre></div><p>Right on top you can see that the &ldquo;OS X Installer&rdquo; installed two packages called &ldquo;JavaTools&rdquo; and &ldquo;JavaEssentials&rdquo; so we don&rsquo;t touch them.</p>
+<p>Now we try to figure out all Java .pkgs that were installed:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grep -i Java /Library/Receipts/InstallHistory.plist
+</code></pre></div><p>So we know that we have to uninstall: &ldquo;JavaForMacOSX107&rdquo;, &ldquo;JavaSecurity&rdquo; and &ldquo;JavaMDNS&rdquo;.</p>
+<p>To get to the files that where installed by those packages we call:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /private/var/db/receipts
+lsbom -s com.apple.pkg.JavaSecurity.bom com.apple.pkg.JavaMDNS.bom com.apple.pkg.JavaForMacOSX107.bom
+</code></pre></div><p>Last thing to do is remove the three .bom and three .plist files from: /private/var/db/receipts.</p>
+<p>You are done</p>
+<p>PS</p>
+<p>Two folder to worth looking at are:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/System/Library/Java/JavaVirtualMachines/
+/Library/Java/JavaVirtualMachines/
+</code></pre></div>
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-02-02</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://loessl.org/categories/computer">computer</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://loessl.org/tags/apple">#apple</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/mac">#mac</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/application">#application</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/java">#java</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/lsbom">#lsbom</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/pkg">#pkg</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/pkgutil">#pkgutil</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/plist">#plist</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/software">#software</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/oracle">#oracle</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Christopher Loessl, 2021<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme Sibuna, based on <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+</p>
+
+            
+        </footer>
+    </div>
+</body>
+</html>

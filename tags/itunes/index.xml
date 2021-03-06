@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iTunes on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/itunes/</link>
+    <description>~/christopher.loessl (iTunes)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Feb 2013 18:27:28 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/itunes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iTunes: sort albums by year instead of name</title>
+      <link>https://loessl.org/posts/itunes-sort-albums-by-year/</link>
+      <pubDate>Wed, 06 Feb 2013 18:27:28 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/itunes-sort-albums-by-year/</guid>
+      <description>&lt;p&gt;By default iTunes sorts albums by name instead of year for whatever reason.&lt;/p&gt;
+&lt;p&gt;Anyway with&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⌘j&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;you can set the sorting to year.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

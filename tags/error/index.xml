@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>error on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/error/</link>
+    <description>~/christopher.loessl (error)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Aug 2013 14:39:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/error/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>cURL and Error Codes</title>
+      <link>https://loessl.org/posts/curl-and-error-codes/</link>
+      <pubDate>Mon, 19 Aug 2013 14:39:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/curl-and-error-codes/</guid>
+      <description>&lt;p&gt;So brew threw this at me this morning&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl: &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;56&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; SSL read: error:00000000:lib&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;:func&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;:reason&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;, errno &lt;span style=&#34;color:#ae81ff&#34;&gt;54&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This error code clearly states&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define X509_V_ERR_CRL_PATH_VALIDATION_ERROR 54
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Which is actually not interesting&amp;hellip; but error code #50 is&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;/* The application is not happy */&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#define X509_V_ERR_APPLICATION_VERIFICATION 50
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://cvs.openssl.org/fileview?f=openssl/crypto/x509/x509_vfy.h&amp;amp;v=1.67.2.3.4.4&#34;&gt;Source&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

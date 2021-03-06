@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>console on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/console/</link>
+    <description>~/christopher.loessl (console)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Dec 2013 20:02:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/console/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mdfind &amp; mdls &amp; Spotlight</title>
+      <link>https://loessl.org/posts/mdfind-mdls-spotlight/</link>
+      <pubDate>Fri, 27 Dec 2013 20:02:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/mdfind-mdls-spotlight/</guid>
+      <description>&lt;p&gt;Searching for files with Spotlight is awesome and you can actually use the power of Spotlight even in the console. But first let me show you some nice features of Spotlight.&lt;/p&gt;
+&lt;h2 id=&#34;spotlight&#34;&gt;Spotlight&lt;/h2&gt;
+&lt;p&gt;Searching for all images that contain &lt;code&gt;me&lt;/code&gt;, are of kind image and were taken with flash:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind kind:image flash:1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Spotlight supports a whole lot of these search fields like, duration, pixel height, width, last opened, ISO speed, aperture, exposure time and so forth for a full list check this &lt;a href=&#34;http://hints.macworld.com/dlfiles/spotlight_cmds.pdf&#34;&gt;PDF&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;mdfind&#34;&gt;mdfind&lt;/h2&gt;
+&lt;p&gt;Now let’s move over to the console. Here you can do this cool stuff with a tool called &lt;code&gt;mdfind&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Let’s find all audio files that are longer than 10 minutes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind -interpret &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;duration:&amp;gt;=600 kind:music&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;-interpret&lt;/code&gt; interprets the search string as if you typed it into Spotlight. &lt;code&gt;mdfind&lt;/code&gt; supports another mode in which you can search on fields of the meta information directly.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind -literal &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;kMDItemDurationSeconds &amp;gt; 600 &amp;amp;&amp;amp; kMDItemContentTypeTree == public.audio&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;All mp3s that are longer than 10 minutes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;kMDItemDurationSeconds &amp;gt; 600 &amp;amp;&amp;amp; kMDItemKind = &amp;#34;MPEG Audio Layer 3&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;All &lt;a href=&#34;https://atp.fm&#34;&gt;ATP&lt;/a&gt; podcasts:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;(kMDItemAuthors == &amp;#34;atp&amp;#34;cdw)&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;cdw stands for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ignore case&lt;/li&gt;
+&lt;li&gt;ignore diacritical&lt;/li&gt;
+&lt;li&gt;word based&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All by the &lt;a href=&#34;http://5by5.tv&#34;&gt;5by5&lt;/a&gt; network&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;kMDItemAuthors = &amp;#34;*5by5.tv*&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Both are of course possible in Spotlight as well by simply searching for:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;author:atp
+author:5by5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Find all pictures taken with an iPhone 4S on the last day of the year 2011 and the first day of 2012. The range includes the from date but not the until date.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdfind &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;kind:image created:31/12/11-2/1/12 model:&amp;#34;iPhone 4S&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;mdls&#34;&gt;mdls&lt;/h2&gt;
+&lt;p&gt;How to figure out these strange looking search fields, that’s where &lt;code&gt;mdls&lt;/code&gt; comes into play.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdls &amp;lt;file&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Prints out all meta information fields for that file. With &lt;code&gt;mdfind&lt;/code&gt; you can then search for those fields.&lt;/p&gt;
+&lt;p&gt;If you are curious about all possible field values you can get them with&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdimport -X
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mdimport -A
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Be warned, it is a lot of information.&lt;/p&gt;
+&lt;h2 id=&#34;final-note&#34;&gt;Final note&lt;/h2&gt;
+&lt;p&gt;It’s worth having a look at the man page of these commands and the help provided with &lt;code&gt;mdfind -h&lt;/code&gt; because the information is not consistent. For example the man page doesn’t tell you about the &lt;code&gt;-s&lt;/code&gt; flag which brings smart folders to the command line.&lt;/p&gt;
+&lt;p&gt;And for the curious how I came across &lt;code&gt;mdfind&lt;/code&gt;. I stumbled upon that command while reading this &lt;a href=&#34;http://brettterpstra.com/2013/12/22/quick-tip-tag-filer-without-hazel/&#34;&gt;blog post&lt;/a&gt; by Brett Terpstra.&lt;/p&gt;
+&lt;p&gt;Sources:
+&lt;a href=&#34;http://hints.macworld.com/dlfiles/spotlight_cmds.pdf&#34;&gt;Spotlight reference&lt;/a&gt;
+&lt;a href=&#34;http://www.macdevcenter.com/pub/a/mac/2006/01/04/mdfind.html?page=1&#34;&gt;MacDevCenter about mdfind&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Script to automatically login to UpUnet-S at Uppsala University</title>
+      <link>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</link>
+      <pubDate>Tue, 26 Mar 2013 10:28:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</guid>
+      <description>&lt;p&gt;If you want a small bash, zsh or shell script that auto authenticates you with Uppsala Universities UpUnet-S you can use this simple one liner, just add our username and password and up you go&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl --data &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;action=Login&amp;#34;&lt;/span&gt; --data &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;usergroup=UpUnet-S&amp;#34;&lt;/span&gt; --data-urlencode &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;username=YOUR_USERNAME&amp;#34;&lt;/span&gt; --data-urlencode &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;password=YOUR_PASSWORD&amp;#34;&lt;/span&gt; https://netlogon.student.uu.se
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you are a student at SLU you can try to substitute &lt;code&gt;usergroup=UpUnet-S&lt;/code&gt; with &lt;code&gt;usergroup=SLU&lt;/code&gt; and it should work for you as well. It&amp;rsquo;s untested though.&lt;/p&gt;
+&lt;p&gt;There is even an iPhone app that I wrote for it: &lt;a href=&#34;https://github.com/hashier/UpUnet-S&#34;&gt;https://github.com/hashier/UpUnet-S&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

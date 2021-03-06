@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/windows/</link>
+    <description>~/christopher.loessl (windows)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Feb 2013 11:17:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FreeMind</title>
+      <link>https://loessl.org/posts/freemind/</link>
+      <pubDate>Wed, 20 Feb 2013 11:17:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/freemind/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://freemind.sourceforge.net/wiki/index.php/Main_Page&#34;&gt;FreeMind&lt;/a&gt; is a mind-mapping software I recently started to use and I like it, so far. But let the webpage talk for itself:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;FreeMind is a premier free mind-mapping software written in Java. The recent development has hopefully turned it into high productivity tool. We are proud that the operation and navigation of FreeMind is faster than that of MindManager because of one-click &amp;ldquo;fold / unfold&amp;rdquo; and &amp;ldquo;follow link&amp;rdquo; operations.&lt;/p&gt;
+&lt;p&gt;So you want to write a completely new metaphysics? Why don&amp;rsquo;t you use FreeMind? You have a tool at hand that remarkably resembles the tray slips of Robert Pirsig, described in his sequel to Zen and the Art of Motorcycle Maintenance called Lila. Do you want to refactor your essays in a similar way you would refactor software? Or do you want to keep personal knowledge base, which is easy to manage? Why don&amp;rsquo;t you try FreeMind? Do you want to prioritize, know where you are, where you&amp;rsquo;ve been and where you are heading, as Stephen Covey would advise you? Have you tried FreeMind to keep track of all the things that are needed for that?&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

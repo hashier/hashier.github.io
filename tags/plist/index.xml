@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>plist on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/plist/</link>
+    <description>~/christopher.loessl (plist)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Sep 2013 20:33:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/plist/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fixing TruePreview for Apple Mail 6.6</title>
+      <link>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-6/</link>
+      <pubDate>Mon, 23 Sep 2013 20:33:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-6/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;defaults write ~/Library/Mail/Bundles/TruePreview.mailbundle/Contents/Info SupportedPluginCompatibilityUUIDs -array-add DAFFB2B4-77BC-4C25-8CE1-2405E652D54B
+defaults write ~/Library/Mail/Bundles/TruePreview.mailbundle/Contents/Info SupportedPluginCompatibilityUUIDs -array-add 2B98D2DD-000B-4521-83EB-7BFCB9B161C8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you started mail before executing these two commands, make sure to copy the plugin from the Bundle &lt;code&gt;(Disbaled)&lt;/code&gt; folder back to the Bundle folder.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fixing TruePreview for Apple Mail 6.5</title>
+      <link>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-5/</link>
+      <pubDate>Sat, 27 Jul 2013 01:10:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-5/</guid>
+      <description>&lt;p&gt;If you started Mail and it tells you that your plugin got disabled you have to move the plugin first from the disabled folder back to the &amp;ldquo;normal&amp;rdquo; folder:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mv ~/Library/Mail/Bundles&lt;span style=&#34;color:#ae81ff&#34;&gt;\ \(&lt;/span&gt;Disabled&lt;span style=&#34;color:#ae81ff&#34;&gt;\)&lt;/span&gt;/TruePreview.mailbundle ~/Library/Mail/Bundles/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;after this you need to figure out the new UUIDs with these two commands:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;defaults read /Applications/Mail.app/Contents/Info.plist PluginCompatibilityUUID
+defaults read /System/Library/Frameworks/Message.framework/Resources/Info.plist PluginCompatibilityUUID
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;These two UUIDs need to go into this file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;~/Library/Mail/Bundles/TruePreview.mailbundle/Contents/Info.plist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can either do it with&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;defaults write ~/Library/Mail/Bundles/TruePreview.mailbundle/Contents/Info SupportedPluginCompatibilityUUIDs -array-add $UUID
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or any other text editor.&lt;/p&gt;
+&lt;p&gt;If the bundle is installed system wide of course you have to look into &lt;code&gt;/Library&lt;/code&gt; instead of &lt;code&gt;~/Library&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Source:
+&lt;a href=&#34;http://langui.sh/2009/11/09/fixing-growlmail-letterbox-for-mail-4-2/#fn-811-1&#34;&gt;Fixing GrowlMail for Mail 4.2 | langui.sh&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mission Control</title>
+      <link>https://loessl.org/posts/mission-control/</link>
+      <pubDate>Mon, 20 May 2013 18:29:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/mission-control/</guid>
+      <description>&lt;p&gt;To get mission control to pop up fast just write this to your plist file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;defaults write com.apple.dock expose-animation-duration -float 0.1; killall Dock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And with&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;defaults delete com.apple.dock expose-animation-duration; killall Dock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;you can get back to default setting.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mac OS X is updating your preferences in the background</title>
+      <link>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</link>
+      <pubDate>Tue, 07 May 2013 16:24:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</guid>
+      <description>&lt;p&gt;Recently I noticed that a config file of Safari gets updated every now and then even if Safari is not running.&lt;/p&gt;
+&lt;p&gt;The same goes for these configuration files:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/Users/hashier/Library/SyncedPreferences/com.apple.Safari.plist
+/Users/hashier/Library/SyncedPreferences/com.apple.syncedpreferences.plist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;These two files are not directly readable with e.g. &lt;code&gt;cat&lt;/code&gt; but you read them with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;defaults read /Users/hashier/Library/SyncedPreferences/com.apple.Safari.plist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can see all your open tabs on all your iPhone, iPad, iMac, MacBook etc devices that support Safari Cloud Tabs.&lt;/p&gt;
+&lt;p&gt;The other file reveals other system preferences that get synced over iCloud like some settings from Apple Mail. Just have a look and poke a bit around.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Safari search</title>
+      <link>https://loessl.org/posts/safari-search/</link>
+      <pubDate>Fri, 08 Feb 2013 14:42:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/safari-search/</guid>
+      <description>&lt;p&gt;To be able to use Safari&amp;rsquo;s search function you definitely should execute this cmd:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool FALSE
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As the name states it. Your search string doesn&amp;rsquo;t need to be at the beginning of the word.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Getting rid of Java on a Mac</title>
+      <link>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</link>
+      <pubDate>Sat, 02 Feb 2013 11:38:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</guid>
+      <description>&lt;p&gt;If you installed Java from Apple then you have the problem, that you have got a very old Version of Java.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ java -version
+java version &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1.6.0_37&amp;#34;&lt;/span&gt;Java&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;TM&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; SE Runtime Environment &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;build 1.6.0_37-b06-434-11M3909&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+Java HotSpot&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;TM&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; 64-Bit Server VM &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;build 20.12-b01-434, mixed mode&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Java get&amp;rsquo;s installed as a .pkg file and here is how to figure out which files this .pkg installed (unfortunately I haven&amp;rsquo;t found out where the pre- and postflight scripts are so you have to hope they don&amp;rsquo;t do anything nasty).&lt;/p&gt;
+&lt;p&gt;First things first; some essential Java files are on your system after a fresh installation, so we have to figure out what files are there from the beginning. To do this we have look into&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/Library/Receipts/InstallHistory.plist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Right on top you can see that the &amp;ldquo;OS X Installer&amp;rdquo; installed two packages called &amp;ldquo;JavaTools&amp;rdquo; and &amp;ldquo;JavaEssentials&amp;rdquo; so we don&amp;rsquo;t touch them.&lt;/p&gt;
+&lt;p&gt;Now we try to figure out all Java .pkgs that were installed:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;grep -i Java /Library/Receipts/InstallHistory.plist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So we know that we have to uninstall: &amp;ldquo;JavaForMacOSX107&amp;rdquo;, &amp;ldquo;JavaSecurity&amp;rdquo; and &amp;ldquo;JavaMDNS&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;To get to the files that where installed by those packages we call:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cd /private/var/db/receipts
+lsbom -s com.apple.pkg.JavaSecurity.bom com.apple.pkg.JavaMDNS.bom com.apple.pkg.JavaForMacOSX107.bom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Last thing to do is remove the three .bom and three .plist files from: /private/var/db/receipts.&lt;/p&gt;
+&lt;p&gt;You are done&lt;/p&gt;
+&lt;p&gt;PS&lt;/p&gt;
+&lt;p&gt;Two folder to worth looking at are:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/System/Library/Java/JavaVirtualMachines/
+/Library/Java/JavaVirtualMachines/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

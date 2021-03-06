@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>android on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/android/</link>
+    <description>~/christopher.loessl (android)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Sep 2013 17:38:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Send Broadcast Messages to Android</title>
+      <link>https://loessl.org/posts/send-broadcast-messages-to-android/</link>
+      <pubDate>Wed, 04 Sep 2013 17:38:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/send-broadcast-messages-to-android/</guid>
+      <description>&lt;p&gt;Faking a received SMS&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;adb shell am broadcast &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;a android&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;provider&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Telephony&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;SMS_RECEIVED&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>ActivityManager | isUserAMonkey()</title>
+      <link>https://loessl.org/posts/activitymanager-isuseramonkey/</link>
+      <pubDate>Thu, 15 Aug 2013 12:45:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/activitymanager-isuseramonkey/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;boolean&lt;/span&gt; isUserAMonkey
+
+Added in API level 8
+
+Returns &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; the user &lt;span style=&#34;color:#66d9ef&#34;&gt;interface&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;is&lt;/span&gt; currently being messed with by a monkey&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Update: There are more:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fyiWillBeAdvancedByHostKThx&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+
+Added in API level 11
+
+Called by an AppWidgetHost to indicate that it will be automatically advancing the views of &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt; AdapterViewFlipper by calling &lt;span style=&#34;color:#a6e22e&#34;&gt;advance&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt; at some point in the future&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; This allows AdapterViewFlipper to prepare by no longer Advancing its children&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;boolean&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;isUserAGoat&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+
+Added in API level 17
+
+Used to determine whether the user making &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt; call is subject to teleportations&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;
+
+Returns whether the user making &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt; call is a goat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;via &lt;a href=&#34;http://developer.android.com/reference/android/app/ActivityManager.html#isUserAMonkey&#34;&gt;ActivityManager | Android Developers&lt;/a&gt; &lt;a href=&#34;http://developer.android.com/reference/android/widget/AdapterViewFlipper.html#fyiWillBeAdvancedByHostKThx()&#34;&gt;and&lt;/a&gt; &lt;a href=&#34;http://developer.android.com/reference/android/os/UserManager.html#isUserAGoat()&#34;&gt;and&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>No Such File or Directory</title>
+      <link>https://loessl.org/posts/no-such-file-or-directory/</link>
+      <pubDate>Fri, 15 Mar 2013 02:58:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/no-such-file-or-directory/</guid>
+      <description>&lt;p&gt;bash: ./adb: No such file or directory&lt;/p&gt;
+&lt;p&gt;Fix:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;apt-get install ia32-libs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;via &lt;a href=&#34;http://ubuntuforums.org/showthread.php?t=1520697&#34;&gt;ubuntu bash: ./adb: No such file or directory&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Mavericks Wallpapers and Screen Saver Images - ~/christopher.loessl</title>
+<meta name="description" content="Private homepage of Christopher Loessl">
+
+<link rel="icon" type="image/x-icon" href="https://loessl.org/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://loessl.org/favicon.png">
+
+<link rel="stylesheet" href="https://loessl.org/css/style.css?rnd=1615051686" />
+
+<link rel="stylesheet" href="https://loessl.org/css/custom.css?rnd=1615051686">
+
+<meta property="og:title" content="Mavericks Wallpapers and Screen Saver Images" />
+<meta property="og:description" content="Have a folder with all the Mavericks wallpapers and screen saver images but without wasting a lot of space." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loessl.org/posts/mavericks-wallpapers-and-screen-saver-images/" />
+<meta property="article:published_time" content="2013-10-25T20:56:00+00:00" />
+<meta property="article:modified_time" content="2013-10-25T20:56:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mavericks Wallpapers and Screen Saver Images"/>
+<meta name="twitter:description" content="Have a folder with all the Mavericks wallpapers and screen saver images but without wasting a lot of space."/>
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">~/christopher.loessl</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://loessl.org/projects/" title="">~/projects</a>
+    
+    <a class="" href="https://loessl.org/posts/" title="">~/blog</a>
+    
+    <a class="" href="https://loessl.org/tags/" title="">~/tags</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Mavericks Wallpapers and Screen Saver Images</h1>
+        </header>
+        <div class="content">
+            <p>Have a folder with all the Mavericks wallpapers and screen saver images but without wasting a lot of space.</p>
+<p>So you can set it as the folder that should be used for randomly choosing a background plus you can delete the ones you don&rsquo;t want.</p>
+<p>So we generate a folder in which we link all the default Mavericks wallpapers + screen saver images and set this as our folder to chose background images from, here&rsquo;s the script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir folder
+cd folder
+find /Library/Desktop<span style="color:#ae81ff">\ </span>Pictures /Library/Screen<span style="color:#ae81ff">\ </span>Savers/Default<span style="color:#ae81ff">\ </span>Collections <span style="color:#ae81ff">\(</span> -name <span style="color:#e6db74">&#34;*.jpg&#34;</span> -or -name <span style="color:#e6db74">&#34;*.png&#34;</span> <span style="color:#ae81ff">\)</span> -and <span style="color:#ae81ff">\!</span> -path <span style="color:#e6db74">&#34;*.thumbnails*&#34;</span> -and <span style="color:#ae81ff">\!</span> -path <span style="color:#e6db74">&#34;*Solid Colors*&#34;</span> -exec ln -s <span style="color:#e6db74">&#34;{}&#34;</span> . <span style="color:#ae81ff">\;</span>
+</code></pre></div>
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-10-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://loessl.org/categories/computer">computer</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://loessl.org/tags/apple">#apple</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/mac">#mac</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/setup">#setup</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Christopher Loessl, 2021<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme Sibuna, based on <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+</p>
+
+            
+        </footer>
+    </div>
+</body>
+</html>

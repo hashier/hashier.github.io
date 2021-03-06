@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>index on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/index/</link>
+    <description>~/christopher.loessl (index)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Jun 2020 20:07:58 +0200</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/index/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Some of my projects</title>
+      <link>https://loessl.org/projects/</link>
+      <pubDate>Sat, 06 Jun 2020 20:07:58 +0200</pubDate>
+      
+      <guid>https://loessl.org/projects/</guid>
+      <description>&lt;p&gt;This is a small (incomplete) list of projects that I have started over the years and that have had some impact on me in one way or another.
+Starting with my very first successful C project that allowed transfer of files between a famous gateway router (&lt;a href=&#34;https://fli4l.de&#34;&gt;fli4l&lt;/a&gt;) and a local machine, flicp.&lt;/p&gt;
+&lt;p&gt;You can find most of my projects on &lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt; or by clicking on them below.&lt;/p&gt;
+&lt;h2 id=&#34;1-2-animationhttpshashiergithubio1-2-animation&#34;&gt;&lt;a href=&#34;https://hashier.github.io/1-2-animation/&#34;&gt;1-2-animation&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This command line tool generates Poemotion images.
+These are 2D images that provide an optical illusion of being 3D when viewed with a striped masked.&lt;/p&gt;
+&lt;p&gt;A video of this effect can be found on the project&amp;rsquo;s GitHub page.&lt;/p&gt;
+&lt;p&gt;Written in Go.&lt;/p&gt;
+&lt;h2 id=&#34;spotify-playlist-managerhttpshashiergithubiobucketify&#34;&gt;&lt;a href=&#34;https://hashier.github.io/Bucketify/&#34;&gt;Spotify Playlist Manager&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This app helps you to manage and filter your Spotify Playlist.&lt;/p&gt;
+&lt;p&gt;Whether you want to filtering your playlists by genre, country of artist or just simply randomise it, this app can do it for you.&lt;/p&gt;
+&lt;p&gt;Written in Objective-C with different Frameworks like CocoaLibSpotify and ENiOS.&lt;/p&gt;
+&lt;h2 id=&#34;idlesoundhttpshashiergithubioidlesound&#34;&gt;&lt;a href=&#34;https://hashier.github.io/idleSound/&#34;&gt;idleSound&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Automatically mute your Mac when it becomes idle or your screen locks.&lt;/p&gt;
+&lt;p&gt;Idle time as well as the screen-lock/screen-saver are individually adjustable.&lt;/p&gt;
+&lt;p&gt;Mac Menubar UI App, written in Objective-C.&lt;/p&gt;
+&lt;h2 id=&#34;sskeychainhttpsgithubcomsoffessskeychain&#34;&gt;&lt;a href=&#34;https://github.com/soffes/sskeychain/&#34;&gt;SSKeychain&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Objective-C wrapper around the iOS/OS X keychain.
+I wrote the unite testsfor almost the whole code base.&lt;/p&gt;
+&lt;p&gt;Written in Objective-C.&lt;/p&gt;
+&lt;h2 id=&#34;macfolkethttpshashiergithubiomacfolket&#34;&gt;&lt;a href=&#34;https://hashier.github.io/MacFolket/&#34;&gt;MacFolket&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MacFolket is a Swedish/English dictionary that is deeply integrated into OS~X.&lt;/p&gt;
+&lt;p&gt;After finding a dictionary database under the CC license, I decided to develop a program that facilitates reading Swedish webpages.&lt;/p&gt;
+&lt;p&gt;Implemented in XSLT (I started a Golang rewrite recently).&lt;/p&gt;
+&lt;h2 id=&#34;gimp-cuda-pluginhttpsgithubcomhashiergicu&#34;&gt;&lt;a href=&#34;https://github.com/hashier/gicu/&#34;&gt;GIMP CUDA-Plugin&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;GIMP plugin written to use GPU acceleration.&lt;/p&gt;
+&lt;p&gt;The plugin extends GIMP to apply various filters on images with the help of the graphics card.
+This is done by transfer of heavy calculations to the GPU.&lt;/p&gt;
+&lt;p&gt;As far as I know, this was the very first every written GIMP plugin
+that off loaded the heavy math calculations to the graphics card.&lt;/p&gt;
+&lt;p&gt;Written in C, X11, GTK+ and CUDA.&lt;/p&gt;
+&lt;h2 id=&#34;supersafthttpsgithubcomhashiersupersaft&#34;&gt;&lt;a href=&#34;https://github.com/hashier/SuperSaft/&#34;&gt;SuperSaft&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Implementation of the SAFT protocol.&lt;/p&gt;
+&lt;p&gt;It is fully functional and compatible with the original client and server.
+More information about the protocol can be found here in this pre-RFC:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://linux.math.tifr.res.in/manuals/text/sendfile.txt&#34;&gt;http://linux.math.tifr.res.in/manuals/text/sendfile.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Written in ANSI C.&lt;/p&gt;
+&lt;h2 id=&#34;flicphttpswwwfli4lde&#34;&gt;&lt;a href=&#34;https://www.fli4l.de/&#34;&gt;flicp&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;My initiation into the world of developing software.&lt;/p&gt;
+&lt;p&gt;fli4l.de is a Linux based ISDN-, DSL- and Ethernet-router.
+The communication with the system service utilized a special
+protocol thatwas only implemented in a program for Windows.
+I wrote flicp to be able to transfer files to and from Unix/Linux
+based systems to the service&lt;/p&gt;
+&lt;p&gt;Written in ANSI C.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

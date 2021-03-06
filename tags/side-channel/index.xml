@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>side-channel on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/side-channel/</link>
+    <description>~/christopher.loessl (side-channel)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Feb 2021 18:15:03 +0100</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/side-channel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TIL: Big Ben</title>
+      <link>https://loessl.org/posts/til-big-ben/</link>
+      <pubDate>Sun, 21 Feb 2021 18:15:03 +0100</pubDate>
+      
+      <guid>https://loessl.org/posts/til-big-ben/</guid>
+      <description>&lt;p&gt;An interesting side-channel attack—that the Britished used—during World War Two…&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;During World War Two, BBC News was broadcast to Nazi-occupied Europe. Each news programme opened with a live broadcast of Big Ben tolling the hour – the magical sound of freedom. Ingenious German physicists found a way to determine the weather conditions in London based on tiny differences in the tone of the broadcast ding-dongs. This information offered invaluable help to the Luftwaffe. When the British Secret Service discovered this, they replaced the live broadcast with a set recording of the famous clock.&lt;/p&gt;
+&lt;p&gt;— Sapiens: A Brief History of Humankind by Yuval Noah Harari&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

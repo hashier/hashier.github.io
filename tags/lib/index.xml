@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lib on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/lib/</link>
+    <description>~/christopher.loessl (lib)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Apr 2013 14:43:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/lib/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LD_PRELOAD and DYLD_INSERT_LIBRARIES</title>
+      <link>https://loessl.org/posts/ld_preload-and-dyld_insert_libraries/</link>
+      <pubDate>Thu, 25 Apr 2013 14:43:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/ld_preload-and-dyld_insert_libraries/</guid>
+      <description>&lt;p&gt;A simple LD_PRELOAD tutorial that works under Linux can be found &lt;a href=&#34;http://www.catonmat.net/blog/simple-ld-preload-tutorial/&#34;&gt;here&lt;/a&gt;. One that can be used under OS X you should also read &lt;a href=&#34;http://blog.client9.com/2012/06/ldpreload-on-mac-os-x.html&#34;&gt;this one&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

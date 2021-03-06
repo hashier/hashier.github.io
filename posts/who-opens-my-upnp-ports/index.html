@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Who opens my UPnP ports? - ~/christopher.loessl</title>
+<meta name="description" content="Private homepage of Christopher Loessl">
+
+<link rel="icon" type="image/x-icon" href="https://loessl.org/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://loessl.org/favicon.png">
+
+<link rel="stylesheet" href="https://loessl.org/css/style.css?rnd=1615051687" />
+
+<link rel="stylesheet" href="https://loessl.org/css/custom.css?rnd=1615051687">
+
+<meta property="og:title" content="Who opens my UPnP ports?" />
+<meta property="og:description" content="Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and instantly noticed that someone/something opened some ports in my router and forwarded them to my machine. So of course I wanted to know what&rsquo;s going on on my network." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loessl.org/posts/who-opens-my-upnp-ports/" />
+<meta property="article:published_time" content="2013-05-07T16:11:00+00:00" />
+<meta property="article:modified_time" content="2013-05-07T16:11:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Who opens my UPnP ports?"/>
+<meta name="twitter:description" content="Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and instantly noticed that someone/something opened some ports in my router and forwarded them to my machine. So of course I wanted to know what&rsquo;s going on on my network."/>
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">~/christopher.loessl</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://loessl.org/projects/" title="">~/projects</a>
+    
+    <a class="" href="https://loessl.org/posts/" title="">~/blog</a>
+    
+    <a class="" href="https://loessl.org/tags/" title="">~/tags</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Who opens my UPnP ports?</h1>
+        </header>
+        <div class="content">
+            <p>Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and instantly noticed that someone/something opened some ports in my router and forwarded them to my machine. So of course I wanted to know what&rsquo;s going on on my network.</p>
+<p>First idea &ldquo;wireshark&rdquo; but this only gives you information from which port these UPnP stuff goes, it doesn&rsquo;t tell you the application that initiated these packages. For the curious here is the <a href="http://wiki.wireshark.org/SSDP">filter</a> you can use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">udp.dstport <span style="color:#f92672">==</span> <span style="color:#ae81ff">1900</span> <span style="color:#f92672">&amp;&amp;</span> http <span style="color:#f92672">&amp;&amp;</span> ip.addr <span style="color:#f92672">==</span> 192.168.1.100
+</code></pre></div><p>UPnP uses the <a href="http://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol">SSDP</a> protocol which isn&rsquo;t implemented by wireshark but you can simply use the http protocol because SSDP is based on <a href="http://en.wikipedia.org/wiki/HTTPU">HTTPU</a> (yes, HTTPU).</p>
+<blockquote>
+<p>Imagine a picture that shows you that port 4500 and 5353 are open</p>
+</blockquote>
+<p>So port 4500 and 5353 (both UDP) are forwarded to my Mac but which software is behind this? Strangely</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsof -i :4500
+lsof -i :5353
+</code></pre></div><p>Booth show nothing&hellip; which means right now nothing is listening on those ports on my machine.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Let&rsquo;s see which &ldquo;normal&rdquo; services listen on those ports. Of course this is not 100 % certain since any program could listen on those ports.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ grep <span style="color:#ae81ff">4500</span> /etc/services
+ipsec-msft      4500/udp    <span style="color:#75715e"># Microsoft IPsec NAT-T</span>
+ipsec-msft      4500/tcp    <span style="color:#75715e"># Microsoft IPsec NAT-T</span>
+
+$ grep <span style="color:#ae81ff">5353</span> /etc/services
+<span style="color:#75715e">#               5353        Unassigned</span>
+mdns            5353/udp    <span style="color:#75715e"># Multicast DNS</span>
+mdns            5353/tcp    <span style="color:#75715e"># Multicast DNS</span>
+</code></pre></div><p>I didn&rsquo;t do anything with VPN or IPsec so I started googling and found this <a href="http://support.apple.com/kb/TS1629">Apple KB entry</a> which explained to me which services forward those ports and apparently it&rsquo;s just &ldquo;Back to My Mac&rdquo; and some &ldquo;Bonjour&rdquo; stuff.</p>
+<p>For the case that the service is still up and running on the port the <code>lsof</code> output would look something like this, where you can easily read the <code>command</code> and <code>PID</code> that is listening on a given port:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ lsof -i :32323
+COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+Python  <span style="color:#ae81ff">21495</span> hashier    3u  IPv4 0x23f1441a8dbc1b79      0t0  TCP *:32323 <span style="color:#f92672">(</span>LISTEN<span style="color:#f92672">)</span>
+</code></pre></div><p>In this case I just started a python script which binds to port <code>32323</code>.</p>
+<p>Some other quick tips of <code>lsof</code>.</p>
+<p>Print established TCP connections:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsof -P -iTCP -sTCP:ESTABLISHED
+</code></pre></div><p>Print listening TCP connections:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ lsof -P -iTCP -sTCP:LISTEN
+...
+Python    <span style="color:#ae81ff">21495</span> hashier    3u  IPv4 0x23f1441a8dbc1b79      0t0  TCP *:32323 <span style="color:#f92672">(</span>LISTEN<span style="color:#f92672">)</span>
+...
+</code></pre></div><p>and here we can as well see the listening python TCP server on <code>32323</code>. This is a very quick way to find out all the services that are waiting for a connection.</p>
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-05-07</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://loessl.org/categories/computer">computer</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://loessl.org/tags/apple">#apple</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/application">#application</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/linux">#linux</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/lsof">#lsof</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/mac">#mac</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/network">#network</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/port">#port</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/software">#software</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/strange">#strange</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/sysadmin">#sysadmin</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/tcp">#tcp</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/tip">#tip</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/tool">#tool</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/udp">#udp</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/upnp">#upnp</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Christopher Loessl, 2021<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme Sibuna, based on <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+</p>
+
+            
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>asm on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/asm/</link>
+    <description>~/christopher.loessl (asm)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Oct 2013 13:30:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/asm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deep Wizardry: Stack Unwinding</title>
+      <link>https://loessl.org/posts/deep-wizardry-stack-unwinding/</link>
+      <pubDate>Wed, 16 Oct 2013 13:30:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/deep-wizardry-stack-unwinding/</guid>
+      <description>&lt;p&gt;Nice blog post about &lt;a href=&#34;http://blog.reverberate.org/2013/05/deep-wizardry-stack-unwinding.html&#34;&gt;stack unwinding&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

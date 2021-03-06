@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>oracle on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/oracle/</link>
+    <description>~/christopher.loessl (oracle)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Feb 2013 00:18:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://loessl.org/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to fix slow Ubuntu in VirtualBox</title>
+      <link>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</link>
+      <pubDate>Sat, 23 Feb 2013 00:18:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;apt-get install linux-headers-generic build-essential 2. compizconfig-settings-manager dkms&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install the guest drivers&lt;/li&gt;
+&lt;li&gt;Open ccsm (from the console) and disable &amp;ldquo;Framebuffer object&amp;rdquo; option under &amp;ldquo;OpenGL&amp;rdquo; (be prepared that you won&amp;rsquo;t be able to read much, but if you activate 3D first, then it will be even worse)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;shutdown -h now&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Activate 3D acceleration in VirtualBox&lt;/li&gt;
+&lt;li&gt;power on&lt;/li&gt;
+&lt;li&gt;done.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/usr/lib/nux/unity_support_test -p
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Source:
+&lt;a href=&#34;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&#34;&gt;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Java, the hopefully last round</title>
+      <link>https://loessl.org/posts/java-hopefully-last-round/</link>
+      <pubDate>Thu, 07 Feb 2013 18:37:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/java-hopefully-last-round/</guid>
+      <description>&lt;p&gt;I had a fresh installation of Mountain Lion and installed Java 7. The problem was when I tried to run StandAloneJava applications ML always asked me whether it should install Java 6. Apparently a lot of people have this problem and here is the solution how to solve it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo mkdir /System/Library/Java/JavaVirtualMachines
+sudo ln -s /Library/Java/JavaVirtualMachines/jdk_VERSION /System/Library/Java/JavaVirtualMachines/1.6.0.jdk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;of course you have to amend VERSION to match your Java 7 version.&lt;/p&gt;
+&lt;p&gt;Caveat:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Watch out for doing the symlink&amp;hellip; Apple released 1.6 security update recently. If you apply this update from Apple, the symlink seems to fool the update and installs 1.6 update into where the symlink points to, i.e. Oracle&amp;rsquo;s 1.7.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://apple.stackexchange.com/questions/58203/mountain-lion-with-java-7-only&#34;&gt;– Jonah Tsai Jan 19 at 18:04&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java, a new round. Round 7</title>
+      <link>https://loessl.org/posts/java-a-new-round-round-7/</link>
+      <pubDate>Mon, 04 Feb 2013 13:10:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/java-a-new-round-round-7/</guid>
+      <description>&lt;p&gt;After fighting against Java 6 from Apple I decided to install Java 7 and have a look into that. To say the least, I still feel quite nauseous so I keep this EXTREMELY short.&lt;/p&gt;
+&lt;p&gt;To get rid of Java 7 from Oracle you have to do this:&lt;/p&gt;
+&lt;h2 id=&#34;remove-jre&#34;&gt;Remove JRE&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate to &lt;code&gt;/Library/Internet Plug-Ins&lt;/code&gt; and remove &lt;code&gt;the JavaAppletPlugin.plugin&lt;/code&gt; directory&lt;/li&gt;
+&lt;li&gt;Navigate to &lt;code&gt;/Library/PreferencePanes&lt;/code&gt; and remove &lt;code&gt;JavaControlPanel.prefpane&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;remove-jdk&#34;&gt;Remove JDK&lt;/h2&gt;
+&lt;p&gt;Navigate to &lt;code&gt;/Library/Java/JavaVirtualMachines&lt;/code&gt; and remove the directory of the &lt;code&gt;JDK&lt;/code&gt; you want to get rid of.&lt;/p&gt;
+&lt;h2 id=&#34;removing-the-pref-panel&#34;&gt;Removing the Pref-Panel&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo rm -rf /Library/PreferencePanes/JavaControlPanel.prefpane
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;sources&#34;&gt;Sources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jre.html&#34;&gt;http://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jre.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jdk.html&#34;&gt;http://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jdk.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Getting rid of Java on a Mac</title>
+      <link>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</link>
+      <pubDate>Sat, 02 Feb 2013 11:38:00 +0000</pubDate>
+      
+      <guid>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</guid>
+      <description>&lt;p&gt;If you installed Java from Apple then you have the problem, that you have got a very old Version of Java.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ java -version
+java version &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1.6.0_37&amp;#34;&lt;/span&gt;Java&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;TM&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; SE Runtime Environment &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;build 1.6.0_37-b06-434-11M3909&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+Java HotSpot&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;TM&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; 64-Bit Server VM &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;build 20.12-b01-434, mixed mode&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Java get&amp;rsquo;s installed as a .pkg file and here is how to figure out which files this .pkg installed (unfortunately I haven&amp;rsquo;t found out where the pre- and postflight scripts are so you have to hope they don&amp;rsquo;t do anything nasty).&lt;/p&gt;
+&lt;p&gt;First things first; some essential Java files are on your system after a fresh installation, so we have to figure out what files are there from the beginning. To do this we have look into&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/Library/Receipts/InstallHistory.plist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Right on top you can see that the &amp;ldquo;OS X Installer&amp;rdquo; installed two packages called &amp;ldquo;JavaTools&amp;rdquo; and &amp;ldquo;JavaEssentials&amp;rdquo; so we don&amp;rsquo;t touch them.&lt;/p&gt;
+&lt;p&gt;Now we try to figure out all Java .pkgs that were installed:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;grep -i Java /Library/Receipts/InstallHistory.plist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So we know that we have to uninstall: &amp;ldquo;JavaForMacOSX107&amp;rdquo;, &amp;ldquo;JavaSecurity&amp;rdquo; and &amp;ldquo;JavaMDNS&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;To get to the files that where installed by those packages we call:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cd /private/var/db/receipts
+lsbom -s com.apple.pkg.JavaSecurity.bom com.apple.pkg.JavaMDNS.bom com.apple.pkg.JavaForMacOSX107.bom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Last thing to do is remove the three .bom and three .plist files from: /private/var/db/receipts.&lt;/p&gt;
+&lt;p&gt;You are done&lt;/p&gt;
+&lt;p&gt;PS&lt;/p&gt;
+&lt;p&gt;Two folder to worth looking at are:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;/System/Library/Java/JavaVirtualMachines/
+/Library/Java/JavaVirtualMachines/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

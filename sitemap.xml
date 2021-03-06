@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://loessl.org/categories/</loc>
+    <lastmod>2021-02-21T18:15:03+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/categories/computer/</loc>
+    <lastmod>2021-02-21T18:15:03+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/</loc>
+    <lastmod>2021-02-21T18:15:03+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/privacy/</loc>
+    <lastmod>2021-02-21T18:15:03+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/security/</loc>
+    <lastmod>2021-02-21T18:15:03+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/side-channel/</loc>
+    <lastmod>2021-02-21T18:15:03+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/</loc>
+    <lastmod>2021-02-21T18:15:03+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/til/</loc>
+    <lastmod>2021-02-21T18:15:03+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/til-big-ben/</loc>
+    <lastmod>2021-02-21T18:15:03+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/shell/</loc>
+    <lastmod>2020-06-17T22:16:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/til-mac-in-place-sed/</loc>
+    <lastmod>2020-06-17T22:16:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/index/</loc>
+    <lastmod>2020-06-06T20:07:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/projects/</loc>
+    <lastmod>2020-06-06T20:07:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/static-page/</loc>
+    <lastmod>2020-06-06T20:07:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/</loc>
+    <lastmod>2020-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/apple/</loc>
+    <lastmod>2014-03-04T01:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/block/</loc>
+    <lastmod>2014-03-04T01:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/blocks-closures-on-stack-and-heap/</loc>
+    <lastmod>2014-03-04T01:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/clang/</loc>
+    <lastmod>2014-03-04T01:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/closure/</loc>
+    <lastmod>2014-03-04T01:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/development/</loc>
+    <lastmod>2014-03-04T01:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/gcc/</loc>
+    <lastmod>2014-03-04T01:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/objc/</loc>
+    <lastmod>2014-03-04T01:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/pointer/</loc>
+    <lastmod>2014-03-04T01:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/property-strong-and-copy/</loc>
+    <lastmod>2014-02-25T22:36:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/ios/</loc>
+    <lastmod>2014-02-09T15:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/mac/</loc>
+    <lastmod>2014-02-09T15:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/multiple-xcode-targets-and-tests/</loc>
+    <lastmod>2014-02-09T15:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/xcode/</loc>
+    <lastmod>2014-02-09T15:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/console/</loc>
+    <lastmod>2013-12-27T20:02:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/mdfind-mdls-spotlight/</loc>
+    <lastmod>2013-12-27T20:02:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/tip/</loc>
+    <lastmod>2013-12-27T20:02:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/tool/</loc>
+    <lastmod>2013-12-27T20:02:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/i10n/</loc>
+    <lastmod>2013-12-27T18:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/i18n/</loc>
+    <lastmod>2013-12-27T18:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/ios-localization-with-ilocalize/</loc>
+    <lastmod>2013-12-27T18:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/osx/</loc>
+    <lastmod>2013-12-27T18:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/git/</loc>
+    <lastmod>2013-11-28T23:51:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/git-diff-and-objective-c/</loc>
+    <lastmod>2013-11-28T23:51:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/mavericks-wallpapers-and-screen-saver-images/</loc>
+    <lastmod>2013-10-25T20:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/setup/</loc>
+    <lastmod>2013-10-25T20:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/asm/</loc>
+    <lastmod>2013-10-16T13:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/deep-wizardry-stack-unwinding/</loc>
+    <lastmod>2013-10-16T13:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/brendans-blog-the-use-method-mac-os-x-performance-checklist/</loc>
+    <lastmod>2013-10-06T17:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/dtrace/</loc>
+    <lastmod>2013-10-06T17:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/fix/</loc>
+    <lastmod>2013-09-23T20:33:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-6/</loc>
+    <lastmod>2013-09-23T20:33:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/mail/</loc>
+    <lastmod>2013-09-23T20:33:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/plist/</loc>
+    <lastmod>2013-09-23T20:33:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/android/</loc>
+    <lastmod>2013-09-04T17:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/google/</loc>
+    <lastmod>2013-09-04T17:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/send-broadcast-messages-to-android/</loc>
+    <lastmod>2013-09-04T17:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/common-h/</loc>
+    <lastmod>2013-09-04T15:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/automatically-increment-build-number-cfbundleversion/</loc>
+    <lastmod>2013-08-21T19:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/coding/</loc>
+    <lastmod>2013-08-21T19:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/software/</loc>
+    <lastmod>2013-08-21T19:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/application/</loc>
+    <lastmod>2013-08-19T14:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/brew/</loc>
+    <lastmod>2013-08-19T14:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/code/</loc>
+    <lastmod>2013-08-19T14:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/curl/</loc>
+    <lastmod>2013-08-19T14:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/curl-and-error-codes/</loc>
+    <lastmod>2013-08-19T14:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/error/</loc>
+    <lastmod>2013-08-19T14:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/funny/</loc>
+    <lastmod>2013-08-19T14:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/ssl/</loc>
+    <lastmod>2013-08-19T14:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/activitymanager-isuseramonkey/</loc>
+    <lastmod>2013-08-15T12:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/api/</loc>
+    <lastmod>2013-08-15T12:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/config/</loc>
+    <lastmod>2013-07-27T01:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-5/</loc>
+    <lastmod>2013-07-27T01:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/improving-the-security-of-your-ssh-private-key-files-martin-kleppmanns-blog/</loc>
+    <lastmod>2013-07-03T17:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/key/</loc>
+    <lastmod>2013-07-03T17:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/ssh/</loc>
+    <lastmod>2013-07-03T17:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/hot-corners/</loc>
+    <lastmod>2013-06-26T16:07:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/git-r-grep/</loc>
+    <lastmod>2013-06-21T02:15:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/finding-the-right-latex-packages/</loc>
+    <lastmod>2013-05-22T13:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/installation/</loc>
+    <lastmod>2013-05-22T13:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/latex/</loc>
+    <lastmod>2013-05-22T13:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/linux/</loc>
+    <lastmod>2013-05-22T13:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/writing/</loc>
+    <lastmod>2013-05-22T13:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/mission-control/</loc>
+    <lastmod>2013-05-20T18:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/productivity/</loc>
+    <lastmod>2013-05-20T18:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/cloud/</loc>
+    <lastmod>2013-05-07T16:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/icloud/</loc>
+    <lastmod>2013-05-07T16:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</loc>
+    <lastmod>2013-05-07T16:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/setting/</loc>
+    <lastmod>2013-05-07T16:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/sync/</loc>
+    <lastmod>2013-05-07T16:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/system/</loc>
+    <lastmod>2013-05-07T16:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/lsof/</loc>
+    <lastmod>2013-05-07T16:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/network/</loc>
+    <lastmod>2013-05-07T16:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/port/</loc>
+    <lastmod>2013-05-07T16:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/strange/</loc>
+    <lastmod>2013-05-07T16:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/sysadmin/</loc>
+    <lastmod>2013-05-07T16:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/tcp/</loc>
+    <lastmod>2013-05-07T16:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/udp/</loc>
+    <lastmod>2013-05-07T16:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/upnp/</loc>
+    <lastmod>2013-05-07T16:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/who-opens-my-upnp-ports/</loc>
+    <lastmod>2013-05-07T16:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/dynamic/</loc>
+    <lastmod>2013-04-25T14:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/ld_preload-and-dyld_insert_libraries/</loc>
+    <lastmod>2013-04-25T14:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/lib/</loc>
+    <lastmod>2013-04-25T14:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/shared/</loc>
+    <lastmod>2013-04-25T14:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</loc>
+    <lastmod>2013-03-26T10:28:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/uu/</loc>
+    <lastmod>2013-03-26T10:28:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/apt/</loc>
+    <lastmod>2013-03-15T02:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/no-such-file-or-directory/</loc>
+    <lastmod>2013-03-15T02:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/ubuntu/</loc>
+    <lastmod>2013-03-15T02:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</loc>
+    <lastmod>2013-02-23T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/oracle/</loc>
+    <lastmod>2013-02-23T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/virtualbox/</loc>
+    <lastmod>2013-02-23T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/freemind/</loc>
+    <lastmod>2013-02-20T11:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/freemind/</loc>
+    <lastmod>2013-02-20T11:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/java/</loc>
+    <lastmod>2013-02-20T11:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/mind-mapping/</loc>
+    <lastmod>2013-02-20T11:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/windows/</loc>
+    <lastmod>2013-02-20T11:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/safari-search/</loc>
+    <lastmod>2013-02-08T14:42:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/how-to-run-freemind-on-ml/</loc>
+    <lastmod>2013-02-07T20:05:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/java-hopefully-last-round/</loc>
+    <lastmod>2013-02-07T18:37:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/itunes/</loc>
+    <lastmod>2013-02-06T18:27:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/itunes-sort-albums-by-year/</loc>
+    <lastmod>2013-02-06T18:27:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/shortcut/</loc>
+    <lastmod>2013-02-06T18:27:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/fingerprint/</loc>
+    <lastmod>2013-02-05T16:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/ssh-key-length-and-fpr/</loc>
+    <lastmod>2013-02-05T16:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/java-a-new-round-round-7/</loc>
+    <lastmod>2013-02-04T13:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</loc>
+    <lastmod>2013-02-02T11:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/lsbom/</loc>
+    <lastmod>2013-02-02T11:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/pkg/</loc>
+    <lastmod>2013-02-02T11:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/pkgutil/</loc>
+    <lastmod>2013-02-02T11:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/install/</loc>
+    <lastmod>2013-02-01T21:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/setting-up-a-new-mac/</loc>
+    <lastmod>2013-02-01T21:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/posts/challenger/</loc>
+    <lastmod>2013-01-28T16:31:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/nasa/</loc>
+    <lastmod>2013-01-28T16:31:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/categories/science/</loc>
+    <lastmod>2013-01-28T16:31:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/tags/space/</loc>
+    <lastmod>2013-01-28T16:31:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://loessl.org/series/</loc>
+  </url>
+  
+</urlset>

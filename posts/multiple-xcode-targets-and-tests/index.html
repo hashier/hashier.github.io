@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Multiple Xcode Targets and Tests - ~/christopher.loessl</title>
+<meta name="description" content="Private homepage of Christopher Loessl">
+
+<link rel="icon" type="image/x-icon" href="https://loessl.org/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://loessl.org/favicon.png">
+
+<link rel="stylesheet" href="https://loessl.org/css/style.css?rnd=1615051686" />
+
+<link rel="stylesheet" href="https://loessl.org/css/custom.css?rnd=1615051686">
+
+<meta property="og:title" content="Multiple Xcode Targets and Tests" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://loessl.org/posts/multiple-xcode-targets-and-tests/" />
+<meta property="article:published_time" content="2014-02-09T15:58:00+00:00" />
+<meta property="article:modified_time" content="2014-02-09T15:58:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Multiple Xcode Targets and Tests"/>
+<meta name="twitter:description" content=""/>
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">~/christopher.loessl</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://loessl.org/projects/" title="">~/projects</a>
+    
+    <a class="" href="https://loessl.org/posts/" title="">~/blog</a>
+    
+    <a class="" href="https://loessl.org/tags/" title="">~/tags</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Multiple Xcode Targets and Tests</h1>
+        </header>
+        <div class="content">
+            <ul>
+<li>Go to targets -&gt; Select target -&gt; Duplicate (I duplicated a target which name was “tests”)</li>
+<li>Rename the target to whatever you want (I use “Tooth” here)</li>
+<li>Go to “Manage Schemes” and delete the scheme with the old name (“tests copy”) and click on “Autocreate Schemes Now”</li>
+<li>Rename the “tests copy-Info.plist” to “Tooth-Info.plist” in your “Project Navigator” (or the path where Xcode can find the .plist file)</li>
+<li>(If you need a different .pch file, you have to duplicate it in finder and add it to your project, otherwise “Tooth” will use the same .pch file as “tests”)</li>
+<li>Go to the “Build Settings” of your new target and make sure that you check the following key value pairs:
+<ul>
+<li>Info.plist File: Change from “tests copy-Info.plist” to “Tooth-Info.plist”</li>
+<li>Product Name: Change from “tests copy” to “$(TARGET_NAME)”</li>
+<li>Prefix Header: Change accordingly if you need a different .pch file and created it earlier</li>
+<li>Preprocessor Macros
+<ul>
+<li>Add something like “TOOTH=1” to your “Tooth” target and “TESTS=1” to your “tests” target (in Debug and Release)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>If your project doesn’t build (or link) any more now, just reopen Xcode.</p>
+<p>This is how you can decide in which target you are inside your code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">#if TESTS
+</span><span style="color:#75715e"></span>    NSLog(<span style="color:#e6db74">@&#34;I&#39;m the tests target&#34;</span>);
+<span style="color:#75715e">#elif TOOTH
+</span><span style="color:#75715e"></span>    NSLog(<span style="color:#e6db74">@&#34;I&#39;m the Tooth target&#34;</span>);
+<span style="color:#75715e">#else
+</span><span style="color:#75715e"></span>    NSLog(<span style="color:#e6db74">@&#34;Error: You added a new target and didn&#39;t set the Macros&#34;</span>);
+<span style="color:#75715e">#endif
+</span></code></pre></div><h2 id="adding-a-new-test-target">Adding a new test target</h2>
+<p>Of course you want to be able to write tests for your new target as well.</p>
+<ul>
+<li>Go to the “Test Navigator”</li>
+<li>On the bottom left click the “+” sign and chose “New Test Target…”</li>
+<li>Select the Target you want to build tests for</li>
+<li>WAIT! Don’t worry that you don’t see any tests for the new test target, just wait…. until it’s there, or restart Xcode</li>
+<li>Right click on it and enable your test target</li>
+<li>Go to “Build Settings” and select your tests target
+<ul>
+<li>Framework Search Path: Add “$(SRCROOT)” otherwise you will get errors with Frameworks like Crashlytics that it can’t find #import “Crashlytics/Crashlytics.h” (I add this as a project key value so I don’t have to do it for every new test target)</li>
+</ul>
+</li>
+<li>Start writing tests (:</li>
+</ul>
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-02-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://loessl.org/categories/computer">computer</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://loessl.org/tags/apple">#apple</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/development">#development</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/ios">#iOS</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/mac">#mac</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/objc">#ObjC</a></li>
+                    
+                        <li><a href="https://loessl.org/tags/xcode">#Xcode</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Christopher Loessl, 2021<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme Sibuna, based on <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+</p>
+
+            
+        </footer>
+    </div>
+</body>
+</html>
