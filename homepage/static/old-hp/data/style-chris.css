@@ -314,7 +314,7 @@ li.closed {
 }
 
 pre.pre {
-  font-family: mono;
+  font-family: mono, Monospace;
   padding: 0.5em;
   border: 1px dashed #a36d47;
   color: Black;
@@ -324,7 +324,7 @@ pre.pre {
 }
 
 pre.code {
-  font-family: mono;
+  font-family: mono, Monospace;
   padding: 0.5em;
   border: 1px dashed #a36d47;
   color: Black;
@@ -334,6 +334,6 @@ pre.code {
 }
 
 code {
-  font-family: mono;
+  font-family: mono, Monospace;
   font-weight: normal;
 }
