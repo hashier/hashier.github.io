@@ -3,27 +3,13 @@
   <channel>
     <title>Categories on ~/christopher.loessl</title>
     <link>https://loessl.org/categories/</link>
-    <description>Recent content in Categories on ~/christopher.loessl</description>
+    <description>~/christopher.loessl (Categories)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Feb 2021 18:15:03 +0100</lastBuildDate><atom:link href="https://loessl.org/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>computer</title>
-      <link>https://loessl.org/categories/computer/</link>
-      <pubDate>Sun, 21 Feb 2021 18:15:03 +0100</pubDate>
-      
-      <guid>https://loessl.org/categories/computer/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Sun, 21 Feb 2021 18:15:03 +0100</lastBuildDate>
     
-    <item>
-      <title>science</title>
-      <link>https://loessl.org/categories/science/</link>
-      <pubDate>Mon, 28 Jan 2013 16:31:00 +0200</pubDate>
-      
-      <guid>https://loessl.org/categories/science/</guid>
-      <description></description>
-    </item>
+    <atom:link href="https://loessl.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    
     
   </channel>
 </rss>
