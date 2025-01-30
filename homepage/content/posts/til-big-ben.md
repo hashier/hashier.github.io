@@ -12,7 +12,7 @@ aliases:
 draft: false
 ---
 
-An interesting side-channel attack—that the Britished used—during World War Two…
+An interesting side-channel attack—that the Germans used—during World War Two…
 
 <!--more-->
 
