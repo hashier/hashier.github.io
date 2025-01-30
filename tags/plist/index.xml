@@ -1,54 +1,65 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Plist on ~/christopher.loessl</title>
+    <title>plist on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/plist/</link>
-    <description>Recent content in Plist on ~/christopher.loessl</description>
-    <generator>Hugo</generator>
+    <description>Recent content in plist on ~/christopher.loessl</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Sep 2013 20:33:00 +0000</lastBuildDate>
-    <atom:link href="https://loessl.org/tags/plist/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Sep 2013 20:33:00 +0000</lastBuildDate><atom:link href="https://loessl.org/tags/plist/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fixing TruePreview for Apple Mail 6.6</title>
       <link>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-6/</link>
       <pubDate>Mon, 23 Sep 2013 20:33:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-6/</guid>
       <description></description>
     </item>
+    
     <item>
       <title>Fixing TruePreview for Apple Mail 6.5</title>
       <link>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-5/</link>
       <pubDate>Sat, 27 Jul 2013 01:10:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-5/</guid>
       <description>&lt;p&gt;If you started Mail and it tells you that your plugin got disabled you have to move the plugin first from the disabled folder back to the &amp;ldquo;normal&amp;rdquo; folder:&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Mission Control</title>
       <link>https://loessl.org/posts/mission-control/</link>
       <pubDate>Mon, 20 May 2013 18:29:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/mission-control/</guid>
       <description>&lt;p&gt;To get mission control to pop up fast just write this to your plist file:&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Mac OS X is updating your preferences in the background</title>
       <link>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</link>
       <pubDate>Tue, 07 May 2013 16:24:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</guid>
       <description>&lt;p&gt;Recently I noticed that a config file of Safari gets updated every now and then even if Safari is not running.&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Safari search</title>
       <link>https://loessl.org/posts/safari-search/</link>
       <pubDate>Fri, 08 Feb 2013 14:42:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/safari-search/</guid>
       <description>&lt;p&gt;To be able to use Safari&amp;rsquo;s search function you definitely should execute this cmd:&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Getting rid of Java on a Mac</title>
       <link>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</link>
       <pubDate>Sat, 02 Feb 2013 11:38:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</guid>
       <description>&lt;p&gt;If you installed Java from Apple then you have the problem, that you have got a very old Version of Java.&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

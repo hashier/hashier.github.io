@@ -1,40 +1,48 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Osx on ~/christopher.loessl</title>
+    <title>osx on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/osx/</link>
-    <description>Recent content in Osx on ~/christopher.loessl</description>
-    <generator>Hugo</generator>
+    <description>Recent content in osx on ~/christopher.loessl</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Dec 2013 18:24:00 +0000</lastBuildDate>
-    <atom:link href="https://loessl.org/tags/osx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Dec 2013 18:24:00 +0000</lastBuildDate><atom:link href="https://loessl.org/tags/osx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iOS Localization With iLocalize</title>
       <link>https://loessl.org/posts/ios-localization-with-ilocalize/</link>
       <pubDate>Fri, 27 Dec 2013 18:24:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/ios-localization-with-ilocalize/</guid>
-      <description>&lt;p&gt;I did it once before and now I have to do it again - and of course, I forgot how to do it.&#xA;This time I&amp;rsquo;ll write it down how on way of localisation of an iOS project works.&lt;/p&gt;&#xA;&lt;p&gt;I don&amp;rsquo;t use nib files and all user facing strings are set in code with NSLocalizedStrings(&amp;hellip;). If you are using nibs or need to translate strings in Storyboard and/or nib files, your approach might differ.&lt;/p&gt;</description>
+      <description>I did it once before and now I have to do it again - and of course, I forgot how to do it. This time I&amp;rsquo;ll write it down how on way of localisation of an iOS project works.
+I don&amp;rsquo;t use nib files and all user facing strings are set in code with NSLocalizedStrings(&amp;hellip;). If you are using nibs or need to translate strings in Storyboard and/or nib files, your approach might differ.</description>
     </item>
+    
     <item>
       <title>Brendan&#39;s blog » The USE Method: Mac OS X Performance Checklist</title>
       <link>https://loessl.org/posts/brendans-blog-the-use-method-mac-os-x-performance-checklist/</link>
       <pubDate>Sun, 06 Oct 2013 17:24:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/brendans-blog-the-use-method-mac-os-x-performance-checklist/</guid>
       <description>&lt;p&gt;&amp;ldquo;Mac OS X Performance Checklist&amp;rdquo; is one of the best blog posts I have read in a long time.&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Fixing TruePreview for Apple Mail 6.5</title>
       <link>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-5/</link>
       <pubDate>Sat, 27 Jul 2013 01:10:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-5/</guid>
       <description>&lt;p&gt;If you started Mail and it tells you that your plugin got disabled you have to move the plugin first from the disabled folder back to the &amp;ldquo;normal&amp;rdquo; folder:&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Hot Corners</title>
       <link>https://loessl.org/posts/hot-corners/</link>
       <pubDate>Wed, 26 Jun 2013 16:07:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/hot-corners/</guid>
       <description>&lt;p&gt;Did you know, that you can trigger your HotCorners with a modifier key?&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

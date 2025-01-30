@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Writing on ~/christopher.loessl</title>
+    <title>writing on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/writing/</link>
-    <description>Recent content in Writing on ~/christopher.loessl</description>
-    <generator>Hugo</generator>
+    <description>Recent content in writing on ~/christopher.loessl</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 May 2013 13:47:00 +0000</lastBuildDate>
-    <atom:link href="https://loessl.org/tags/writing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 May 2013 13:47:00 +0000</lastBuildDate><atom:link href="https://loessl.org/tags/writing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Finding the right LaTeX packages</title>
       <link>https://loessl.org/posts/finding-the-right-latex-packages/</link>
       <pubDate>Wed, 22 May 2013 13:47:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/finding-the-right-latex-packages/</guid>
       <description>&lt;p&gt;If you have little space on your machine and therefore want to install the LaTeX Basic package (which is only around 150MB instead of a couple of GB) you might run into problems that packages are missing but with &lt;code&gt;tlmgr&lt;/code&gt; this is quite easy to solve&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

@@ -1,54 +1,65 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on ~/christopher.loessl</title>
+    <title>linux on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/linux/</link>
-    <description>Recent content in Linux on ~/christopher.loessl</description>
-    <generator>Hugo</generator>
+    <description>Recent content in linux on ~/christopher.loessl</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 May 2013 13:47:00 +0000</lastBuildDate>
-    <atom:link href="https://loessl.org/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 May 2013 13:47:00 +0000</lastBuildDate><atom:link href="https://loessl.org/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Finding the right LaTeX packages</title>
       <link>https://loessl.org/posts/finding-the-right-latex-packages/</link>
       <pubDate>Wed, 22 May 2013 13:47:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/finding-the-right-latex-packages/</guid>
       <description>&lt;p&gt;If you have little space on your machine and therefore want to install the LaTeX Basic package (which is only around 150MB instead of a couple of GB) you might run into problems that packages are missing but with &lt;code&gt;tlmgr&lt;/code&gt; this is quite easy to solve&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Who opens my UPnP ports?</title>
       <link>https://loessl.org/posts/who-opens-my-upnp-ports/</link>
       <pubDate>Tue, 07 May 2013 16:11:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/who-opens-my-upnp-ports/</guid>
       <description>&lt;p&gt;Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and instantly noticed that someone/something opened some ports in my router and forwarded them to my machine. So of course I wanted to know what&amp;rsquo;s going on on my network.&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>LD_PRELOAD and DYLD_INSERT_LIBRARIES</title>
       <link>https://loessl.org/posts/ld_preload-and-dyld_insert_libraries/</link>
       <pubDate>Thu, 25 Apr 2013 14:43:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/ld_preload-and-dyld_insert_libraries/</guid>
-      <description>&lt;p&gt;A simple LD_PRELOAD tutorial that works under Linux can be found &lt;a href=&#34;http://www.catonmat.net/blog/simple-ld-preload-tutorial/&#34;&gt;here&lt;/a&gt;. One that can be used under OS X you should also read &lt;a href=&#34;http://blog.client9.com/2012/06/ldpreload-on-mac-os-x.html&#34;&gt;this one&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>A simple LD_PRELOAD tutorial that works under Linux can be found here. One that can be used under OS X you should also read this one.</description>
     </item>
+    
     <item>
       <title>No Such File or Directory</title>
       <link>https://loessl.org/posts/no-such-file-or-directory/</link>
       <pubDate>Fri, 15 Mar 2013 02:58:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/no-such-file-or-directory/</guid>
       <description>&lt;p&gt;bash: ./adb: No such file or directory&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>How to fix slow Ubuntu in VirtualBox</title>
       <link>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</link>
       <pubDate>Sat, 23 Feb 2013 00:18:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</guid>
-      <description>&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;apt-get install linux-headers-generic build-essential 2. compizconfig-settings-manager dkms&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Install the guest drivers&lt;/li&gt;&#xA;&lt;li&gt;Open ccsm (from the console) and disable &amp;ldquo;Framebuffer object&amp;rdquo; option under &amp;ldquo;OpenGL&amp;rdquo; (be prepared that you won&amp;rsquo;t be able to read much, but if you activate 3D first, then it will be even worse)&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;shutdown -h now&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Activate 3D acceleration in VirtualBox&lt;/li&gt;&#xA;&lt;li&gt;power on&lt;/li&gt;&#xA;&lt;li&gt;done.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/usr/lib/nux/unity_support_test -p&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Source:&#xA;&lt;a href=&#34;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&#34;&gt;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&lt;/a&gt;&lt;/p&gt;</description>
+      <description>apt-get install linux-headers-generic build-essential 2. compizconfig-settings-manager dkms Install the guest drivers Open ccsm (from the console) and disable &amp;ldquo;Framebuffer object&amp;rdquo; option under &amp;ldquo;OpenGL&amp;rdquo; (be prepared that you won&amp;rsquo;t be able to read much, but if you activate 3D first, then it will be even worse) shutdown -h now Activate 3D acceleration in VirtualBox power on done. /usr/lib/nux/unity_support_test -p Source: http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968</description>
     </item>
+    
     <item>
       <title>FreeMind</title>
       <link>https://loessl.org/posts/freemind/</link>
       <pubDate>Wed, 20 Feb 2013 11:17:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/freemind/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://freemind.sourceforge.net/wiki/index.php/Main_Page&#34;&gt;FreeMind&lt;/a&gt; is a mind-mapping software I recently started to use and I like it, so far. But let the webpage talk for itself:&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

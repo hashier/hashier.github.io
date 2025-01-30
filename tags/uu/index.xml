@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Uu on ~/christopher.loessl</title>
+    <title>uu on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/uu/</link>
-    <description>Recent content in Uu on ~/christopher.loessl</description>
-    <generator>Hugo</generator>
+    <description>Recent content in uu on ~/christopher.loessl</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Mar 2013 10:28:00 +0000</lastBuildDate>
-    <atom:link href="https://loessl.org/tags/uu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Mar 2013 10:28:00 +0000</lastBuildDate><atom:link href="https://loessl.org/tags/uu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Script to automatically login to UpUnet-S at Uppsala University</title>
       <link>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</link>
       <pubDate>Tue, 26 Mar 2013 10:28:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</guid>
       <description>&lt;p&gt;If you want a small bash, zsh or shell script that auto authenticates you with Uppsala Universities UpUnet-S you can use this simple one liner, just add our username and password and up you go&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Security on ~/christopher.loessl</title>
+    <title>security on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/security/</link>
-    <description>Recent content in Security on ~/christopher.loessl</description>
-    <generator>Hugo</generator>
+    <description>Recent content in security on ~/christopher.loessl</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Feb 2021 18:15:03 +0100</lastBuildDate>
-    <atom:link href="https://loessl.org/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Feb 2021 18:15:03 +0100</lastBuildDate><atom:link href="https://loessl.org/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TIL: Big Ben</title>
       <link>https://loessl.org/posts/til-big-ben/</link>
       <pubDate>Sun, 21 Feb 2021 18:15:03 +0100</pubDate>
+      
       <guid>https://loessl.org/posts/til-big-ben/</guid>
       <description>&lt;p&gt;An interesting side-channel attack—that the Germans used—during World War Two…&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Improving the security of your SSH private key files — Martin Kleppmann’s blog</title>
       <link>https://loessl.org/posts/improving-the-security-of-your-ssh-private-key-files-martin-kleppmanns-blog/</link>
       <pubDate>Wed, 03 Jul 2013 17:50:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/improving-the-security-of-your-ssh-private-key-files-martin-kleppmanns-blog/</guid>
       <description></description>
     </item>
+    
   </channel>
 </rss>

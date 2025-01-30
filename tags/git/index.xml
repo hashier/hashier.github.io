@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on ~/christopher.loessl</title>
+    <title>git on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/git/</link>
-    <description>Recent content in Git on ~/christopher.loessl</description>
-    <generator>Hugo</generator>
+    <description>Recent content in git on ~/christopher.loessl</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Nov 2013 23:51:00 +0000</lastBuildDate>
-    <atom:link href="https://loessl.org/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Nov 2013 23:51:00 +0000</lastBuildDate><atom:link href="https://loessl.org/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>git diff and ObjectiveC</title>
       <link>https://loessl.org/posts/git-diff-and-objective-c/</link>
       <pubDate>Thu, 28 Nov 2013 23:51:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/git-diff-and-objective-c/</guid>
       <description>&lt;p&gt;When writing Objective-C code and using git you probably realised that the &lt;code&gt;git diff&lt;/code&gt; output does not mention the function name in which the change occurred. This can easily be changed.&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Recursive git grep</title>
       <link>https://loessl.org/posts/git-r-grep/</link>
       <pubDate>Fri, 21 Jun 2013 02:15:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/git-r-grep/</guid>
       <description>&lt;p&gt;I just figured out, that I want to make sure, that I never committed a key to my repository before publishing it, so what&amp;rsquo;s the easiest way to grep throw all commits in a git repository:&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

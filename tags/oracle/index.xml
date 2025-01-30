@@ -1,40 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Oracle on ~/christopher.loessl</title>
+    <title>oracle on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/oracle/</link>
-    <description>Recent content in Oracle on ~/christopher.loessl</description>
-    <generator>Hugo</generator>
+    <description>Recent content in oracle on ~/christopher.loessl</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Feb 2013 00:18:00 +0000</lastBuildDate>
-    <atom:link href="https://loessl.org/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Feb 2013 00:18:00 +0000</lastBuildDate><atom:link href="https://loessl.org/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to fix slow Ubuntu in VirtualBox</title>
       <link>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</link>
       <pubDate>Sat, 23 Feb 2013 00:18:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</guid>
-      <description>&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;apt-get install linux-headers-generic build-essential 2. compizconfig-settings-manager dkms&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Install the guest drivers&lt;/li&gt;&#xA;&lt;li&gt;Open ccsm (from the console) and disable &amp;ldquo;Framebuffer object&amp;rdquo; option under &amp;ldquo;OpenGL&amp;rdquo; (be prepared that you won&amp;rsquo;t be able to read much, but if you activate 3D first, then it will be even worse)&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;shutdown -h now&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Activate 3D acceleration in VirtualBox&lt;/li&gt;&#xA;&lt;li&gt;power on&lt;/li&gt;&#xA;&lt;li&gt;done.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/usr/lib/nux/unity_support_test -p&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Source:&#xA;&lt;a href=&#34;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&#34;&gt;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&lt;/a&gt;&lt;/p&gt;</description>
+      <description>apt-get install linux-headers-generic build-essential 2. compizconfig-settings-manager dkms Install the guest drivers Open ccsm (from the console) and disable &amp;ldquo;Framebuffer object&amp;rdquo; option under &amp;ldquo;OpenGL&amp;rdquo; (be prepared that you won&amp;rsquo;t be able to read much, but if you activate 3D first, then it will be even worse) shutdown -h now Activate 3D acceleration in VirtualBox power on done. /usr/lib/nux/unity_support_test -p Source: http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968</description>
     </item>
+    
     <item>
       <title>Java, the hopefully last round</title>
       <link>https://loessl.org/posts/java-hopefully-last-round/</link>
       <pubDate>Thu, 07 Feb 2013 18:37:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/java-hopefully-last-round/</guid>
       <description>&lt;p&gt;I had a fresh installation of Mountain Lion and installed Java 7. The problem was when I tried to run StandAloneJava applications ML always asked me whether it should install Java 6. Apparently a lot of people have this problem and here is the solution how to solve it.&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Java, a new round. Round 7</title>
       <link>https://loessl.org/posts/java-a-new-round-round-7/</link>
       <pubDate>Mon, 04 Feb 2013 13:10:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/java-a-new-round-round-7/</guid>
       <description>&lt;p&gt;After fighting against Java 6 from Apple I decided to install Java 7 and have a look into that. To say the least, I still feel quite nauseous so I keep this EXTREMELY short.&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>Getting rid of Java on a Mac</title>
       <link>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</link>
       <pubDate>Sat, 02 Feb 2013 11:38:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</guid>
       <description>&lt;p&gt;If you installed Java from Apple then you have the problem, that you have got a very old Version of Java.&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

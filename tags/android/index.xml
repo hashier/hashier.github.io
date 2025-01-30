@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Android on ~/christopher.loessl</title>
+    <title>android on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/android/</link>
-    <description>Recent content in Android on ~/christopher.loessl</description>
-    <generator>Hugo</generator>
+    <description>Recent content in android on ~/christopher.loessl</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Sep 2013 17:38:00 +0000</lastBuildDate>
-    <atom:link href="https://loessl.org/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Sep 2013 17:38:00 +0000</lastBuildDate><atom:link href="https://loessl.org/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Send Broadcast Messages to Android</title>
       <link>https://loessl.org/posts/send-broadcast-messages-to-android/</link>
       <pubDate>Wed, 04 Sep 2013 17:38:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/send-broadcast-messages-to-android/</guid>
       <description>&lt;p&gt;Faking a received SMS&lt;/p&gt;</description>
     </item>
+    
     <item>
       <title>ActivityManager | isUserAMonkey()</title>
       <link>https://loessl.org/posts/activitymanager-isuseramonkey/</link>
       <pubDate>Thu, 15 Aug 2013 12:45:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/activitymanager-isuseramonkey/</guid>
       <description></description>
     </item>
+    
     <item>
       <title>No Such File or Directory</title>
       <link>https://loessl.org/posts/no-such-file-or-directory/</link>
       <pubDate>Fri, 15 Mar 2013 02:58:00 +0000</pubDate>
+      
       <guid>https://loessl.org/posts/no-such-file-or-directory/</guid>
       <description>&lt;p&gt;bash: ./adb: No such file or directory&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>
