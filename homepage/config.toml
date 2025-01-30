@@ -27,15 +27,15 @@ staticDir = "static"
   #   weight = 1
 
   [[menu.main]]
-    identifier = "projects"
-    name = "~/projects"
-    url = "/projects/"
-    weight = 2
-
-  [[menu.main]]
     identifier = "blog"
     name = "~/blog"
     url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "projects"
+    name = "~/projects"
+    url = "/projects/"
     weight = 3
 
   [[menu.main]]
