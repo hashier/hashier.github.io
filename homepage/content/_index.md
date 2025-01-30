@@ -7,15 +7,14 @@ comment: "This file needs to be _index.md. If it is index.md /posts isn't workin
 
 ## About me
 
-My name is Christopher Loessl. Currently working as a Senior Security Engineer at Tink AB, a FinTech company, in Stockholm.
+My name is Christopher Loessl. Currently working as a Senior Security Engineering Manager at [Visa](https://www.visa.com).
 
-I'm a devoted security and software engineer, interested in security, operating systems, networking and mobile, with more than 15+ years of Linux/Unix and 10+ years of professional software development experience.
+I'm a devoted security and software engineer, interested in security, operating systems, networking and mobile, with more than 20+ years of Linux/Unix and 15+ years of professional software development experience.
 
-During this time I have written patches, features and bug fixes for various open source projects (e.g., VLC, OWASP, Adium, Newsblur, Mantle, ...).
+Skilled in developing and executing strategic plans, conducting risk assessments, and leading teams. Specialized in security architecture, application security, cloud security, security operations, incident response, cybersecurity, and more. Proven track record of contributing to open-source projects such as VLC, OWASP, ASVS, Adium, and Newsblur.
 
-By listening to podcasts, answering questions on StackOverflow, reading blogs, and giving the occasional talk at developer meetings I stay engaged with the communities and push myself to be at the cutting edge of this fast-paced field.
-
-In my free time I love to read, hike, climb and observe the universe through my 8" dobsonian telescope.
+In my free time, I enjoy reading 📚, hiking 🏔️, climbing 🧗, squash, and exploring the universe with
+my 8” Dobsonian telescope 🔭.
 
 ## Links
 
