@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Closure on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/closure/</link>
+    <description>Recent content in Closure on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Mar 2014 01:56:00 +0000</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/closure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blocks and Closures on Stack and Heap</title>
+      <link>https://loessl.org/posts/blocks-closures-on-stack-and-heap/</link>
+      <pubDate>Tue, 04 Mar 2014 01:56:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/blocks-closures-on-stack-and-heap/</guid>
+      <description>&lt;h2 id=&#34;blocks-on-the-stack&#34;&gt;Blocks on the Stack&lt;/h2&gt;&#xA;&lt;p&gt;While reading through Apple’s open source code (headers) I came across &lt;a href=&#34;http://opensource.apple.com/source/libdispatch/libdispatch-339.1.9/dispatch/queue.h&#34;&gt;queue.h&lt;/a&gt; and stumbled over the following warning:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

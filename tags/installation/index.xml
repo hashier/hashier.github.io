@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installation on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/installation/</link>
+    <description>Recent content in Installation on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 May 2013 13:47:00 +0000</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/installation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Finding the right LaTeX packages</title>
+      <link>https://loessl.org/posts/finding-the-right-latex-packages/</link>
+      <pubDate>Wed, 22 May 2013 13:47:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/finding-the-right-latex-packages/</guid>
+      <description>&lt;p&gt;If you have little space on your machine and therefore want to install the LaTeX Basic package (which is only around 150MB instead of a couple of GB) you might run into problems that packages are missing but with &lt;code&gt;tlmgr&lt;/code&gt; this is quite easy to solve&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mission Control</title>
+      <link>https://loessl.org/posts/mission-control/</link>
+      <pubDate>Mon, 20 May 2013 18:29:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/mission-control/</guid>
+      <description>&lt;p&gt;To get mission control to pop up fast just write this to your plist file:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to fix slow Ubuntu in VirtualBox</title>
+      <link>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</link>
+      <pubDate>Sat, 23 Feb 2013 00:18:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</guid>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;apt-get install linux-headers-generic build-essential 2. compizconfig-settings-manager dkms&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Install the guest drivers&lt;/li&gt;&#xA;&lt;li&gt;Open ccsm (from the console) and disable &amp;ldquo;Framebuffer object&amp;rdquo; option under &amp;ldquo;OpenGL&amp;rdquo; (be prepared that you won&amp;rsquo;t be able to read much, but if you activate 3D first, then it will be even worse)&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;shutdown -h now&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Activate 3D acceleration in VirtualBox&lt;/li&gt;&#xA;&lt;li&gt;power on&lt;/li&gt;&#xA;&lt;li&gt;done.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/usr/lib/nux/unity_support_test -p&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Source:&#xA;&lt;a href=&#34;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&#34;&gt;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java, the hopefully last round</title>
+      <link>https://loessl.org/posts/java-hopefully-last-round/</link>
+      <pubDate>Thu, 07 Feb 2013 18:37:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/java-hopefully-last-round/</guid>
+      <description>&lt;p&gt;I had a fresh installation of Mountain Lion and installed Java 7. The problem was when I tried to run StandAloneJava applications ML always asked me whether it should install Java 6. Apparently a lot of people have this problem and here is the solution how to solve it.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Config on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/config/</link>
+    <description>Recent content in Config on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Jul 2013 01:10:00 +0000</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/config/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixing TruePreview for Apple Mail 6.5</title>
+      <link>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-5/</link>
+      <pubDate>Sat, 27 Jul 2013 01:10:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-5/</guid>
+      <description>&lt;p&gt;If you started Mail and it tells you that your plugin got disabled you have to move the plugin first from the disabled folder back to the &amp;ldquo;normal&amp;rdquo; folder:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Improving the security of your SSH private key files — Martin Kleppmann’s blog</title>
+      <link>https://loessl.org/posts/improving-the-security-of-your-ssh-private-key-files-martin-kleppmanns-blog/</link>
+      <pubDate>Wed, 03 Jul 2013 17:50:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/improving-the-security-of-your-ssh-private-key-files-martin-kleppmanns-blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hot Corners</title>
+      <link>https://loessl.org/posts/hot-corners/</link>
+      <pubDate>Wed, 26 Jun 2013 16:07:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/hot-corners/</guid>
+      <description>&lt;p&gt;Did you know, that you can trigger your HotCorners with a modifier key?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Finding the right LaTeX packages</title>
+      <link>https://loessl.org/posts/finding-the-right-latex-packages/</link>
+      <pubDate>Wed, 22 May 2013 13:47:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/finding-the-right-latex-packages/</guid>
+      <description>&lt;p&gt;If you have little space on your machine and therefore want to install the LaTeX Basic package (which is only around 150MB instead of a couple of GB) you might run into problems that packages are missing but with &lt;code&gt;tlmgr&lt;/code&gt; this is quite easy to solve&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mission Control</title>
+      <link>https://loessl.org/posts/mission-control/</link>
+      <pubDate>Mon, 20 May 2013 18:29:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/mission-control/</guid>
+      <description>&lt;p&gt;To get mission control to pop up fast just write this to your plist file:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mac OS X is updating your preferences in the background</title>
+      <link>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</link>
+      <pubDate>Tue, 07 May 2013 16:24:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</guid>
+      <description>&lt;p&gt;Recently I noticed that a config file of Safari gets updated every now and then even if Safari is not running.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Script to automatically login to UpUnet-S at Uppsala University</title>
+      <link>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</link>
+      <pubDate>Tue, 26 Mar 2013 10:28:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</guid>
+      <description>&lt;p&gt;If you want a small bash, zsh or shell script that auto authenticates you with Uppsala Universities UpUnet-S you can use this simple one liner, just add our username and password and up you go&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to fix slow Ubuntu in VirtualBox</title>
+      <link>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</link>
+      <pubDate>Sat, 23 Feb 2013 00:18:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</guid>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;apt-get install linux-headers-generic build-essential 2. compizconfig-settings-manager dkms&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Install the guest drivers&lt;/li&gt;&#xA;&lt;li&gt;Open ccsm (from the console) and disable &amp;ldquo;Framebuffer object&amp;rdquo; option under &amp;ldquo;OpenGL&amp;rdquo; (be prepared that you won&amp;rsquo;t be able to read much, but if you activate 3D first, then it will be even worse)&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;shutdown -h now&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Activate 3D acceleration in VirtualBox&lt;/li&gt;&#xA;&lt;li&gt;power on&lt;/li&gt;&#xA;&lt;li&gt;done.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/usr/lib/nux/unity_support_test -p&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Source:&#xA;&lt;a href=&#34;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&#34;&gt;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Safari search</title>
+      <link>https://loessl.org/posts/safari-search/</link>
+      <pubDate>Fri, 08 Feb 2013 14:42:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/safari-search/</guid>
+      <description>&lt;p&gt;To be able to use Safari&amp;rsquo;s search function you definitely should execute this cmd:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>iTunes: sort albums by year instead of name</title>
+      <link>https://loessl.org/posts/itunes-sort-albums-by-year/</link>
+      <pubDate>Wed, 06 Feb 2013 18:27:28 +0000</pubDate>
+      <guid>https://loessl.org/posts/itunes-sort-albums-by-year/</guid>
+      <description>&lt;p&gt;By default iTunes sorts albums by name instead of year for whatever reason.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Setting up a new Mac</title>
+      <link>https://loessl.org/posts/setting-up-a-new-mac/</link>
+      <pubDate>Fri, 01 Feb 2013 21:50:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/setting-up-a-new-mac/</guid>
+      <description>&lt;p&gt;Every time I setup a new Mac system I wonder &amp;ldquo;what else do I have to set/configure&amp;rdquo; so I decided today while setting up a new Mac that I will write down the (imho) most important steps, settings and applications. Thus I have a step by step list next time I set up a new Mac (:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

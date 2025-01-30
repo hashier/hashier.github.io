@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mail on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/mail/</link>
+    <description>Recent content in Mail on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Sep 2013 20:33:00 +0000</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/mail/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixing TruePreview for Apple Mail 6.6</title>
+      <link>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-6/</link>
+      <pubDate>Mon, 23 Sep 2013 20:33:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fixing TruePreview for Apple Mail 6.5</title>
+      <link>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-5/</link>
+      <pubDate>Sat, 27 Jul 2013 01:10:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/fixing-truepreview-for-apple-mail-6-5/</guid>
+      <description>&lt;p&gt;If you started Mail and it tells you that your plugin got disabled you have to move the plugin first from the disabled folder back to the &amp;ldquo;normal&amp;rdquo; folder:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mac OS X is updating your preferences in the background</title>
+      <link>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</link>
+      <pubDate>Tue, 07 May 2013 16:24:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</guid>
+      <description>&lt;p&gt;Recently I noticed that a config file of Safari gets updated every now and then even if Safari is not running.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

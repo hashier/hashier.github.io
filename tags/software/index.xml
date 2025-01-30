@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/software/</link>
+    <description>Recent content in Software on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Aug 2013 19:19:00 +0000</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automatically Increment Build Number (CFBundleVersion)</title>
+      <link>https://loessl.org/posts/automatically-increment-build-number-cfbundleversion/</link>
+      <pubDate>Wed, 21 Aug 2013 19:19:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/automatically-increment-build-number-cfbundleversion/</guid>
+      <description>&lt;p&gt;David wrote this nice little helper that automatically increments the build version every time.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mission Control</title>
+      <link>https://loessl.org/posts/mission-control/</link>
+      <pubDate>Mon, 20 May 2013 18:29:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/mission-control/</guid>
+      <description>&lt;p&gt;To get mission control to pop up fast just write this to your plist file:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Who opens my UPnP ports?</title>
+      <link>https://loessl.org/posts/who-opens-my-upnp-ports/</link>
+      <pubDate>Tue, 07 May 2013 16:11:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/who-opens-my-upnp-ports/</guid>
+      <description>&lt;p&gt;Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and instantly noticed that someone/something opened some ports in my router and forwarded them to my machine. So of course I wanted to know what&amp;rsquo;s going on on my network.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to fix slow Ubuntu in VirtualBox</title>
+      <link>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</link>
+      <pubDate>Sat, 23 Feb 2013 00:18:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/how-to-fix-slow-ubuntu-in-vbox/</guid>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;apt-get install linux-headers-generic build-essential 2. compizconfig-settings-manager dkms&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Install the guest drivers&lt;/li&gt;&#xA;&lt;li&gt;Open ccsm (from the console) and disable &amp;ldquo;Framebuffer object&amp;rdquo; option under &amp;ldquo;OpenGL&amp;rdquo; (be prepared that you won&amp;rsquo;t be able to read much, but if you activate 3D first, then it will be even worse)&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;shutdown -h now&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;Activate 3D acceleration in VirtualBox&lt;/li&gt;&#xA;&lt;li&gt;power on&lt;/li&gt;&#xA;&lt;li&gt;done.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/usr/lib/nux/unity_support_test -p&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Source:&#xA;&lt;a href=&#34;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&#34;&gt;http://askubuntu.com/questions/207813/why-does-an-ubuntu-12-10-guest-in-virtualbox-run-very-very-slowly/214968#214968&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FreeMind</title>
+      <link>https://loessl.org/posts/freemind/</link>
+      <pubDate>Wed, 20 Feb 2013 11:17:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/freemind/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://freemind.sourceforge.net/wiki/index.php/Main_Page&#34;&gt;FreeMind&lt;/a&gt; is a mind-mapping software I recently started to use and I like it, so far. But let the webpage talk for itself:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to run FreeMind on Mountain Lion</title>
+      <link>https://loessl.org/posts/how-to-run-freemind-on-ml/</link>
+      <pubDate>Thu, 07 Feb 2013 20:05:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/how-to-run-freemind-on-ml/</guid>
+      <description>&lt;p&gt;If you try to run FreeMind on Mountain Lion you get this &amp;ldquo;nice&amp;rdquo; error message:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java, the hopefully last round</title>
+      <link>https://loessl.org/posts/java-hopefully-last-round/</link>
+      <pubDate>Thu, 07 Feb 2013 18:37:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/java-hopefully-last-round/</guid>
+      <description>&lt;p&gt;I had a fresh installation of Mountain Lion and installed Java 7. The problem was when I tried to run StandAloneJava applications ML always asked me whether it should install Java 6. Apparently a lot of people have this problem and here is the solution how to solve it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>iTunes: sort albums by year instead of name</title>
+      <link>https://loessl.org/posts/itunes-sort-albums-by-year/</link>
+      <pubDate>Wed, 06 Feb 2013 18:27:28 +0000</pubDate>
+      <guid>https://loessl.org/posts/itunes-sort-albums-by-year/</guid>
+      <description>&lt;p&gt;By default iTunes sorts albums by name instead of year for whatever reason.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java, a new round. Round 7</title>
+      <link>https://loessl.org/posts/java-a-new-round-round-7/</link>
+      <pubDate>Mon, 04 Feb 2013 13:10:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/java-a-new-round-round-7/</guid>
+      <description>&lt;p&gt;After fighting against Java 6 from Apple I decided to install Java 7 and have a look into that. To say the least, I still feel quite nauseous so I keep this EXTREMELY short.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting rid of Java on a Mac</title>
+      <link>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</link>
+      <pubDate>Sat, 02 Feb 2013 11:38:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</guid>
+      <description>&lt;p&gt;If you installed Java from Apple then you have the problem, that you have got a very old Version of Java.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Setting up a new Mac</title>
+      <link>https://loessl.org/posts/setting-up-a-new-mac/</link>
+      <pubDate>Fri, 01 Feb 2013 21:50:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/setting-up-a-new-mac/</guid>
+      <description>&lt;p&gt;Every time I setup a new Mac system I wonder &amp;ldquo;what else do I have to set/configure&amp;rdquo; so I decided today while setting up a new Mac that I will write down the (imho) most important steps, settings and applications. Thus I have a step by step list next time I set up a new Mac (:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

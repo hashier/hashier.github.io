@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tip on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/tip/</link>
+    <description>Recent content in Tip on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Dec 2013 20:02:00 +0000</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/tip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mdfind &amp; mdls &amp; Spotlight</title>
+      <link>https://loessl.org/posts/mdfind-mdls-spotlight/</link>
+      <pubDate>Fri, 27 Dec 2013 20:02:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/mdfind-mdls-spotlight/</guid>
+      <description>&lt;p&gt;Searching for files with Spotlight is awesome and you can actually use the power of Spotlight even in the console. But first let me show you some nice features of Spotlight.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mission Control</title>
+      <link>https://loessl.org/posts/mission-control/</link>
+      <pubDate>Mon, 20 May 2013 18:29:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/mission-control/</guid>
+      <description>&lt;p&gt;To get mission control to pop up fast just write this to your plist file:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Who opens my UPnP ports?</title>
+      <link>https://loessl.org/posts/who-opens-my-upnp-ports/</link>
+      <pubDate>Tue, 07 May 2013 16:11:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/who-opens-my-upnp-ports/</guid>
+      <description>&lt;p&gt;Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and instantly noticed that someone/something opened some ports in my router and forwarded them to my machine. So of course I wanted to know what&amp;rsquo;s going on on my network.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Script to automatically login to UpUnet-S at Uppsala University</title>
+      <link>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</link>
+      <pubDate>Tue, 26 Mar 2013 10:28:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</guid>
+      <description>&lt;p&gt;If you want a small bash, zsh or shell script that auto authenticates you with Uppsala Universities UpUnet-S you can use this simple one liner, just add our username and password and up you go&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Safari search</title>
+      <link>https://loessl.org/posts/safari-search/</link>
+      <pubDate>Fri, 08 Feb 2013 14:42:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/safari-search/</guid>
+      <description>&lt;p&gt;To be able to use Safari&amp;rsquo;s search function you definitely should execute this cmd:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to run FreeMind on Mountain Lion</title>
+      <link>https://loessl.org/posts/how-to-run-freemind-on-ml/</link>
+      <pubDate>Thu, 07 Feb 2013 20:05:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/how-to-run-freemind-on-ml/</guid>
+      <description>&lt;p&gt;If you try to run FreeMind on Mountain Lion you get this &amp;ldquo;nice&amp;rdquo; error message:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>iTunes: sort albums by year instead of name</title>
+      <link>https://loessl.org/posts/itunes-sort-albums-by-year/</link>
+      <pubDate>Wed, 06 Feb 2013 18:27:28 +0000</pubDate>
+      <guid>https://loessl.org/posts/itunes-sort-albums-by-year/</guid>
+      <description>&lt;p&gt;By default iTunes sorts albums by name instead of year for whatever reason.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

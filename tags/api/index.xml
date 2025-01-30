@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Api on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/api/</link>
+    <description>Recent content in Api on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Aug 2013 12:45:00 +0000</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ActivityManager | isUserAMonkey()</title>
+      <link>https://loessl.org/posts/activitymanager-isuseramonkey/</link>
+      <pubDate>Thu, 15 Aug 2013 12:45:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/activitymanager-isuseramonkey/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

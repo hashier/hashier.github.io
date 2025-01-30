@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Static-Page on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/static-page/</link>
+    <description>Recent content in Static-Page on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Jun 2020 20:07:58 +0200</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/static-page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some of my projects</title>
+      <link>https://loessl.org/projects/</link>
+      <pubDate>Sat, 06 Jun 2020 20:07:58 +0200</pubDate>
+      <guid>https://loessl.org/projects/</guid>
+      <description>&lt;p&gt;This is a small (incomplete) list of projects that I have started over the years and that have had some impact on me in one way or another.&#xA;Starting with my very first successful C project that allowed transfer of files between a famous gateway router (&lt;a href=&#34;https://fli4l.de&#34;&gt;fli4l&lt;/a&gt;) and a local machine, flicp.&lt;/p&gt;&#xA;&lt;p&gt;You can find most of my projects on &lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt; or by clicking on them below.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-2-animationhttpshashiergithubio1-2-animation&#34;&gt;&lt;a href=&#34;https://hashier.github.io/1-2-animation/&#34;&gt;1-2-animation&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;This command line tool generates Poemotion images.&#xA;These are 2D images that provide an optical illusion of being 3D when viewed with a striped masked.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

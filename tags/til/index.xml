@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Til on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/til/</link>
+    <description>Recent content in Til on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Feb 2021 18:15:03 +0100</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/til/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TIL: Big Ben</title>
+      <link>https://loessl.org/posts/til-big-ben/</link>
+      <pubDate>Sun, 21 Feb 2021 18:15:03 +0100</pubDate>
+      <guid>https://loessl.org/posts/til-big-ben/</guid>
+      <description>&lt;p&gt;An interesting side-channel attack—that the Germans used—during World War Two…&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TIL: Mac in-place sed</title>
+      <link>https://loessl.org/posts/til-mac-in-place-sed/</link>
+      <pubDate>Wed, 17 Jun 2020 22:16:31 +0200</pubDate>
+      <guid>https://loessl.org/posts/til-mac-in-place-sed/</guid>
+      <description>&lt;p&gt;TIL how to use in-place sed on Mac.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Automatically Increment Build Number (CFBundleVersion)</title>
+      <link>https://loessl.org/posts/automatically-increment-build-number-cfbundleversion/</link>
+      <pubDate>Wed, 21 Aug 2013 19:19:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/automatically-increment-build-number-cfbundleversion/</guid>
+      <description>&lt;p&gt;David wrote this nice little helper that automatically increments the build version every time.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Improving the security of your SSH private key files — Martin Kleppmann’s blog</title>
+      <link>https://loessl.org/posts/improving-the-security-of-your-ssh-private-key-files-martin-kleppmanns-blog/</link>
+      <pubDate>Wed, 03 Jul 2013 17:50:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/improving-the-security-of-your-ssh-private-key-files-martin-kleppmanns-blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hot Corners</title>
+      <link>https://loessl.org/posts/hot-corners/</link>
+      <pubDate>Wed, 26 Jun 2013 16:07:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/hot-corners/</guid>
+      <description>&lt;p&gt;Did you know, that you can trigger your HotCorners with a modifier key?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Recursive git grep</title>
+      <link>https://loessl.org/posts/git-r-grep/</link>
+      <pubDate>Fri, 21 Jun 2013 02:15:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/git-r-grep/</guid>
+      <description>&lt;p&gt;I just figured out, that I want to make sure, that I never committed a key to my repository before publishing it, so what&amp;rsquo;s the easiest way to grep throw all commits in a git repository:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

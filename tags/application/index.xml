@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Application on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/application/</link>
+    <description>Recent content in Application on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Aug 2013 14:39:00 +0000</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cURL and Error Codes</title>
+      <link>https://loessl.org/posts/curl-and-error-codes/</link>
+      <pubDate>Mon, 19 Aug 2013 14:39:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/curl-and-error-codes/</guid>
+      <description>&lt;p&gt;So brew threw this at me this morning&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Who opens my UPnP ports?</title>
+      <link>https://loessl.org/posts/who-opens-my-upnp-ports/</link>
+      <pubDate>Tue, 07 May 2013 16:11:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/who-opens-my-upnp-ports/</guid>
+      <description>&lt;p&gt;Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and instantly noticed that someone/something opened some ports in my router and forwarded them to my machine. So of course I wanted to know what&amp;rsquo;s going on on my network.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to run FreeMind on Mountain Lion</title>
+      <link>https://loessl.org/posts/how-to-run-freemind-on-ml/</link>
+      <pubDate>Thu, 07 Feb 2013 20:05:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/how-to-run-freemind-on-ml/</guid>
+      <description>&lt;p&gt;If you try to run FreeMind on Mountain Lion you get this &amp;ldquo;nice&amp;rdquo; error message:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting rid of Java on a Mac</title>
+      <link>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</link>
+      <pubDate>Sat, 02 Feb 2013 11:38:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/getting-rid-of-java-on-a-mac/</guid>
+      <description>&lt;p&gt;If you installed Java from Apple then you have the problem, that you have got a very old Version of Java.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

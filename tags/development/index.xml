@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/development/</link>
+    <description>Recent content in Development on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Mar 2014 01:56:00 +0000</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blocks and Closures on Stack and Heap</title>
+      <link>https://loessl.org/posts/blocks-closures-on-stack-and-heap/</link>
+      <pubDate>Tue, 04 Mar 2014 01:56:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/blocks-closures-on-stack-and-heap/</guid>
+      <description>&lt;h2 id=&#34;blocks-on-the-stack&#34;&gt;Blocks on the Stack&lt;/h2&gt;&#xA;&lt;p&gt;While reading through Apple’s open source code (headers) I came across &lt;a href=&#34;http://opensource.apple.com/source/libdispatch/libdispatch-339.1.9/dispatch/queue.h&#34;&gt;queue.h&lt;/a&gt; and stumbled over the following warning:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Property: strong and copy</title>
+      <link>https://loessl.org/posts/property-strong-and-copy/</link>
+      <pubDate>Tue, 25 Feb 2014 22:36:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/property-strong-and-copy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multiple Xcode Targets and Tests</title>
+      <link>https://loessl.org/posts/multiple-xcode-targets-and-tests/</link>
+      <pubDate>Sun, 09 Feb 2014 15:58:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/multiple-xcode-targets-and-tests/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>iOS Localization With iLocalize</title>
+      <link>https://loessl.org/posts/ios-localization-with-ilocalize/</link>
+      <pubDate>Fri, 27 Dec 2013 18:24:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/ios-localization-with-ilocalize/</guid>
+      <description>&lt;p&gt;I did it once before and now I have to do it again - and of course, I forgot how to do it.&#xA;This time I&amp;rsquo;ll write it down how on way of localisation of an iOS project works.&lt;/p&gt;&#xA;&lt;p&gt;I don&amp;rsquo;t use nib files and all user facing strings are set in code with NSLocalizedStrings(&amp;hellip;). If you are using nibs or need to translate strings in Storyboard and/or nib files, your approach might differ.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>git diff and ObjectiveC</title>
+      <link>https://loessl.org/posts/git-diff-and-objective-c/</link>
+      <pubDate>Thu, 28 Nov 2013 23:51:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/git-diff-and-objective-c/</guid>
+      <description>&lt;p&gt;When writing Objective-C code and using git you probably realised that the &lt;code&gt;git diff&lt;/code&gt; output does not mention the function name in which the change occurred. This can easily be changed.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deep Wizardry: Stack Unwinding</title>
+      <link>https://loessl.org/posts/deep-wizardry-stack-unwinding/</link>
+      <pubDate>Wed, 16 Oct 2013 13:30:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/deep-wizardry-stack-unwinding/</guid>
+      <description>&lt;p&gt;Nice blog post about &lt;a href=&#34;http://blog.reverberate.org/2013/05/deep-wizardry-stack-unwinding.html&#34;&gt;stack unwinding&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Send Broadcast Messages to Android</title>
+      <link>https://loessl.org/posts/send-broadcast-messages-to-android/</link>
+      <pubDate>Wed, 04 Sep 2013 17:38:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/send-broadcast-messages-to-android/</guid>
+      <description>&lt;p&gt;Faking a received SMS&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>common.h</title>
+      <link>https://loessl.org/posts/common-h/</link>
+      <pubDate>Wed, 04 Sep 2013 15:24:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/common-h/</guid>
+      <description>&lt;p&gt;So I got sick with NSLog and wrote myself a simple wrapper around it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Automatically Increment Build Number (CFBundleVersion)</title>
+      <link>https://loessl.org/posts/automatically-increment-build-number-cfbundleversion/</link>
+      <pubDate>Wed, 21 Aug 2013 19:19:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/automatically-increment-build-number-cfbundleversion/</guid>
+      <description>&lt;p&gt;David wrote this nice little helper that automatically increments the build version every time.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ActivityManager | isUserAMonkey()</title>
+      <link>https://loessl.org/posts/activitymanager-isuseramonkey/</link>
+      <pubDate>Thu, 15 Aug 2013 12:45:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/activitymanager-isuseramonkey/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Recursive git grep</title>
+      <link>https://loessl.org/posts/git-r-grep/</link>
+      <pubDate>Fri, 21 Jun 2013 02:15:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/git-r-grep/</guid>
+      <description>&lt;p&gt;I just figured out, that I want to make sure, that I never committed a key to my repository before publishing it, so what&amp;rsquo;s the easiest way to grep throw all commits in a git repository:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LD_PRELOAD and DYLD_INSERT_LIBRARIES</title>
+      <link>https://loessl.org/posts/ld_preload-and-dyld_insert_libraries/</link>
+      <pubDate>Thu, 25 Apr 2013 14:43:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/ld_preload-and-dyld_insert_libraries/</guid>
+      <description>&lt;p&gt;A simple LD_PRELOAD tutorial that works under Linux can be found &lt;a href=&#34;http://www.catonmat.net/blog/simple-ld-preload-tutorial/&#34;&gt;here&lt;/a&gt;. One that can be used under OS X you should also read &lt;a href=&#34;http://blog.client9.com/2012/06/ldpreload-on-mac-os-x.html&#34;&gt;this one&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Script to automatically login to UpUnet-S at Uppsala University</title>
+      <link>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</link>
+      <pubDate>Tue, 26 Mar 2013 10:28:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</guid>
+      <description>&lt;p&gt;If you want a small bash, zsh or shell script that auto authenticates you with Uppsala Universities UpUnet-S you can use this simple one liner, just add our username and password and up you go&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

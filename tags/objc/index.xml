@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ObjC on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/objc/</link>
+    <description>Recent content in ObjC on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Mar 2014 01:56:00 +0000</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/objc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blocks and Closures on Stack and Heap</title>
+      <link>https://loessl.org/posts/blocks-closures-on-stack-and-heap/</link>
+      <pubDate>Tue, 04 Mar 2014 01:56:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/blocks-closures-on-stack-and-heap/</guid>
+      <description>&lt;h2 id=&#34;blocks-on-the-stack&#34;&gt;Blocks on the Stack&lt;/h2&gt;&#xA;&lt;p&gt;While reading through Apple’s open source code (headers) I came across &lt;a href=&#34;http://opensource.apple.com/source/libdispatch/libdispatch-339.1.9/dispatch/queue.h&#34;&gt;queue.h&lt;/a&gt; and stumbled over the following warning:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Property: strong and copy</title>
+      <link>https://loessl.org/posts/property-strong-and-copy/</link>
+      <pubDate>Tue, 25 Feb 2014 22:36:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/property-strong-and-copy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multiple Xcode Targets and Tests</title>
+      <link>https://loessl.org/posts/multiple-xcode-targets-and-tests/</link>
+      <pubDate>Sun, 09 Feb 2014 15:58:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/multiple-xcode-targets-and-tests/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>git diff and ObjectiveC</title>
+      <link>https://loessl.org/posts/git-diff-and-objective-c/</link>
+      <pubDate>Thu, 28 Nov 2013 23:51:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/git-diff-and-objective-c/</guid>
+      <description>&lt;p&gt;When writing Objective-C code and using git you probably realised that the &lt;code&gt;git diff&lt;/code&gt; output does not mention the function name in which the change occurred. This can easily be changed.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>common.h</title>
+      <link>https://loessl.org/posts/common-h/</link>
+      <pubDate>Wed, 04 Sep 2013 15:24:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/common-h/</guid>
+      <description>&lt;p&gt;So I got sick with NSLog and wrote myself a simple wrapper around it.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ICloud on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/icloud/</link>
+    <description>Recent content in ICloud on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 May 2013 16:24:00 +0000</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/icloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac OS X is updating your preferences in the background</title>
+      <link>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</link>
+      <pubDate>Tue, 07 May 2013 16:24:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/mac-os-x-is-updating-your-preferences-in-the-background/</guid>
+      <description>&lt;p&gt;Recently I noticed that a config file of Safari gets updated every now and then even if Safari is not running.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

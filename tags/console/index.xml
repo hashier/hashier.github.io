@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Console on ~/christopher.loessl</title>
+    <link>https://loessl.org/tags/console/</link>
+    <description>Recent content in Console on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Dec 2013 20:02:00 +0000</lastBuildDate>
+    <atom:link href="https://loessl.org/tags/console/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mdfind &amp; mdls &amp; Spotlight</title>
+      <link>https://loessl.org/posts/mdfind-mdls-spotlight/</link>
+      <pubDate>Fri, 27 Dec 2013 20:02:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/mdfind-mdls-spotlight/</guid>
+      <description>&lt;p&gt;Searching for files with Spotlight is awesome and you can actually use the power of Spotlight even in the console. But first let me show you some nice features of Spotlight.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Script to automatically login to UpUnet-S at Uppsala University</title>
+      <link>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</link>
+      <pubDate>Tue, 26 Mar 2013 10:28:00 +0000</pubDate>
+      <guid>https://loessl.org/posts/script-to-automatically-login-to-upunet-s-at-uppsala-university/</guid>
+      <description>&lt;p&gt;If you want a small bash, zsh or shell script that auto authenticates you with Uppsala Universities UpUnet-S you can use this simple one liner, just add our username and password and up you go&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

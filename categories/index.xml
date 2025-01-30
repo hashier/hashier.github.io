@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on ~/christopher.loessl</title>
+    <link>https://loessl.org/categories/</link>
+    <description>Recent content in Categories on ~/christopher.loessl</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Feb 2021 18:15:03 +0100</lastBuildDate>
+    <atom:link href="https://loessl.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computer</title>
+      <link>https://loessl.org/categories/computer/</link>
+      <pubDate>Sun, 21 Feb 2021 18:15:03 +0100</pubDate>
+      <guid>https://loessl.org/categories/computer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Science</title>
+      <link>https://loessl.org/categories/science/</link>
+      <pubDate>Mon, 28 Jan 2013 16:31:00 +0200</pubDate>
+      <guid>https://loessl.org/categories/science/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
