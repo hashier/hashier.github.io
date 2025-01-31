@@ -1,7 +1,7 @@
 ---
 title: "TIL: Mac in-place sed"
 date: 2020-06-17T22:16:31+02:00
-tags: [til, shell]
+tags: [til, shell, apple]
 categories: [computer]
 aliases:
 ---
