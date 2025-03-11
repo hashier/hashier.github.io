@@ -1,7 +1,7 @@
 +++
 author = "Hugo Authors"
 title = "Rich Content"
-date = "2019-03-10"
+date = "2025-01-01"
 description = "A brief description of Hugo Shortcodes"
 tags = [
     "shortcodes",
@@ -16,9 +16,7 @@ Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-manageme
 
 ## Instagram Simple Shortcode
 
-{{< instagram_simple BGvuInzyFAe hidecaption >}}
-
-<br>
+{{< instagram BGvuInzyFAe hidecaption >}}
 
 ---
 
@@ -26,15 +24,11 @@ Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-manageme
 
 {{< youtube ZJthWmvUzzc >}}
 
-<br>
-
 ---
 
 ## Twitter Simple Shortcode
 
-{{< twitter_simple 1085870671291310081 >}}
-
-<br>
+<!-- {{< twitter_simple 1085870671291310081 >}} -->
 
 ---
 
