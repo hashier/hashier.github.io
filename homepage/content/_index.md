@@ -22,5 +22,5 @@ my 8” Dobsonian telescope 🔭.
 [Some projects](/projects)
 
 <https://github.com/hashier> \
-<https://twitter.com/hashier> \
+<https://chaos.social/@hashier> \
 [christopher@loessl.org](mailto:christopher@loessl.org)
