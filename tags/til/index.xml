@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>til on ~/christopher.loessl</title>
+    <title>Til on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/til/</link>
-    <description>~/christopher.loessl (til)</description>
+    <description>~/christopher.loessl (Til)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 21 Feb 2021 18:15:03 +0100</lastBuildDate>

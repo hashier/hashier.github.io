@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>code on ~/christopher.loessl</title>
+    <title>Code on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/code/</link>
-    <description>~/christopher.loessl (code)</description>
+    <description>~/christopher.loessl (Code)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Aug 2013 14:39:00 +0000</lastBuildDate>

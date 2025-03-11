@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>latex on ~/christopher.loessl</title>
+    <title>Latex on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/latex/</link>
-    <description>~/christopher.loessl (latex)</description>
+    <description>~/christopher.loessl (Latex)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 May 2013 13:47:00 +0000</lastBuildDate>

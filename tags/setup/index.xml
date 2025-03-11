@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>setup on ~/christopher.loessl</title>
+    <title>Setup on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/setup/</link>
-    <description>~/christopher.loessl (setup)</description>
+    <description>~/christopher.loessl (Setup)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 25 Oct 2013 20:56:00 +0000</lastBuildDate>

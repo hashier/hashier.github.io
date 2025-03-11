@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>port on ~/christopher.loessl</title>
+    <title>Port on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/port/</link>
-    <description>~/christopher.loessl (port)</description>
+    <description>~/christopher.loessl (Port)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 May 2013 16:11:00 +0000</lastBuildDate>
@@ -28,8 +28,6 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lsof -i :4500
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lsof -i :5353
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Booth show nothing&amp;hellip; which means right now nothing is listening on those ports on my machine.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;Let&amp;rsquo;s see which &amp;ldquo;normal&amp;rdquo; services listen on those ports. Of course this is not 100 % certain since any program could listen on those ports.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ grep &lt;span style=&#34;color:#ae81ff&#34;&gt;4500&lt;/span&gt; /etc/services
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ipsec-msft      4500/udp    &lt;span style=&#34;color:#75715e&#34;&gt;# Microsoft IPsec NAT-T&lt;/span&gt;

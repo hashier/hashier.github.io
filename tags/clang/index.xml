@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>clang on ~/christopher.loessl</title>
+    <title>Clang on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/clang/</link>
-    <description>~/christopher.loessl (clang)</description>
+    <description>~/christopher.loessl (Clang)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Mar 2014 01:56:00 +0000</lastBuildDate>

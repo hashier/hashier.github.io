@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ssh on ~/christopher.loessl</title>
+    <title>Ssh on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/ssh/</link>
-    <description>~/christopher.loessl (ssh)</description>
+    <description>~/christopher.loessl (Ssh)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 03 Jul 2013 17:50:00 +0000</lastBuildDate>

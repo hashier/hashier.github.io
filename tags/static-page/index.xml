@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>static-page on ~/christopher.loessl</title>
+    <title>Static-Page on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/static-page/</link>
-    <description>~/christopher.loessl (static-page)</description>
+    <description>~/christopher.loessl (Static-Page)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 06 Jun 2020 20:07:58 +0200</lastBuildDate>

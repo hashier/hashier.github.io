@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>git on ~/christopher.loessl</title>
+    <title>Git on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/git/</link>
-    <description>~/christopher.loessl (git)</description>
+    <description>~/christopher.loessl (Git)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Nov 2013 23:51:00 +0000</lastBuildDate>

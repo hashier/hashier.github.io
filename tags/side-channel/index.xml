@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>side-channel on ~/christopher.loessl</title>
+    <title>Side-Channel on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/side-channel/</link>
-    <description>~/christopher.loessl (side-channel)</description>
+    <description>~/christopher.loessl (Side-Channel)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 21 Feb 2021 18:15:03 +0100</lastBuildDate>

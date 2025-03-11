@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>install on ~/christopher.loessl</title>
+    <title>Install on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/install/</link>
-    <description>~/christopher.loessl (install)</description>
+    <description>~/christopher.loessl (Install)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Feb 2013 21:50:00 +0000</lastBuildDate>

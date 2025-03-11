@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mail on ~/christopher.loessl</title>
+    <title>Mail on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/mail/</link>
-    <description>~/christopher.loessl (mail)</description>
+    <description>~/christopher.loessl (Mail)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Sep 2013 20:33:00 +0000</lastBuildDate>

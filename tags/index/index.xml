@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>index on ~/christopher.loessl</title>
+    <title>Index on ~/christopher.loessl</title>
     <link>https://loessl.org/tags/index/</link>
-    <description>~/christopher.loessl (index)</description>
+    <description>~/christopher.loessl (Index)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Jun 2020 20:07:58 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 21 Feb 2021 18:15:03 +0100</lastBuildDate>
     
     <atom:link href="https://loessl.org/tags/index/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Posts</title>
+      <link>https://loessl.org/posts/</link>
+      <pubDate>Sun, 21 Feb 2021 18:15:03 +0100</pubDate>
+      
+      <guid>https://loessl.org/posts/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Some of my projects</title>
