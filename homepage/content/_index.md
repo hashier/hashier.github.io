@@ -13,8 +13,7 @@ I'm a devoted security and software engineer, interested in security, operating 
 
 Skilled in developing and executing strategic plans, conducting risk assessments, and leading teams. Specialized in security architecture, application security, cloud security, security operations, incident response, cybersecurity, and more. Proven track record of contributing to open-source projects such as VLC, OWASP, ASVS, Adium, and Newsblur.
 
-In my free time, I enjoy reading 📚, hiking 🏔️, climbing 🧗, squash, and exploring the universe with
-my 8” Dobsonian telescope 🔭.
+In my free time, I enjoy reading 📚, hiking 🏔️, climbing 🧗, squash, and exploring the universe with my 8” Dobsonian telescope 🔭.
 
 ## Links
 
