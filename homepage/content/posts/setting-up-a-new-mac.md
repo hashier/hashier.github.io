@@ -8,7 +8,7 @@ tags:
 - mac
 - setup
 - software
-category:
+categories:
 - computer
 aliases:
 draft: false
