@@ -13,6 +13,8 @@ staticDir = "static"
 # disqusShortname = ""
 # googleAnalytics = ""
 
+enableRobotsTXT = true
+
 [params]
   author = "Christopher Loessl"
   description = "Private homepage of Christopher Loessl"
