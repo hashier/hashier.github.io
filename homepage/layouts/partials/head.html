@@ -5,7 +5,7 @@
 <meta name="referrer" content="no-referrer-when-downgrade">
 
 <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-<meta name="description" content="{{ .Site.Params.Description }}">
+<meta name="description" content="{{ .Description | default .Title | default .Site.Params.Description }}">
 
 <link rel="me" href="https://chaos.social/@hashier" />
 

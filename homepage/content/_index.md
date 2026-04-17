@@ -9,7 +9,7 @@ comment: "This file needs to be _index.md. If it is index.md /posts isn't workin
 
 My name is Christopher Loessl. Currently working as a Senior Security Engineering Manager at [Visa](https://www.visa.com).
 
-I'm a devoted security and software engineer, interested in security, operating systems, networking and mobile, with more than 20+ years of Linux/Unix and 15+ years of professional software development experience.
+I'm a devoted security and software engineer, interested in security, operating systems, networking and mobile, with 20+ years of Linux/Unix and 15+ years of professional software development experience.
 
 Skilled in developing and executing strategic plans, conducting risk assessments, and leading teams. Specialized in security architecture, application security, cloud security, security operations, incident response, cybersecurity, and more. Proven track record of contributing to open-source projects such as VLC, OWASP, ASVS, Adium, and Newsblur.
 
