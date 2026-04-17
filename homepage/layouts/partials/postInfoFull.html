@@ -5,7 +5,12 @@
 
 <div class="post-info">
     {{ if .Params.date }}
-        <div class="post-date">{{ .Params.date.Format $dateFormat }}</div>
+        <div class="post-date">
+            {{ .Params.date.Format $dateFormat }}
+            {{ if .Lastmod.After .Date }}
+                <span class="post-lastmod">(updated {{ .Lastmod.Format $dateFormat }})</span>
+            {{ end }}
+        </div>
     {{ end }}
     <div class="post-taxonomies">
         {{ if .Params.categories }}
