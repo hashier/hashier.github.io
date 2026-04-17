@@ -20,8 +20,9 @@ jobs:
     permissions:
       contents: read
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     env:
-      HUGO_VERSION: 0.142.0
+      HUGO_VERSION: 0.160.1
 
     steps:
       - name: Checkout code
@@ -58,6 +59,14 @@ jobs:
         run: |
           cd homepage
           hugo --minify
+
+      - name: Check internal links
+        run: |
+          gem install htmlproofer --no-document
+          htmlproofer ./homepage/public \
+            --disable-external \
+            --no-enforce-https \
+            --ignore-files "/404.html/"
 
       - name: Upload artifact
         if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/dev' }}
