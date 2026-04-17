@@ -1,3 +1,5 @@
 .DS_Store
 *.swp
 /homepage/public
+/homepage/.hugo_build.lock
+.claude/settings.local.json
