@@ -19,6 +19,7 @@ enableRobotsTXT = true
   author = "Christopher Loessl"
   description = "Private homepage of Christopher Loessl"
   customCss = ["css/custom.css"]
+  mastodon = "https://chaos.social/@hashier"
 
 [menu]
 
