@@ -7,8 +7,6 @@ on:
   pull_request:
     branches:
       - dev
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
@@ -26,15 +24,31 @@ jobs:
       HUGO_VERSION: 0.142.0
 
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-
       - name: Checkout code
         uses: actions/checkout@v6
         with:
           submodules: true
+
+      - name: Cache Hugo binary
+        id: cache-hugo
+        uses: actions/cache@v4
+        with:
+          path: /usr/local/bin/hugo
+          key: hugo-${{ env.HUGO_VERSION }}
+
+      - name: Install Hugo CLI
+        if: steps.cache-hugo.outputs.cache-hit != 'true'
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Cache Hugo build cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/hugo_cache
+          key: hugo-cache-${{ hashFiles('homepage/content/**', 'homepage/layouts/**', 'homepage/static/**') }}
+          restore-keys: |
+            hugo-cache-
 
       - name: Build site
         env:
@@ -58,8 +72,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
+      pages: write
+      id-token: write
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
