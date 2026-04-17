@@ -58,7 +58,7 @@ jobs:
           HUGO_ENVIRONMENT: production
         run: |
           cd homepage
-          hugo --minify
+          hugo --minify --printPathWarnings --printUnusedTemplates --printI18nWarnings --printPathWarnings --printUnusedTemplates --printPathWarnings
 
       - name: Check internal links
         run: |

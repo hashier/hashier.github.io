@@ -3,3 +3,6 @@ toNewPosts:
 
 toOldPosts:
   other: "older posts >>"
+
+Series:
+  other: "Series"
