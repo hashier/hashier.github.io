@@ -14,8 +14,8 @@ brew install hugo
 
 ```sh
 git clone --recurse-submodules https://github.com/hashier/hashier.github.io
-cd hashier.github.io/homepage
-hugo server --buildDrafts
+cd hashier.github.io
+make serve
 ```
 
 The site is served at `http://localhost:1313`. The dev environment uses `config/development/config.toml` which sets a smaller paginator size and enables drafts by default.
