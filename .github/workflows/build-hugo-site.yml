@@ -62,7 +62,7 @@ jobs:
 
       - name: Check internal links
         run: |
-          gem install htmlproofer --no-document
+          gem install html-proofer --no-document
           htmlproofer ./homepage/public \
             --disable-external \
             --no-enforce-https \
