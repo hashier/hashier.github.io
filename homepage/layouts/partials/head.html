@@ -5,7 +5,7 @@
 <meta name="referrer" content="no-referrer-when-downgrade">
 
 <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-<meta name="description" content="{{ .Description | default .Title | default .Site.Params.Description }}">
+<meta name="description" content="{{ .Description | default (.Summary | plainify) | default .Site.Params.Description | default .Title }}">
 
 {{ with .Site.Params.mastodon }}<link rel="me" href="{{ . }}" />{{ end }}
 
