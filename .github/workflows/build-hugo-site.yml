@@ -48,15 +48,12 @@ jobs:
           HUGO_ENVIRONMENT: production
         run: |
           cd homepage
-          hugo --minify --printPathWarnings --printUnusedTemplates --printI18nWarnings
+          hugo --minify --printPathWarnings --printI18nWarnings
 
       - name: Check internal links
         run: |
           sudo gem install html-proofer --no-document
-          htmlproofer ./homepage/public \
-            --disable-external \
-            --no-enforce-https \
-            --ignore-files "/404.html/"
+          htmlproofer ./homepage/public --disable-external
 
       - name: Upload artifact
         if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/dev' }}

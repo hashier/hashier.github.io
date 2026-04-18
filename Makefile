@@ -1,4 +1,4 @@
-HUGO_FLAGS = --printPathWarnings --printUnusedTemplates --printI18nWarnings
+HUGO_FLAGS = --printPathWarnings --printI18nWarnings
 
 .PHONY: serve build clean
 
