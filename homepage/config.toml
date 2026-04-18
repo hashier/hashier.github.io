@@ -49,6 +49,5 @@ enableRobotsTXT = true
     weight = 4
 
 [taxonomies]
-  category = "categories"
   tag = "tags"
   series = "series"

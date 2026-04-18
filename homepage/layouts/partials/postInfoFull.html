@@ -13,14 +13,14 @@
         </div>
     {{ end }}
     <div class="post-taxonomies">
-        {{ if .Params.categories }}
+        {{ if and .Site.Taxonomies.categories .Params.categories }}
             <ul class="post-categories">
                 {{ range .Params.categories }}
                     <li><a href="{{ "categories/" | absLangURL }}{{ . | urlize }}">{{ . }}</a></li>
                 {{ end }}
             </ul>
-            {{ end }}
-            {{ if .Params.tags }}
+        {{ end }}
+        {{ if .Params.tags }}
                 <ul class="post-tags">
                     {{ range .Params.tags }}
                         <li><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">#{{ . }}</a></li>
