@@ -7,8 +7,8 @@
     {{ if .Params.date }}
         <div class="post-date">
             {{ .Params.date.Format $dateFormat }}
-            {{ if .Lastmod.After .Date }}
-                <span class="post-lastmod">(updated {{ .Lastmod.Format $dateFormat }})</span>
+            {{ if and .Params.lastMod (ne .Params.date .Params.lastMod) }}
+                <span class="post-lastmod">(updated {{ .Params.lastMod.Format $dateFormat }})</span>
             {{ end }}
         </div>
     {{ end }}
