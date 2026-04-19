@@ -13,7 +13,7 @@
         </div>
     {{ end }}
     <div class="post-taxonomies">
-        {{ if and .Site.Taxonomies.categories .Params.categories }}
+        {{ if and (index .Site.Taxonomies "categories") .Params.categories }}
             <ul class="post-categories">
                 {{ range .Params.categories }}
                     <li><a href="{{ "categories/" | absLangURL }}{{ . | urlize }}">{{ . }}</a></li>
