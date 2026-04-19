@@ -23,7 +23,7 @@ The site is served at `http://localhost:1313`. The dev environment uses `config/
 ## New post
 
 ```sh
-hugo new posts/my-post-title.md
+cd homepage && hugo new posts/my-post-title.md
 ```
 
 Edit the generated file in `content/posts/`. Set `draft: false` when ready to publish.
