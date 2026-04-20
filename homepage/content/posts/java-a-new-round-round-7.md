@@ -36,5 +36,5 @@ sudo rm -rf /Library/PreferencePanes/JavaControlPanel.prefpane
 
 ## Sources
 
-- <http://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jre.html>
-- <http://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jdk.html>
+- <https://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jre.html>
+- <https://docs.oracle.com/javase/7/docs/webnotes/install/mac/mac-jdk.html>

@@ -10,13 +10,13 @@ Recently I turned on UPnP (Universal Plug and Play) to play a bit with it and in
 
 <!--more-->
 
-First idea "wireshark" but this only gives you information from which port these UPnP stuff goes, it doesn't tell you the application that initiated these packages. For the curious here is the [filter](http://wiki.wireshark.org/SSDP) you can use:
+First idea "wireshark" but this only gives you information from which port these UPnP stuff goes, it doesn't tell you the application that initiated these packages. For the curious here is the [filter](https://wiki.wireshark.org/SSDP) you can use:
 
 ```bash
 udp.dstport == 1900 && http && ip.addr == 192.168.1.100
 ```
 
-UPnP uses the [SSDP](http://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol) protocol which isn't implemented by wireshark but you can simply use the http protocol because SSDP is based on [HTTPU](http://en.wikipedia.org/wiki/HTTPU) (yes, HTTPU).
+UPnP uses the [SSDP](https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol) protocol which isn't implemented by wireshark but you can simply use the http protocol because SSDP is based on [HTTPU](https://en.wikipedia.org/wiki/HTTPU) (yes, HTTPU).
 
 > Imagine a picture that shows you that port 4500 and 5353 are open
 
@@ -65,7 +65,7 @@ mdns            5353/udp    # Multicast DNS
 mdns            5353/tcp    # Multicast DNS
 ```
 
-I didn't do anything with VPN or IPsec so I started googling and found this [Apple KB entry](http://support.apple.com/kb/TS1629) which explained to me which services forward those ports and apparently it's just "Back to My Mac" and some "Bonjour" stuff.
+I didn't do anything with VPN or IPsec so I started googling and found this [Apple KB entry](https://support.apple.com/kb/TS1629) which explained to me which services forward those ports and apparently it's just "Back to My Mac" and some "Bonjour" stuff.
 
 For the case that the service is still up and running on the port the `lsof` output would look something like this, where you can easily read the `command` and `PID` that is listening on a given port:
 

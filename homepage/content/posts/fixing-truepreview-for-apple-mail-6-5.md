@@ -38,4 +38,4 @@ or any other text editor.
 If the bundle is installed system wide of course you have to look into `/Library` instead of `~/Library`.
 
 Source:
-[Fixing GrowlMail for Mail 4.2 | langui.sh](http://langui.sh/2009/11/09/fixing-growlmail-letterbox-for-mail-4-2/#fn-811-1)
+[Fixing GrowlMail for Mail 4.2 | langui.sh](https://langui.sh/2009/11/09/fixing-growlmail-letterbox-for-mail-4-2/#fn-811-1)

@@ -11,4 +11,4 @@ Did you know, that you can trigger your HotCorners with a modifier key?
 <!--more-->
 
 Source:
-<http://hints.macworld.com/article.php?story=20130621130534978>
+<https://hints.macworld.com/article.php?story=20130621130534978>

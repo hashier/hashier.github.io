@@ -36,4 +36,4 @@ Used to determine whether the user making this call is subject to teleportations
 Returns whether the user making this call is a goat
 ```
 
-via [ActivityManager | Android Developers](http://developer.android.com/reference/android/app/ActivityManager.html#isUserAMonkey) [and](http://developer.android.com/reference/android/widget/AdapterViewFlipper.html#fyiWillBeAdvancedByHostKThx()) [and](http://developer.android.com/reference/android/os/UserManager.html#isUserAGoat())
+via [ActivityManager | Android Developers](https://developer.android.com/reference/android/app/ActivityManager.html#isUserAMonkey) [and](https://developer.android.com/reference/android/widget/AdapterViewFlipper.html#fyiWillBeAdvancedByHostKThx()) [and](https://developer.android.com/reference/android/os/UserManager.html#isUserAGoat())

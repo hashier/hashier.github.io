@@ -68,7 +68,7 @@ Implementation of the SAFT protocol.
 It is fully functional and compatible with the original client and server.
 More information about the protocol can be found here in this pre-RFC:
 
-<http://linux.math.tifr.res.in/manuals/text/sendfile.txt>
+<https://linux.math.tifr.res.in/manuals/text/sendfile.txt>
 
 Written in ANSI C.
 

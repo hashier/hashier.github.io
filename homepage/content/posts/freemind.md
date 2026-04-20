@@ -6,7 +6,7 @@ categories: [computer]
 aliases:
 ---
 
-[FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page) is a mind-mapping software I recently started to use and I like it, so far. But let the webpage talk for itself:
+[FreeMind](https://freemind.sourceforge.net/wiki/index.php/Main_Page) is a mind-mapping software I recently started to use and I like it, so far. But let the webpage talk for itself:
 
 <!--more-->
 

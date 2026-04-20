@@ -4,7 +4,7 @@ https://keybase.io/hashier
 
 I hereby claim:
 
-  * I am an admin of http://loessl.org
+  * I am an admin of https://loessl.org
   * I am hashier (https://keybase.io/hashier) on keybase.
   * I have a public key with fingerprint 8A66 095F 4960 62DB D3D1  80D5 44F1 DB06 C926 11B4
 

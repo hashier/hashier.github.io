@@ -304,7 +304,7 @@ killall Finder
 
 
 # sources:
-# http://secrets.blacktree.com
+# https://secrets.blacktree.com
 # https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 ```
 
