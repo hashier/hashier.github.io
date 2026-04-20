@@ -7,8 +7,6 @@ on:
   pull_request:
     branches:
       - dev
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
@@ -22,44 +20,57 @@ jobs:
     permissions:
       contents: read
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     env:
-      HUGO_VERSION: 0.142.0
+      HUGO_VERSION: 0.160.1
 
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-
       - name: Checkout code
         uses: actions/checkout@v6
         with:
           submodules: true
 
+      - name: Cache Hugo binary
+        id: cache-hugo
+        uses: actions/cache@v4
+        with:
+          path: /usr/local/bin/hugo
+          key: hugo-${{ env.HUGO_VERSION }}
+
+      - name: Install Hugo CLI
+        if: steps.cache-hugo.outputs.cache-hit != 'true'
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
       - name: Build site
         env:
-          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
           cd homepage
-          hugo --minify
+          hugo --minify --printPathWarnings --printI18nWarnings
+
+      - name: Check internal links
+        run: |
+          sudo gem install html-proofer --no-document
+          htmlproofer ./homepage/public --disable-external
 
       - name: Upload artifact
-        if: ${{ github.event_name != 'pull_request' }}
+        if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/dev' }}
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./homepage/public
 
   deploy:
-    if: ${{ github.event_name != 'pull_request' }}
+    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/dev' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
+      pages: write
+      id-token: write
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

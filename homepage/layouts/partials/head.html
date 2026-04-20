@@ -5,9 +5,9 @@
 <meta name="referrer" content="no-referrer-when-downgrade">
 
 <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-<meta name="description" content="{{ .Site.Params.Description }}">
+<meta name="description" content="{{ .Description | default (.Summary | plainify) | default .Site.Params.Description | default .Title }}">
 
-<link rel="me" href="https://chaos.social/@hashier" />
+{{ with .Site.Params.mastodon }}<link rel="me" href="{{ . }}" />{{ end }}
 
 {{ with .OutputFormats.Get "rss" -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}

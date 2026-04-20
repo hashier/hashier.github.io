@@ -21,4 +21,4 @@ Caveat:
 
 > Watch out for doing the symlink... Apple released 1.6 security update recently. If you apply this update from Apple, the symlink seems to fool the update and installs 1.6 update into where the symlink points to, i.e. Oracle's 1.7.
 
-[– Jonah Tsai Jan 19 at 18:04](http://apple.stackexchange.com/questions/58203/mountain-lion-with-java-7-only)
+[– Jonah Tsai Jan 19 at 18:04](https://apple.stackexchange.com/questions/58203/mountain-lion-with-java-7-only)

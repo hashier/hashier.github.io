@@ -11,4 +11,4 @@ categories: [computer]
 
 The posts describes how to find bottlenecks if something is not working as it should be. Awesome read!
 
-via [Brendan's blog » The USE Method: Mac OS X Performance Checklist](http://dtrace.org/blogs/brendan/2013/09/18/the-use-method-mac-os-x-performance-checklist/).
+via [Brendan's blog » The USE Method: Mac OS X Performance Checklist](https://dtrace.org/blogs/brendan/2013/09/18/the-use-method-mac-os-x-performance-checklist/).

@@ -17,7 +17,7 @@ Searching for all images that contain `me`, are of kind image and were taken wit
 mdfind kind:image flash:1
 ```
 
-Spotlight supports a whole lot of these search fields like, duration, pixel height, width, last opened, ISO speed, aperture, exposure time and so forth for a full list check this [PDF](http://hints.macworld.com/dlfiles/spotlight_cmds.pdf).
+Spotlight supports a whole lot of these search fields like, duration, pixel height, width, last opened, ISO speed, aperture, exposure time and so forth for a full list check this [PDF](https://hints.macworld.com/dlfiles/spotlight_cmds.pdf).
 
 ## mdfind
 
@@ -53,7 +53,7 @@ cdw stands for:
 - ignore diacritical
 - word based
 
-All by the [5by5](http://5by5.tv) network
+All by the [5by5](https://5by5.tv) network
 
 ```bash
 mdfind 'kMDItemAuthors = "*5by5.tv*"'
@@ -100,8 +100,8 @@ Be warned, it is a lot of information.
 
 It’s worth having a look at the man page of these commands and the help provided with `mdfind -h` because the information is not consistent. For example the man page doesn’t tell you about the `-s` flag which brings smart folders to the command line.
 
-And for the curious how I came across `mdfind`. I stumbled upon that command while reading this [blog post](http://brettterpstra.com/2013/12/22/quick-tip-tag-filer-without-hazel/) by Brett Terpstra.
+And for the curious how I came across `mdfind`. I stumbled upon that command while reading this [blog post](https://brettterpstra.com/2013/12/22/quick-tip-tag-filer-without-hazel/) by Brett Terpstra.
 
 Sources:
-[Spotlight reference](http://hints.macworld.com/dlfiles/spotlight_cmds.pdf)
-[MacDevCenter about mdfind](http://www.macdevcenter.com/pub/a/mac/2006/01/04/mdfind.html?page=1)
+[Spotlight reference](https://hints.macworld.com/dlfiles/spotlight_cmds.pdf)
+[MacDevCenter about mdfind](https://www.macdevcenter.com/pub/a/mac/2006/01/04/mdfind.html?page=1)

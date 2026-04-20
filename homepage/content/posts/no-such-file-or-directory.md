@@ -16,4 +16,4 @@ Fix:
 apt-get install ia32-libs
 ```
 
-via [ubuntu bash: ./adb: No such file or directory](http://ubuntuforums.org/showthread.php?t=1520697)
+via [ubuntu bash: ./adb: No such file or directory](https://ubuntuforums.org/showthread.php?t=1520697)

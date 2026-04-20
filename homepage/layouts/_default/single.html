@@ -10,4 +10,16 @@
         {{ partial "postInfoFull.html" . }}
     </article>
 
+    {{ if gt .Site.Params.readNextPosts 0 }}
+        {{ $related := .Site.RegularPages.Related . | first .Site.Params.readNextPosts }}
+        {{ with $related }}
+            <h3>Read next</h3>
+            <ul>
+                {{ range . }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+        {{ end }}
+    {{ end }}
+
 {{ end }}

@@ -7,7 +7,7 @@ categories: [computer]
 
 ## Blocks on the Stack
 
-While reading through Apple’s open source code (headers) I came across [queue.h](http://opensource.apple.com/source/libdispatch/libdispatch-339.1.9/dispatch/queue.h) and stumbled over the following warning:
+While reading through Apple’s open source code (headers) I came across [queue.h](https://opensource.apple.com/source/libdispatch/libdispatch-339.1.9/dispatch/queue.h) and stumbled over the following warning:
 
 <!--more-->
 
@@ -40,7 +40,7 @@ While reading through Apple’s open source code (headers) I came across [queue.
  */
 ```
 
-I got curious and so I followed the rabbit [down](http://opensource.apple.com/source/libdispatch/libdispatch-339.1.9/dispatch/queue.h) [the](http://objectivistc.tumblr.com/post/10523983325/would-you-please-crash-my-out-of-scope-stack-closure) [rabbit](http://www.friday.com/bbum/2009/08/29/blocks-tips-tricks/) [hole](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Blocks/Articles/bxUsing.html).
+I got curious and so I followed the rabbit [down](https://opensource.apple.com/source/libdispatch/libdispatch-339.1.9/dispatch/queue.h) [the](https://objectivistc.tumblr.com/post/10523983325/would-you-please-crash-my-out-of-scope-stack-closure) [rabbit](https://www.friday.com/bbum/2009/08/29/blocks-tips-tricks/) [hole](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Blocks/Articles/bxUsing.html).
 
 First of, a block in C is defined by `{ ... }`. Identifiers defined inside this block have scope visibility / lifetime (used from now on interchangeable) limited to that block. The `if (x)` statement in Apple’s example above is creating such a C block, in which a struct is created and that struct is assigned to (Objective-C) block (called closures from now on for easier differentiation).
 Every C block creates a new visibility scope were stack variables are stored (stack area) similar to [stack frames](https://en.wikipedia.org/wiki/Call_stack#Structure). Which means after the block is closed it is not save any more to access these memory locations.
@@ -51,7 +51,7 @@ Closures are (apparently) the only Objective-C objects that start on the stack, 
 
 If you run the example code from Apple you will realise, that the code works flawless. It does not crash with a dreaded segfault and it even behaves exactly as you would expect it to.
 Why? This is because clang does not reuse stack areas that were previously used and therefore nothing overwrite the memory location with something different (assuming you are not doing it from a different thread). The situation looks different if you are using gcc with the -O2 flag. gcc then reuses stack areas and overwrites your stack area. Since gcc is not capable of closures and clang doesn’t reuse stack areas you might be never run actually into a problem (There is a [caveat](#closures-inside-of-an-array) tought[^1]). This behaviour is, though, just an implementation detail that might change or vary from compiler to compiler and therefore you should not bet on it, it might change.
-You can find some demo source code [here](http://objectivistc.tumblr.com/post/10523983325/would-you-please-crash-my-out-of-scope-stack-closure) that shows `gcc -O0` versus `gcc -O2`.
+You can find some demo source code [here](https://objectivistc.tumblr.com/post/10523983325/would-you-please-crash-my-out-of-scope-stack-closure) that shows `gcc -O0` versus `gcc -O2`.
 
 ## Closures inside of an Array
 
@@ -69,7 +69,7 @@ for (int i=0; i<3; i++) {
 }
 ```
 
-[Code](http://www.friday.com/bbum/2009/08/29/blocks-tips-tricks/)
+[Code](https://www.friday.com/bbum/2009/08/29/blocks-tips-tricks/)
 
 The output is “2 2 2” instead of the expected "1 2 3". This is because the stack area used for the `for loop` is the same for all iterations and therefore every new created closures overwrites the closures created in the previous iteration. In `b[1]`, `b[2]` and `b[3]` is just a pointer stored to the closure and since the place of creation on the stack was the same for all three closures the pointer is the same which leads to `b[1]==b[2]==b[3]`.
 

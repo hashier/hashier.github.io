@@ -5,4 +5,4 @@ tags: [asm, development]
 categories: [computer]
 ---
 
-Nice blog post about [stack unwinding](http://blog.reverberate.org/2013/05/deep-wizardry-stack-unwinding.html).
+Nice blog post about [stack unwinding](https://blog.reverberate.org/2013/05/deep-wizardry-stack-unwinding.html).

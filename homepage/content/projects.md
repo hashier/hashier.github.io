@@ -37,13 +37,13 @@ Mac Menubar UI App, written in Objective-C.
 ## [SSKeychain](https://github.com/soffes/sskeychain/)
 
 Objective-C wrapper around the iOS/OS X keychain.
-I wrote the unite testsfor almost the whole code base.
+I wrote the unit tests for almost the whole code base.
 
 Written in Objective-C.
 
 ## [MacFolket](https://hashier.github.io/MacFolket/)
 
-MacFolket is a Swedish/English dictionary that is deeply integrated into OS~X.
+MacFolket is a Swedish/English dictionary that is deeply integrated into OS X.
 
 After finding a dictionary database under the CC license, I decided to develop a program that facilitates reading Swedish webpages.
 
@@ -68,7 +68,7 @@ Implementation of the SAFT protocol.
 It is fully functional and compatible with the original client and server.
 More information about the protocol can be found here in this pre-RFC:
 
-<http://linux.math.tifr.res.in/manuals/text/sendfile.txt>
+<https://linux.math.tifr.res.in/manuals/text/sendfile.txt>
 
 Written in ANSI C.
 
@@ -78,7 +78,7 @@ My initiation into the world of developing software.
 
 fli4l.de is a Linux based ISDN-, DSL- and Ethernet-router.
 The communication with the system service utilized a special
-protocol thatwas only implemented in a program for Windows.
+protocol that was only implemented in a program for Windows.
 I wrote flicp to be able to transfer files to and from Unix/Linux
 based systems to the service
 

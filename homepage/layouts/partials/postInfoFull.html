@@ -1,0 +1,31 @@
+{{ $dateFormat := "2006-01-02" }}
+{{ if .Site.Params.dateFormat }}
+    {{ $dateFormat = .Site.Params.dateFormat }}
+{{ end }}
+
+<div class="post-info">
+    {{ if .Params.date }}
+        <div class="post-date">
+            {{ .Params.date.Format $dateFormat }}
+            {{ if and .Params.lastMod (ne .Params.date .Params.lastMod) }}
+                <span class="post-lastmod">(updated {{ .Params.lastMod.Format $dateFormat }})</span>
+            {{ end }}
+        </div>
+    {{ end }}
+    <div class="post-taxonomies">
+        {{ if and (index .Site.Taxonomies "categories") .Params.categories }}
+            <ul class="post-categories">
+                {{ range .Params.categories }}
+                    <li><a href="{{ "categories/" | absLangURL }}{{ . | urlize }}/">{{ . }}</a></li>
+                {{ end }}
+            </ul>
+        {{ end }}
+        {{ if .Params.tags }}
+            <ul class="post-tags">
+                {{ range .Params.tags }}
+                    <li><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}/">#{{ . }}</a></li>
+                {{ end }}
+            </ul>
+        {{ end }}
+    </div>
+</div>

@@ -6,4 +6,4 @@ categories: [computer]
 aliases:
 ---
 
-A simple LD_PRELOAD tutorial that works under Linux can be found [here](http://www.catonmat.net/blog/simple-ld-preload-tutorial/). One that can be used under OS X you should also read [this one](http://blog.client9.com/2012/06/ldpreload-on-mac-os-x.html).
+A simple LD_PRELOAD tutorial that works under Linux can be found [here](https://www.catonmat.net/blog/simple-ld-preload-tutorial/). One that can be used under OS X you should also read [this one](https://blog.client9.com/2012/06/ldpreload-on-mac-os-x.html).

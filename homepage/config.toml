@@ -19,6 +19,8 @@ enableRobotsTXT = true
   author = "Christopher Loessl"
   description = "Private homepage of Christopher Loessl"
   customCss = ["css/custom.css"]
+  mastodon = "https://chaos.social/@hashier"
+  readNextPosts = 3
 
 [menu]
 
@@ -47,6 +49,6 @@ enableRobotsTXT = true
     weight = 4
 
 [taxonomies]
-  category = "categories"
+  # category = "categories"
   tag = "tags"
-  series = "series"
+  # series = "series"
