@@ -1,85 +1,71 @@
 ---
-title: "Some of my projects"
+title: "Projects"
 date: 2020-06-06T20:07:58+02:00
 tags: ["static-page", "index"]
 ---
 
-This is a small (incomplete) list of projects that I have started over the years and that have had some impact on me in one way or another.
-Starting with my very first successful C project that allowed transfer of files between a famous gateway router ([fli4l](https://fli4l.de)) and a local machine, flicp.
+A selection of projects I've built over the years. More on [GitHub](https://github.com/hashier).
 
-You can find most of my projects on [Github](https://github.com) or by clicking on them below.
+## [Voronoi Subway Map](https://github.com/hashier/voronoi-subway-map)
 
-## [1-2-animation](https://hashier.github.io/1-2-animation/)
+Generates a colored Voronoi diagram overlaid on OpenStreetMap showing the closest subway station from any point in the city. Try the [live demo](https://nearest-station.loessl.org/).
 
-This command line tool generates Poemotion images.
-These are 2D images that provide an optical illusion of being 3D when viewed with a striped masked.
+![Voronoi map of Stockholm subway stations](https://raw.githubusercontent.com/hashier/voronoi-subway-map/main/img/img.jpg)
 
-A video of this effect can be found on the project's GitHub page.
+{{< langUsed >}}HTML, JavaScript.{{< /langUsed >}}
 
-Written in Go.
+## [TRMNL Norway Departures](https://github.com/hashier/trmnl-norway-departures)
 
-## [Spotify Playlist Manager](https://hashier.github.io/Bucketify/)
+Plugin for the [TRMNL](https://usetrmnl.com/) e-ink display that shows real-time public transport departures in Norway.
 
-This app helps you to manage and filter your Spotify Playlist.
+<!-- TODO: add image -->
 
-Whether you want to filtering your playlists by genre, country of artist or just simply randomise it, this app can do it for you.
+{{< langUsed >}}Python.{{< /langUsed >}}
 
-Written in Objective-C with different Frameworks like CocoaLibSpotify and ENiOS.
+## [1-2-animation](https://github.com/hashier/1-2-animation)
 
-## [idleSound](https://hashier.github.io/idleSound/)
+Generates Poemotion images — 2D patterns that create an optical illusion of motion when viewed through a striped overlay. [Video demo](https://youtu.be/wS_h5yDLNzM).
 
-Automatically mute your Mac when it becomes idle or your screen locks.
+![1-2-animation example](https://raw.githubusercontent.com/hashier/1-2-animation/master/example/example-color-5-out.png)
 
-Idle time as well as the screen-lock/screen-saver are individually adjustable.
-
-Mac Menubar UI App, written in Objective-C.
-
-## [SSKeychain](https://github.com/soffes/sskeychain/)
-
-Objective-C wrapper around the iOS/OS X keychain.
-I wrote the unit tests for almost the whole code base.
-
-Written in Objective-C.
+{{< langUsed >}}Go.{{< /langUsed >}}
 
 ## [MacFolket](https://hashier.github.io/MacFolket/)
 
-MacFolket is a Swedish/English dictionary that is deeply integrated into OS X.
+A Swedish/English dictionary deeply integrated into macOS — look up words system-wide via the native dictionary popup. 78 stars on GitHub. Installable via [Homebrew](https://github.com/hashier/homebrew-macfolket).
 
-After finding a dictionary database under the CC license, I decided to develop a program that facilitates reading Swedish webpages.
+![MacFolket dictionary lookup](https://raw.githubusercontent.com/hashier/MacFolket/master/images/svendict.jpg)
 
-Implemented in XSLT (I started a Golang rewrite recently).
+{{< langUsed >}}XSLT.{{< /langUsed >}}
 
-## [GIMP CUDA-Plugin](https://github.com/hashier/gicu/)
+## [idleSound](https://hashier.github.io/idleSound/)
 
-GIMP plugin written to use GPU acceleration.
+Automatically mutes your Mac when it becomes idle or the screen locks. Configurable idle time and screen-lock thresholds.
 
-The plugin extends GIMP to apply various filters on images with the help of the graphics card.
-This is done by transfer of heavy calculations to the GPU.
+![idleSound menu bar](https://raw.githubusercontent.com/hashier/idleSound/master/images/Screenshot.png)
 
-As far as I know, this was the very first every written GIMP plugin
-that off loaded the heavy math calculations to the graphics card.
+{{< langUsed >}}Objective-C, macOS menu bar app.{{< /langUsed >}}
 
-Written in C, X11, GTK+ and CUDA.
+## [CBP Compiler](https://github.com/hashier/cbp)
 
-## [SuperSaft](https://github.com/hashier/SuperSaft/)
+Compiler for a custom programming language, built with Bison and Flex. Lexer, parser, AST, and code generation.
 
-Implementation of the SAFT protocol.
+{{< langUsed >}}C++.{{< /langUsed >}}
 
-It is fully functional and compatible with the original client and server.
-More information about the protocol can be found here in this pre-RFC:
+## [GIMP CUDA Plugin](https://github.com/hashier/gicu/)
 
-<https://linux.math.tifr.res.in/manuals/text/sendfile.txt>
+One of the first GIMP plugins to offload image filter computation to the GPU. Extends GIMP with GPU-accelerated filters by transferring heavy calculations to the graphics card via CUDA.
 
-Written in ANSI C.
+{{< langUsed >}}C, GTK+, CUDA.{{< /langUsed >}}
 
-## [flicp](https://www.fli4l.de/)
+## [SuperSAFT](https://github.com/hashier/SuperSAFT/)
 
-My initiation into the world of developing software.
+Full implementation of the [SAFT](https://linux.math.tifr.res.in/manuals/text/sendfile.txt) file transfer protocol, compatible with the original client and server.
 
-fli4l.de is a Linux based ISDN-, DSL- and Ethernet-router.
-The communication with the system service utilized a special
-protocol that was only implemented in a program for Windows.
-I wrote flicp to be able to transfer files to and from Unix/Linux
-based systems to the service
+{{< langUsed >}}ANSI C.{{< /langUsed >}}
 
-Written in ANSI C.
+## [flicp](https://github.com/hashier/flicp)
+
+My first C project. A file transfer client for [fli4l](https://www.fli4l.de/) Linux routers, implementing a proprietary protocol that previously only had a Windows client.
+
+{{< langUsed >}}ANSI C.{{< /langUsed >}}

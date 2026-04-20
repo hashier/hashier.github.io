@@ -1,3 +1,7 @@
+small {
+    color: #888;
+}
+
 @media (prefers-color-scheme: dark) {
     /* main */
     body {
