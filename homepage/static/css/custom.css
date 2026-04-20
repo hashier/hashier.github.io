@@ -2,40 +2,120 @@ small {
     color: #888;
 }
 
+/* Theme toggle slider */
+.theme-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    margin-left: 2em;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.theme-icon {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-switch .slider {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: background-color 0.2s;
+}
+
+.theme-switch .slider::before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.theme-switch input:checked + .slider {
+    background-color: #555;
+}
+
+.theme-switch input:checked + .slider::before {
+    transform: translateX(16px);
+}
+
+/* Dark mode: system preference (default, no toggle clicked) */
 @media (prefers-color-scheme: dark) {
-    /* main */
-    body {
+    html:not([data-theme="light"]) body {
         color: #fafafa;
         background: #232323;
     }
 
-    /* Pager */
-    .pagination-item {
+    html:not([data-theme="light"]) .pagination-item {
         background: #333;
     }
 
-    .pagination-item a {
+    html:not([data-theme="light"]) .pagination-item a {
         color: #fafafa;
     }
 
-    /* Navigation */
-    header a {
+    html:not([data-theme="light"]) header a {
         color: #9b9b9b;
     }
 
-    header nav {
+    html:not([data-theme="light"]) header nav {
         background: #232323;
     }
 
-    /* Title of posts */
-    article header h1 a {
+    html:not([data-theme="light"]) article header h1 a {
         color: #ccc;
     }
 
     @media (max-width: 840px) {
-        /* Have a nice box around menu on phones */
-        header nav {
+        html:not([data-theme="light"]) header nav {
             background: #333;
         }
+    }
+}
+
+/* Dark mode: manual override */
+[data-theme="dark"] body {
+    color: #fafafa;
+    background: #232323;
+}
+
+[data-theme="dark"] .pagination-item {
+    background: #333;
+}
+
+[data-theme="dark"] .pagination-item a {
+    color: #fafafa;
+}
+
+[data-theme="dark"] header a {
+    color: #9b9b9b;
+}
+
+[data-theme="dark"] header nav {
+    background: #232323;
+}
+
+[data-theme="dark"] article header h1 a {
+    color: #ccc;
+}
+
+@media (max-width: 840px) {
+    [data-theme="dark"] header nav {
+        background: #333;
     }
 }
