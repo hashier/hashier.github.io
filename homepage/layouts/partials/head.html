@@ -16,10 +16,13 @@
 <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | absURL }}">
 <link rel="apple-touch-icon-precomposed" href="{{ "favicon.png" | absURL }}">
 
-<link rel="stylesheet" href="{{ "css/style.css" | absURL }}?rnd={{ now.Unix }}" />
+{{ $stylePath := "css/style.css" }}
+{{ $styleFile := os.Stat (printf "themes/anubis/static/%s" $stylePath) }}
+<link rel="stylesheet" href="{{ $stylePath | absURL }}?v={{ $styleFile.ModTime.Unix }}" />
 
 {{ range .Site.Params.customCSS -}}
-<link rel="stylesheet" href="{{ . | absURL }}?rnd={{ now.Unix }}">
+{{ $customFile := os.Stat (printf "static/%s" .) }}
+<link rel="stylesheet" href="{{ . | absURL }}?v={{ $customFile.ModTime.Unix }}">
 {{- end }}
 
 {{ template "_internal/opengraph.html" . }}
