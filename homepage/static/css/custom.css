@@ -191,10 +191,7 @@ small {
 }
 
 .theme-icon {
-    font-size: 0.9em;
-    line-height: 1;
-    position: relative;
-    top: 1.5px;
+    display: block;
     color: var(--text-secondary);
 }
 
