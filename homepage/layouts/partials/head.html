@@ -5,6 +5,7 @@
 
 <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
 <meta name="description" content="{{ .Description | default (.Summary | plainify) | default .Site.Params.Description | default .Title }}">
+<link rel="canonical" href="{{ .Permalink }}">
 
 {{ with .Site.Params.mastodon }}<link rel="me" href="{{ . }}" />{{ end }}
 
