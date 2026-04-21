@@ -1,5 +1,11 @@
-/* Font */
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap');
+/* Font — self-hosted for fast rendering, no external dependency */
+@font-face {
+    font-family: 'Source Sans 3';
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: block;
+    src: url('/fonts/source-sans-3.woff2') format('woff2');
+}
 
 html {
     font-family: 'Source Sans 3', system-ui, sans-serif;
