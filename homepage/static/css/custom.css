@@ -173,6 +173,18 @@ small {
 @media (max-width: 840px) {
     header nav {
         background: var(--nav-mobile-bg);
+        display: block;
+        text-align: center;
+        position: relative;
+        padding: 0.5em 0;
+    }
+
+    header nav .theme-switch {
+        position: absolute;
+        right: 0.5em;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 0;
     }
 }
 
