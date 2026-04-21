@@ -124,6 +124,7 @@ th, td {
 
 header a {
     color: var(--header-link);
+    border-bottom: 1px solid transparent;
 }
 
 header nav {
