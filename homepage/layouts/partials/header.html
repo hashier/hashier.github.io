@@ -15,10 +15,13 @@
 <script>
 (function() {
     var toggle = document.querySelector('.theme-toggle');
-    var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var saved = localStorage.getItem('theme');
+    var isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
     toggle.checked = isDark;
     toggle.addEventListener('change', function() {
-        document.documentElement.setAttribute('data-theme', toggle.checked ? 'dark' : 'light');
+        var theme = toggle.checked ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
     });
 })();
 </script>
