@@ -6,3 +6,13 @@ toOldPosts:
 
 Series:
   other: "Series"
+
+readMore:
+  other: "Read more"
+
+powered:
+  other: "Powered by"
+
+# lowercase intentional: used as common noun in footer ("..., theme Sibuna, ...")
+theme:
+  other: "theme"
