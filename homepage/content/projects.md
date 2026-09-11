@@ -46,26 +46,11 @@ Automatically mutes your Mac when it becomes idle or the screen locks. Configura
 
 {{< langUsed >}}Objective-C, macOS menu bar app.{{< /langUsed >}}
 
-## [CBP Compiler](https://github.com/hashier/cbp)
+## Earlier work
 
-Compiler for a custom programming language, built with Bison and Flex. Lexer, parser, AST, and code generation.
+A few older projects, kept here for the record rather than the spotlight.
 
-{{< langUsed >}}C++.{{< /langUsed >}}
-
-## [GIMP CUDA Plugin](https://github.com/hashier/gicu/)
-
-One of the first GIMP plugins to offload image filter computation to the GPU. Extends GIMP with GPU-accelerated filters by transferring heavy calculations to the graphics card via CUDA.
-
-{{< langUsed >}}C, GTK+, CUDA.{{< /langUsed >}}
-
-## [SuperSAFT](https://github.com/hashier/SuperSAFT/)
-
-Full implementation of the [SAFT](https://linux.math.tifr.res.in/manuals/text/sendfile.txt) file transfer protocol, compatible with the original client and server.
-
-{{< langUsed >}}ANSI C.{{< /langUsed >}}
-
-## [flicp](https://github.com/hashier/flicp)
-
-My first C project. A file transfer client for [fli4l](https://www.fli4l.de/) Linux routers, implementing a proprietary protocol that previously only had a Windows client.
-
-{{< langUsed >}}ANSI C.{{< /langUsed >}}
+- [SuperSAFT](https://github.com/hashier/SuperSAFT) — my very first code: an implementation of the SAFT file transfer protocol.
+- [flicp](https://github.com/hashier/flicp) — my first C project: a file transfer client for [fli4l](https://www.fli4l.de/) Linux routers.
+- [CBP Compiler](https://github.com/hashier/cbp) — university project: a compiler for a subset of C, built with Bison and Flex.
+- [GIMP CUDA Plugin](https://github.com/hashier/gicu) — the very first CUDA-accelerated GIMP plugin ever written.
