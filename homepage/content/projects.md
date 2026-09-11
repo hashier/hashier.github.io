@@ -12,7 +12,7 @@ Generates a colored Voronoi diagram overlaid on OpenStreetMap showing the closes
 
 ![Voronoi map of Stockholm subway stations](https://raw.githubusercontent.com/hashier/voronoi-subway-map/main/img/img.jpg)
 
-{{< langUsed >}}HTML, JavaScript.{{< /langUsed >}}
+{{< langUsed >}}HTML, JavaScript{{< /langUsed >}}
 
 ## [TRMNL Norway Departures](https://github.com/hashier/trmnl-norway-departures)
 
@@ -20,7 +20,7 @@ Plugin for the [TRMNL](https://usetrmnl.com/) e-ink display that shows real-time
 
 <!-- TODO: add image -->
 
-{{< langUsed >}}Python.{{< /langUsed >}}
+{{< langUsed >}}Python{{< /langUsed >}}
 
 ## [1-2-animation](https://github.com/hashier/1-2-animation)
 
@@ -28,7 +28,7 @@ Generates Poemotion images — 2D patterns that create an optical illusion of mo
 
 ![1-2-animation example](https://raw.githubusercontent.com/hashier/1-2-animation/master/example/example-color-5-out.png)
 
-{{< langUsed >}}Go.{{< /langUsed >}}
+{{< langUsed >}}Go{{< /langUsed >}}
 
 ## [MacFolket](https://hashier.github.io/MacFolket/)
 
@@ -36,7 +36,7 @@ A Swedish/English dictionary deeply integrated into macOS — look up words syst
 
 ![MacFolket dictionary lookup](https://raw.githubusercontent.com/hashier/MacFolket/master/images/svendict.jpg)
 
-{{< langUsed >}}XSLT.{{< /langUsed >}}
+{{< langUsed >}}XSLT{{< /langUsed >}}
 
 ## [idleSound](https://hashier.github.io/idleSound/)
 
@@ -44,7 +44,7 @@ Automatically mutes your Mac when it becomes idle or the screen locks. Configura
 
 ![idleSound menu bar](https://raw.githubusercontent.com/hashier/idleSound/master/images/Screenshot.png)
 
-{{< langUsed >}}Objective-C, macOS menu bar app.{{< /langUsed >}}
+{{< langUsed >}}Objective-C, macOS menu bar app{{< /langUsed >}}
 
 ## [Mastodon Stats on Followings](https://github.com/hashier/mastodon-stats-on-followings)
 
@@ -56,7 +56,7 @@ Finds out which of the people you follow on Mastodon are the most chatty — ran
   stroughtonsmith ....  48 posts   13 threads   30 boosts   91 total  6.5/day
 ```
 
-{{< langUsed >}}Python.{{< /langUsed >}}
+{{< langUsed >}}Python{{< /langUsed >}}
 
 ## Earlier work
 
