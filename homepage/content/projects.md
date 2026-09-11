@@ -46,6 +46,18 @@ Automatically mutes your Mac when it becomes idle or the screen locks. Configura
 
 {{< langUsed >}}Objective-C, macOS menu bar app.{{< /langUsed >}}
 
+## [Mastodon Stats on Followings](https://github.com/hashier/mastodon-stats-on-followings)
+
+Finds out which of the people you follow on Mastodon are the most chatty — ranks your followings by timeline noise (posts, threads, boosts) over the last 14 days so you can curate who you follow.
+
+```
+  vncresolver ........ 120 posts    0 threads    0 boosts  120 total  8.6/day
+  briankrebs .........  11 posts    3 threads   82 boosts   96 total  6.9/day
+  stroughtonsmith ....  48 posts   13 threads   30 boosts   91 total  6.5/day
+```
+
+{{< langUsed >}}Python.{{< /langUsed >}}
+
 ## Earlier work
 
 A few older projects, kept here for the record rather than the spotlight.
