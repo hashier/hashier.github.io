@@ -6,11 +6,11 @@ tags: ["static-page", "index"]
 
 A selection of projects I've built over the years. More on [GitHub](https://github.com/hashier).
 
-## [Voronoi Subway Map](https://github.com/hashier/voronoi-subway-map)
+## [Nearest Station Map](https://github.com/hashier/voronoi-subway-map)
 
-Generates a colored Voronoi diagram overlaid on OpenStreetMap showing the closest subway station from any point in the city. Try the [live demo](https://nearest-station.loessl.org/).
+Shows the closest transit station (subway, rail, airport, bus) anywhere in the world, drawn as a colored Voronoi diagram over OpenStreetMap. Try the [live demo](https://nearest-station.loessl.org/).
 
-![Voronoi map of Stockholm subway stations](https://raw.githubusercontent.com/hashier/voronoi-subway-map/main/img/img.jpg)
+![Nearest Station Map of Stockholm subway stations](https://raw.githubusercontent.com/hashier/voronoi-subway-map/main/img/img.jpg)
 
 {{< langUsed >}}HTML, JavaScript{{< /langUsed >}}
 
