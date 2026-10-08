@@ -32,9 +32,11 @@ A Swedish/English dictionary deeply integrated into macOS — look up words syst
 
 ## [1-2-animation](https://github.com/hashier/1-2-animation)
 
-Generates Poemotion images — 2D patterns that create an optical illusion of motion when viewed through a striped overlay. [Video demo](https://youtu.be/wS_h5yDLNzM).
+Generates Poemotion images (also known as [barrier-grid animations](https://en.wikipedia.org/wiki/Barrier-grid_animation_and_stereography)): still pictures that start to move when you slide a striped sheet over them.
 
-![The generated image plus a striped mask: sliding the mask over the image makes a molecule rotate](/img/projects/1-2-animation.gif)
+The tool takes a few animation frames, cuts them into thin vertical strips and interleaves them into one scrambled-looking image (top left). The mask (top right) is a real plastic sheet with black stripes and narrow clear slits. Lay it over the image on a screen or a printout and each slit shows a strip of one frame only. Slide the sheet sideways and the frames play one after another, as in the animation below. See it in real life in the [video demo](https://youtu.be/wS_h5yDLNzM).
+
+![The generated image plus a photo of the striped plastic mask; below, a molecule rotates as the mask slides over the image](/img/projects/1-2-animation.gif)
 
 {{< langUsed >}}Go{{< /langUsed >}}
 
