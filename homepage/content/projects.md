@@ -1,7 +1,6 @@
 ---
 title: "Projects"
 date: 2020-06-06T20:07:58+02:00
-tags: ["static-page", "index"]
 ---
 
 A selection of projects I've built over the years. More on [GitHub](https://github.com/hashier).
