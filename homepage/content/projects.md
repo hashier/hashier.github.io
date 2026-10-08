@@ -24,7 +24,7 @@ Firefox extension that records which root certificate authorities your HTTPS con
 
 ## [MacFolket](https://hashier.github.io/MacFolket/)
 
-A Swedish/English dictionary deeply integrated into macOS — look up words system-wide via the native dictionary popup. Installable via [Homebrew](https://github.com/hashier/homebrew-tap).
+A Swedish/English dictionary deeply integrated into macOS: look up words system-wide via the native dictionary popup. Installable via [Homebrew](https://github.com/hashier/homebrew-tap).
 
 ![MacFolket dictionary lookup](/img/projects/macfolket.jpg)
 
@@ -58,7 +58,7 @@ Automatically mutes your Mac when it becomes idle or the screen locks. Configura
 
 ## [Mastodon Stats on Followings](https://github.com/hashier/mastodon-stats-on-followings)
 
-Finds out which of the people you follow on Mastodon are the most chatty — ranks your followings by timeline noise (posts, threads, boosts) over the last 14 days so you can curate who you follow.
+Finds out which of the people you follow on Mastodon are the most chatty. It ranks your followings by timeline noise (posts, threads, boosts) over the last 14 days, so you can curate who you follow.
 
 ```
   vncresolver ........ 120 posts    0 threads    0 boosts  120 total  8.6/day
@@ -72,7 +72,7 @@ Finds out which of the people you follow on Mastodon are the most chatty — ran
 
 A few older projects, kept here for the record rather than the spotlight.
 
-- [SuperSAFT](https://github.com/hashier/SuperSAFT) — my very first code: an implementation of the SAFT file transfer protocol.
-- [flicp](https://github.com/hashier/flicp) — my first C project: a file transfer client for [fli4l](https://www.fli4l.de/) Linux routers.
-- [CBP Compiler](https://github.com/hashier/cbp) — university project: a compiler for a subset of C, built with Bison and Flex.
-- [GIMP CUDA Plugin](https://github.com/hashier/gicu) — the very first CUDA-accelerated GIMP plugin ever written.
+- [SuperSAFT](https://github.com/hashier/SuperSAFT): my very first code, an implementation of the SAFT file transfer protocol.
+- [flicp](https://github.com/hashier/flicp): my first C project, a file transfer client for [fli4l](https://www.fli4l.de/) Linux routers.
+- [CBP Compiler](https://github.com/hashier/cbp): a university project, a compiler for a subset of C, built with Bison and Flex.
+- [GIMP CUDA Plugin](https://github.com/hashier/gicu): the very first CUDA-accelerated GIMP plugin ever written.
