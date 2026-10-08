@@ -42,9 +42,9 @@ The tool takes a few animation frames, cuts them into thin vertical strips and i
 
 ## [TRMNL Norway Departures](https://github.com/hashier/trmnl-norway-departures)
 
-Plugin for the [TRMNL](https://usetrmnl.com/) e-ink display that shows real-time public transport departures in Norway.
+Plugin for the [TRMNL](https://usetrmnl.com/) e-ink display that shows real-time public transport departures in Norway. Install it from the [TRMNL recipes](https://trmnl.com/recipes/20164).
 
-<!-- TODO: add image -->
+![The plugin on the TRMNL screen, showing departures from Jernbanetorget in Oslo](/img/projects/trmnl-norway-departures.png)
 
 {{< langUsed >}}Python{{< /langUsed >}}
 
