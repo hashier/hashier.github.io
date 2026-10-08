@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{{/* Copy of the theme's baseof.html; only change: .Site.LanguageCode is deprecated since Hugo v0.158.0 */}}
+<html lang="{{ .Site.Language.Locale }}">
+<head>
+    {{ block "head" . }}
+        {{ partial "head.html" . }}
+    {{ end }}
+</head>
+<body>
+    <a class="skip-main" href="#main">{{ i18n "skipToContent" | humanize }}</a>
+    <div class="container">
+        <header> 
+            {{ block "header" . }}
+                {{ partial "header.html" . }}
+            {{ end }}
+        </header>
+        <main id="main" tabindex="-1"> 
+            {{ block "main" . }}{{ end }}
+        </main>
+        <footer>
+            {{ block "footer" . }}
+                {{ $languagesCount := $.Site.Home.AllTranslations }}
+                {{ if gt $languagesCount 1 }}
+                    {{ partial "languageSelect.html" . }}
+                {{ end }}
+
+                {{ partial "footer.html" . }}
+            {{ end }}
+        </footer>
+    </div>
+</body>
+</html>

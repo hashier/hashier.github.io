@@ -1,5 +1,5 @@
 baseURL = "https://loessl.org"
-languageCode = "en-us"
+locale = "en-us"
 title = "~/christopher.loessl"
 
 theme = "anubis"
